@@ -1,14 +1,14 @@
 <nav style="margin: 0px;" class="tm-navbar uk-navbar" data-uk-sticky="">
                     <div class="uk-container uk-container-center">
-                        <a class="tm-logo uk-float-left" href="index-2.html">
+                        <a class="tm-logo uk-float-left" href="index.php">
                             <img src="images/logo.jpeg" style="width: 70px; height:70px;margin-bottom:18px;" alt="logo" title="logo"> <span>Ace<em> inc</em></span>
                         </a>
 
                         <ul class="uk-navbar-nav uk-hidden-small">
-                            <li class="uk-parent uk-active" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="index-2.html">Home</a>
+                            <li class="uk-parent uk-active" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="index.php">Home</a>
                                 <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
                                     <div class="uk-grid uk-dropdown-grid">
-                                        <div class="uk-width-1-1">
+                                        <!-- <div class="uk-width-1-1">
                                             <ul class="uk-nav uk-nav-navbar">
                                                 <li><a class="yellow-scheme" href="index.php">Yellow Color Scheme</a>
                                                 </li>
@@ -21,7 +21,7 @@
                                                 <li><a href="404.php">Error Page</a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </li>
