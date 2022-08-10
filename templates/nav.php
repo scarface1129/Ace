@@ -1,7 +1,7 @@
 <nav style="margin: 0px;" class="tm-navbar uk-navbar" data-uk-sticky="">
                     <div class="uk-container uk-container-center">
                         <a class="tm-logo uk-float-left" href="index.php">
-                            <img src="images/logo.jpeg" style="width: 70px; height:70px;margin-bottom:18px;" alt="logo" title="logo"> <span>Ace<em> inc</em></span>
+                            <img src="images/logo1.png" style="width: 90px; height:90px;margin-bottom:18px;" alt="logo" title="logo"> <span>Ace<em> inc</em></span>
                         </a>
 
                         <ul class="uk-navbar-nav uk-hidden-small">
@@ -54,7 +54,7 @@
                             </li>
                             <li><a href="news.php">News</a>
                             </li>
-                            <li><a href="category.php">Shop</a>
+                            <li><a href="teams.php">Teams</a>
                             </li>
                             <li><a href="contact.php">Contact</a>
                             </li>

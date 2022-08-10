@@ -10156,7 +10156,8 @@ q {
   transform: rotate(180deg);
 }
 .tm-logo span {
-  padding-left: 17px;
+  padding-left: 0px;
+  margin-left: -10px;
   display: inline-block;
   color: #343025;
   font-size: 38px;

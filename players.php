@@ -1,29 +1,4 @@
-<!DOCTYPE html>
-<html lang="en-gb">
-
-
-<!-- Mirrored from h-sportak.torbara.com/yellow/players.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Jul 2022 22:44:19 GMT -->
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sport.AK</title>
-    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
-    <link href="images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
-    <link href="css/akslider.css" rel="stylesheet" type="text/css" />
-    <link href="css/donate.css" rel="stylesheet" type="text/css" />
-    <link href="css/theme.css" rel="stylesheet" type="text/css" />
-
-
-</head>
-
-<body class="tm-isblog tt-players-page">
-
-    <div class="preloader">
-        <div class="loader"></div>
-    </div>
-
+<?php include('templates/header.php');?>
 
     <div class="over-wrap">
         <div class="toolbar-wrap">

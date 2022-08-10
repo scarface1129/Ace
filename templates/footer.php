@@ -6,7 +6,7 @@
                         <div class="uk-width-1-1">
                             <div class="uk-panel">
                                 <div class="footer-logo">
-                                    <a href="http://h-sportak.torbara.com/"><img src="images/footer-logo-img.png" alt=""><span>Sport</span>.ak</a>
+                                    <a href="http://h-sportak.torbara.com/"><img src="images/footer-logo-img.png" alt=""><span>ACE</span>.INC</a>
                                 </div>
                                 <div class="footer-socials">
                                     <div class="social-top">
