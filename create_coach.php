@@ -42,7 +42,7 @@
                             <div class="uk-cover-background uk-position-relative head-wrap" style="height: 290px; background-image: url('images/head-bg.jpg');">
                                 <img class="uk-invisible" src="images/head-bg.jpg" alt="" height="290" width="1920">
                                 <div class="uk-position-cover uk-flex uk-flex-center head-title">
-                                    <h1>Register Team</h1>
+                                    <h1>Register Player</h1>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
             <ul class="uk-breadcrumb">
                 <li><a href="index-2.php">Home</a>
                 </li>
-                <li class="uk-active"><span>Register Team</span>
+                <li class="uk-active"><span>Register Player</span>
                 </li>
             </ul>
         </div>
@@ -68,7 +68,7 @@
 
                         <div class="uk-container uk-container-center tt-gallery-top">
                             <div class="uk-grid" data-uk-grid-match="">
-                                <div class="uk-width-medium-3-10 uk-width-small-1-1 title">Go Ahead And Get Your Team Registered</div>
+                                <div class="uk-width-medium-3-10 uk-width-small-1-1 title">Go Ahead And Get Your Player Registered</div>
                                 <div class="uk-width-medium-7-10 uk-width-small-1-1 text">Aenean aliquam, dolor eu lacinia pellentesque, dui arcu condimentum nisl, quis sollicitudin mi lorem quis leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis sapien a ante rutrum pulvinar quis ac tellus. Proin facilisis dui at mollis tincidunt. Sed dignissim orci non arcu luctus pretium. Donec at ex aliquet, porttitor lacus eget, ullamcorper quam. Integer pellentesque egestas arcu, nec molestie leo sollicitudin et</div>
                             </div>
                         </div>
@@ -85,29 +85,61 @@
                             <section class="create">
                                 <div class="form">
                                     <form action="" method="post">
+                                    <h3>Personal Information</h3>
+                                        <div class="line"></div>
                                         <div class="form-input">
                                             <label for="name">Name</label>
                                             <input type="text" name="name" id="name">
                                         </div>
                                         <div class="form-input">
-                                            <label for="players">Number Of Players</label>
-                                            <input type="text" name="players" id="players">
+                                            <label for="team">Team</label>
+                                            <select name="team" id="team">
+                                                <option value="">select your team</option>
+                                                <option value="">Barcalona Fc</option>
+                                                <option value="">Barcalona Fc</option>
+                                                <option value="">Barcalona Fc</option>
+                                                <option value="">Barcalona Fc</option>
+                                                <option value="">Barcalona Fc</option>
+                                                <option value="">Barcalona Fc</option>
+                                                <option value="">Barcalona Fc</option>
+                                            </select>
                                         </div>
                                         <div class="form-input">
-                                            <label for="logo">Team Logo</label>
-                                            <input type="file" name="logo" id="logo">
+                                            <label for="picture">Upload a Picture</label>
+                                            <input type="file" name="picture" id="picture">
                                         </div>
                                         
                                         <div class="form-input">
-                                            <label for="seeking_players">Seeking Players?</label>
-                                            <select name="seeking_players" id="seeking_players">
-                                                <option value="True">Yes</option>
-                                                <option value="False">No</option>
+                                            <label for="role">Role</label>
+                                            <select name="role" id="role">
+                                                <option value="">Select Role </option>
+                                                <option value="">Coach</option>
+                                                <option value="">Assistant Coach</option>
+                                                
                                             </select>
                                         </div>
                                         
-                                        
-                                        
+                                        <h3>Contact Information</h3>
+                                        <div class="line"></div>
+                                        <div class="form-input">
+                                            <label for="phone">Phone Number </label>
+                                            <input type="text" name="phone" id="phone">
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="email">Email  </label>
+                                            <input type="text" name="email" id="email">
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="instagram">Instagram Handle </label>
+                                            <input type="text" name="instagram" id="instagram">
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="facebook">Facebook Link </label>
+                                            <input type="text" name="facebook" id="facebook">
+                                        </div>
+                                        <div class="form-input">
+                                        <button>Submit</button>
+                                        </div>
                                     </form>
                                 </div>
                             </section>
@@ -123,47 +155,7 @@
             <?php include('templates/footer.php');?>
 
 
-        <div id="offcanvas" class="uk-offcanvas">
-            <div class="uk-offcanvas-bar">
-                <ul class="uk-nav uk-nav-offcanvas">
-                    <li class="uk-parent uk-active"><a href="index-2.php">Home</a>
-                        <ul class="uk-nav-sub">
-                            <li><a class="yellow-scheme" href="index-2.php">Yellow Color Scheme</a>
-                            </li>
-                            <li><a class="blue-scheme" href="http://h-sportak.torbara.com/blue/index.php">Blue Color Scheme</a>
-                            </li>
-                            <li><a class="red-scheme" href="http://h-sportak.torbara.com/red/index.php">Red Color Scheme</a>
-                            </li>
-                            <li><a href="offline.php">Offline Page</a>
-                            </li>
-                            <li><a href="404.php">Error Page</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="about.php">About</a></li>
-                    <li class="uk-parent uk-active"><a href="#">Pages</a>
-                        <ul class="uk-nav-sub">
-                            <li><a href="players.php">Players</a>
-                            </li>
-                            <li><a href="gallery.php">Gallery</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="uk-parent"><a href="match-list.php">Match</a>
-                        <ul class="uk-nav-sub">
-                            <li><a href="results.php">Results</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="news.php">News</a>
-                    </li>
-                    <li><a href="category.php">Shop</a>
-                    </li>
-                    <li><a href="contact.php">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+            <?php include('templates/bottom.php');?>
     </div>
 
     

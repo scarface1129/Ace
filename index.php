@@ -1420,47 +1420,7 @@
 
         </div>
 
-        <div id="offcanvas" class="uk-offcanvas">
-            <div class="uk-offcanvas-bar">
-                <ul class="uk-nav uk-nav-offcanvas">
-                    <li class="uk-parent uk-active"><a href="index-2.php">Home</a>
-                        <ul class="uk-nav-sub">
-                            <li><a class="yellow-scheme" href="index-2.php">Yellow Color Scheme</a>
-                            </li>
-                            <li><a class="blue-scheme" href="http://h-sportak.torbara.com/blue/index.php">Blue Color Scheme</a>
-                            </li>
-                            <li><a class="red-scheme" href="http://h-sportak.torbara.com/red/index.php">Red Color Scheme</a>
-                            </li>
-                            <li><a href="offline.php">Offline Page</a>
-                            </li>
-                            <li><a href="404.php">Error Page</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="about.php">About</a></li>
-                    <li class="uk-parent"><a href="#">Pages</a>
-                        <ul class="uk-nav-sub">
-                            <li><a href="players.php">Players</a>
-                            </li>
-                            <li><a href="gallery.php">Gallery</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="uk-parent"><a href="match-list.php">Match</a>
-                        <ul class="uk-nav-sub">
-                            <li><a href="results.php">Results</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="news.php">News</a>
-                    </li>
-                    <li><a href="category.php">Shop</a>
-                    </li>
-                    <li><a href="contact.php">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <?php include('templates/bottom.php');?>
     </div>
 
     

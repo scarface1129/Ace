@@ -85,6 +85,8 @@
                             <section class="create">
                                 <div class="form">
                                     <form action="" method="post">
+                                    <h3>Personal Information</h3>
+                                        <div class="line"></div>
                                         <div class="form-input">
                                             <label for="name">Name</label>
                                             <input type="text" name="name" id="name">
@@ -135,9 +137,27 @@
                                                 <option value="">Others</option>
                                             </select>
                                         </div>
-                                        
-                                        
-                                        
+                                        <h3>Contact Information</h3>
+                                        <div class="line"></div>
+                                        <div class="form-input">
+                                            <label for="phone">Phone Number </label>
+                                            <input type="text" name="phone" id="phone">
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="email">Email  </label>
+                                            <input type="text" name="email" id="email">
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="instagram">Instagram Handle </label>
+                                            <input type="text" name="instagram" id="instagram">
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="facebook">Facebook Link </label>
+                                            <input type="text" name="facebook" id="facebook">
+                                        </div>
+                                        <div class="form-input">
+                                        <button>Submit</button>
+                                        </div>
                                     </form>
                                 </div>
                             </section>
@@ -152,48 +172,8 @@
 
             <?php include('templates/footer.php');?>
 
-
-        <div id="offcanvas" class="uk-offcanvas">
-            <div class="uk-offcanvas-bar">
-                <ul class="uk-nav uk-nav-offcanvas">
-                    <li class="uk-parent uk-active"><a href="index-2.php">Home</a>
-                        <ul class="uk-nav-sub">
-                            <li><a class="yellow-scheme" href="index-2.php">Yellow Color Scheme</a>
-                            </li>
-                            <li><a class="blue-scheme" href="http://h-sportak.torbara.com/blue/index.php">Blue Color Scheme</a>
-                            </li>
-                            <li><a class="red-scheme" href="http://h-sportak.torbara.com/red/index.php">Red Color Scheme</a>
-                            </li>
-                            <li><a href="offline.php">Offline Page</a>
-                            </li>
-                            <li><a href="404.php">Error Page</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="about.php">About</a></li>
-                    <li class="uk-parent uk-active"><a href="#">Pages</a>
-                        <ul class="uk-nav-sub">
-                            <li><a href="players.php">Players</a>
-                            </li>
-                            <li><a href="gallery.php">Gallery</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="uk-parent"><a href="match-list.php">Match</a>
-                        <ul class="uk-nav-sub">
-                            <li><a href="results.php">Results</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="news.php">News</a>
-                    </li>
-                    <li><a href="category.php">Shop</a>
-                    </li>
-                    <li><a href="contact.php">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+            <?php include('templates/bottom.php');?>
+        
     </div>
 
     
