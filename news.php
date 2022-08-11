@@ -56,7 +56,7 @@
 
         <div class="uk-container uk-container-center alt">
             <ul class="uk-breadcrumb">
-                <li><a href="index-2.html">Home</a></li>
+                <li><a href="index-2.php">Home</a></li>
                 <li class="uk-active"><span>News</span></li>
             </ul>
         </div>
@@ -71,7 +71,7 @@
                                 <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
                                     <div class="wrapper">
                                         <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.html">
+                                            <a href="news-single.php">
                                             <img src="images/news/35b8bf93115eb2b8da9f8b4f41fdb0fd.jpg" class="img-polaroid" alt="">
                                             </a>        
                                         </div>
@@ -81,7 +81,7 @@
                                             </div>
                                             <div class="name">
                                                 <h4>
-                                                    <a href="news-single.html">
+                                                    <a href="news-single.php">
                                                     Suspendisse purus enim, dictum sed lorem ac, sodales maximus est                    </a>        
                                                 </h4>
                                             </div>
@@ -92,13 +92,13 @@
                                     </div>
                                     <div class="article-actions uk-flex-wrap-bottom">
                                         <div class="count"><i class="uk-icon-comments"></i><span>3</span></div>
-                                        <div class="read-more"><a href="news-single.html">Read More</a></div>
+                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
                                     </div>
                                 </div>
                                 <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
                                     <div class="wrapper">
                                         <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.html">
+                                            <a href="news-single.php">
                                             <img src="images/news/4e9ed1f24d1f63b923e67456774158a3.jpg" class="img-polaroid" alt="">
                                             </a>        
                                         </div>
@@ -108,7 +108,7 @@
                                             </div>
                                             <div class="name">
                                                 <h4>
-                                                    <a href="news-single.html">
+                                                    <a href="news-single.php">
                                                     Suspendisse purus enim, dictum sed lorem ac, sodales maximus est                    </a>        
                                                 </h4>
                                             </div>
@@ -119,13 +119,13 @@
                                     </div>
                                     <div class="article-actions uk-flex-wrap-bottom">
                                         <div class="count"><i class="uk-icon-comments"></i><span>3</span></div>
-                                        <div class="read-more"><a href="news-single.html">Read More</a></div>
+                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
                                     </div>
                                 </div>
                                 <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
                                     <div class="wrapper">
                                         <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.html">
+                                            <a href="news-single.php">
                                             <img src="images/news/19896c58825d0206bd858f7e50bf51b2.jpg" class="img-polaroid" alt="">
                                             </a>        
                                         </div>
@@ -135,7 +135,7 @@
                                             </div>
                                             <div class="name">
                                                 <h4>
-                                                    <a href="news-single.html">
+                                                    <a href="news-single.php">
                                                     Cum sociis natoque penatibus et magnis dis parturient                    </a>       
                                                 </h4>
                                             </div>
@@ -146,13 +146,13 @@
                                     </div>
                                     <div class="article-actions uk-flex-wrap-bottom">
                                         <div class="count"><i class="uk-icon-comments"></i><span>2</span></div>
-                                        <div class="read-more"><a href="news-single.html">Read More</a></div>
+                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
                                     </div>
                                 </div>
                                 <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
                                     <div class="wrapper">
                                         <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.html">
+                                            <a href="news-single.php">
                                             <img src="images/news/0a213d8fc9b9586f374154e6b55e0d7d.jpg" class="img-polaroid" alt="">
                                             </a>        
                                         </div>
@@ -162,7 +162,7 @@
                                             </div>
                                             <div class="name">
                                                 <h4>
-                                                    <a href="news-single.html">
+                                                    <a href="news-single.php">
                                                     Vestibulum ante ipsum primis in                    </a>     
                                                 </h4>
                                             </div>
@@ -173,13 +173,13 @@
                                     </div>
                                     <div class="article-actions uk-flex-wrap-bottom">
                                         <div class="count"><i class="uk-icon-comments"></i><span>3</span></div>
-                                        <div class="read-more"><a href="news-single.html">Read More</a></div>
+                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
                                     </div>
                                 </div>
                                 <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
                                     <div class="wrapper">
                                         <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.html">
+                                            <a href="news-single.php">
                                             <img src="images/news/853d071dfa2f869fbd2a70dbcb3a8f5e.jpg" class="img-polaroid" alt="">
                                             </a>        
                                         </div>
@@ -189,7 +189,7 @@
                                             </div>
                                             <div class="name">
                                                 <h4>
-                                                    <a href="news-single.html">
+                                                    <a href="news-single.php">
                                                     Nullam enim ante, volutpat non viverra eget                    </a>     
                                                 </h4>
                                             </div>
@@ -200,13 +200,13 @@
                                     </div>
                                     <div class="article-actions uk-flex-wrap-bottom">
                                         <div class="count"><i class="uk-icon-comments"></i><span>3</span></div>
-                                        <div class="read-more"><a href="news-single.html">Read More</a></div>
+                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
                                     </div>
                                 </div>
                                 <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
                                     <div class="wrapper">
                                         <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.html">
+                                            <a href="news-single.php">
                                             <img src="images/news/7f2425d96a8122cb1ac403d0604c257e.jpg" class="img-polaroid" alt="">
                                             </a>        
                                         </div>
@@ -216,7 +216,7 @@
                                             </div>
                                             <div class="name">
                                                 <h4>
-                                                    <a href="news-single.html">
+                                                    <a href="news-single.php">
                                                     Interdum et malesuada fames ac ante ipsum primis in faucibus                    </a>        
                                                 </h4>
                                             </div>
@@ -227,13 +227,13 @@
                                     </div>
                                     <div class="article-actions uk-flex-wrap-bottom">
                                         <div class="count"><i class="uk-icon-comments"></i><span>2</span></div>
-                                        <div class="read-more"><a href="news-single.html">Read More</a></div>
+                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
                                     </div>
                                 </div>
                                 <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
                                     <div class="wrapper">
                                         <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.html">
+                                            <a href="news-single.php">
                                             <img src="images/news/a05149b3647ccfca06226f762ad4a50a.jpg" class="img-polaroid" alt="">
                                             </a>        
                                         </div>
@@ -243,7 +243,7 @@
                                             </div>
                                             <div class="name">
                                                 <h4>
-                                                    <a href="news-single.html">
+                                                    <a href="news-single.php">
                                                     Nunc tincidunt dictum nisi                    </a>      
                                                 </h4>
                                             </div>
@@ -254,13 +254,13 @@
                                     </div>
                                     <div class="article-actions uk-flex-wrap-bottom">
                                         <div class="count"><i class="uk-icon-comments"></i><span>1</span></div>
-                                        <div class="read-more"><a href="news-single.html">Read More</a></div>
+                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
                                     </div>
                                 </div>
                                 <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
                                     <div class="wrapper">
                                         <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.html">
+                                            <a href="news-single.php">
                                             <img src="images/news/534579b3c373c09398691a46025fe5e6.jpg" class="img-polaroid" alt="">
                                             </a>        
                                         </div>
@@ -270,7 +270,7 @@
                                             </div>
                                             <div class="name">
                                                 <h4>
-                                                    <a href="news-single.html">
+                                                    <a href="news-single.php">
                                                     Nunc in interdum neque. Mauris tincidunt molestie felis                    </a>     
                                                 </h4>
                                             </div>
@@ -281,13 +281,13 @@
                                     </div>
                                     <div class="article-actions uk-flex-wrap-bottom">
                                         <div class="count"><i class="uk-icon-comments"></i><span>2</span></div>
-                                        <div class="read-more"><a href="news-single.html">Read More</a></div>
+                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
                                     </div>
                                 </div>
                                 <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
                                     <div class="wrapper">
                                         <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.html">
+                                            <a href="news-single.php">
                                             <img src="images/news/f1aa744989a08c3135ade02490456f4f.jpg" class="img-polaroid" alt="">
                                             </a>        
                                         </div>
@@ -297,7 +297,7 @@
                                             </div>
                                             <div class="name">
                                                 <h4>
-                                                    <a href="news-single.html">
+                                                    <a href="news-single.php">
                                                     Vivamus in risus nulla. Fusce volutpat varius odio                    </a>      
                                                 </h4>
                                             </div>
@@ -308,7 +308,7 @@
                                     </div>
                                     <div class="article-actions uk-flex-wrap-bottom">
                                         <div class="count"><i class="uk-icon-comments"></i><span>3</span></div>
-                                        <div class="read-more"><a href="news-single.html">Read More</a></div>
+                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -497,40 +497,40 @@
         <div id="offcanvas" class="uk-offcanvas">
             <div class="uk-offcanvas-bar">
                 <ul class="uk-nav uk-nav-offcanvas">
-                    <li class="uk-parent"><a href="index-2.html">Home</a>
+                    <li class="uk-parent"><a href="index-2.php">Home</a>
                         <ul class="uk-nav-sub">
-                            <li><a class="yellow-scheme" href="index-2.html">Yellow Color Scheme</a>
+                            <li><a class="yellow-scheme" href="index-2.php">Yellow Color Scheme</a>
                             </li>
-                            <li><a class="blue-scheme" href="http://h-sportak.torbara.com/blue/index.html">Blue Color Scheme</a>
+                            <li><a class="blue-scheme" href="http://h-sportak.torbara.com/blue/index.php">Blue Color Scheme</a>
                             </li>
-                            <li><a class="red-scheme" href="http://h-sportak.torbara.com/red/index.html">Red Color Scheme</a>
+                            <li><a class="red-scheme" href="http://h-sportak.torbara.com/red/index.php">Red Color Scheme</a>
                             </li>
-                            <li><a href="offline.html">Offline Page</a>
+                            <li><a href="offline.php">Offline Page</a>
                             </li>
-                            <li><a href="404.html">Error Page</a>
+                            <li><a href="404.php">Error Page</a>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.php">About</a></li>
                     <li class="uk-parent"><a href="#">Pages</a>
                         <ul class="uk-nav-sub">
-                            <li><a href="players.html">Players</a>
+                            <li><a href="players.php">Players</a>
                             </li>
-                            <li><a href="gallery.html">Gallery</a>
+                            <li><a href="gallery.php">Gallery</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="uk-parent"><a href="match-list.html">Match</a>
+                    <li class="uk-parent"><a href="match-list.php">Match</a>
                         <ul class="uk-nav-sub">
-                            <li><a href="results.html">Results</a>
+                            <li><a href="results.php">Results</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="uk-active"><a href="news.html">News</a>
+                    <li class="uk-active"><a href="news.php">News</a>
                     </li>
-                    <li><a href="category.html">Shop</a>
+                    <li><a href="category.php">Shop</a>
                     </li>
-                    <li><a href="contact.html">Contact</a>
+                    <li><a href="contact.php">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -584,5 +584,5 @@
 </body>
 
 
-<!-- Mirrored from h-sportak.torbara.com/yellow/news.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Jul 2022 23:31:43 GMT -->
+<!-- Mirrored from h-sportak.torbara.com/yellow/news.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Jul 2022 23:31:43 GMT -->
 </html>

@@ -53,7 +53,7 @@
 
         <div class="uk-container uk-container-center alt">
             <ul class="uk-breadcrumb">
-                <li><a href="index-2.html">Home</a>
+                <li><a href="index-2.php">Home</a>
                 </li>
                 <li class="uk-active"><span>About</span>
                 </li>
@@ -483,40 +483,40 @@
         <div id="offcanvas" class="uk-offcanvas">
             <div class="uk-offcanvas-bar">
                 <ul class="uk-nav uk-nav-offcanvas">
-                    <li class="uk-parent"><a href="index-2.html">Home</a>
+                    <li class="uk-parent"><a href="index-2.php">Home</a>
                         <ul class="uk-nav-sub">
-                            <li><a class="yellow-scheme" href="index-2.html">Yellow Color Scheme</a>
+                            <li><a class="yellow-scheme" href="index-2.php">Yellow Color Scheme</a>
                             </li>
-                            <li><a class="blue-scheme" href="http://h-sportak.torbara.com/blue/index.html">Blue Color Scheme</a>
+                            <li><a class="blue-scheme" href="http://h-sportak.torbara.com/blue/index.php">Blue Color Scheme</a>
                             </li>
-                            <li><a class="red-scheme" href="http://h-sportak.torbara.com/red/index.html">Red Color Scheme</a>
+                            <li><a class="red-scheme" href="http://h-sportak.torbara.com/red/index.php">Red Color Scheme</a>
                             </li>
-                            <li><a href="offline.html">Offline Page</a>
+                            <li><a href="offline.php">Offline Page</a>
                             </li>
-                            <li><a href="404.html">Error Page</a>
+                            <li><a href="404.php">Error Page</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="uk-active"><a href="about.html">About</a></li>
+                    <li class="uk-active"><a href="about.php">About</a></li>
                     <li class="uk-parent"><a href="#">Pages</a>
                         <ul class="uk-nav-sub">
-                            <li><a href="players.html">Players</a>
+                            <li><a href="players.php">Players</a>
                             </li>
-                            <li><a href="gallery.html">Gallery</a>
+                            <li><a href="gallery.php">Gallery</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="uk-parent"><a href="match-list.html">Match</a>
+                    <li class="uk-parent"><a href="match-list.php">Match</a>
                         <ul class="uk-nav-sub">
-                            <li><a href="results.html">Results</a>
+                            <li><a href="results.php">Results</a>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="news.html">News</a>
+                    <li><a href="news.php">News</a>
                     </li>
-                    <li><a href="category.html">Shop</a>
+                    <li><a href="category.php">Shop</a>
                     </li>
-                    <li><a href="contact.html">Contact</a>
+                    <li><a href="contact.php">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -542,5 +542,5 @@
 </body>
 
 
-<!-- Mirrored from h-sportak.torbara.com/yellow/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Jul 2022 22:44:19 GMT -->
+<!-- Mirrored from h-sportak.torbara.com/yellow/about.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Jul 2022 22:44:19 GMT -->
 </html>

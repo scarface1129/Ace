@@ -53,7 +53,7 @@
 
         <div class="uk-container uk-container-center alt">
             <ul class="uk-breadcrumb">
-                <li><a href="index-2.html">Home</a>
+                <li><a href="index-2.php">Home</a>
                 </li>
                 <li class="uk-active"><span>Players</span>
                 </li>
@@ -111,11 +111,11 @@
                                                         </div>
                                                         <div class="bio">
                                                             <span>
-                                                            <a href="player.html">bio
+                                                            <a href="player.php">bio
                                                             </a>
                                                             </span>
                                                         </div>
-                                                        <a href="player.html">
+                                                        <a href="player.php">
                                                         <img src="images/494a6c4fd56d9d2af64b92b6337db693.jpg" class="img-polaroid" alt="Steven Webb" title="Steven Webb">
                                                         </a>
                                                         <ul class="socials">
@@ -144,7 +144,7 @@
                                                     <div class="info">
                                                         <div class="name">
                                                             <h3>
-                                                                <a href="player.html">
+                                                                <a href="player.php">
                                                                 Steven Webb                    
                                                                 </a>
                                                             </h3>
@@ -167,11 +167,11 @@
                                                         </div>
                                                         <div class="bio">
                                                             <span>
-                                                            <a href="player.html">bio
+                                                            <a href="player.php">bio
                                                             </a>
                                                             </span>
                                                         </div>
-                                                        <a href="player.html">
+                                                        <a href="player.php">
                                                         <img src="images/df207a70fca3a58b07082ce9aca2c538.jpg" class="img-polaroid" alt="John Montgomery" title="John Montgomery">
                                                         </a>
                                                         <ul class="socials">
@@ -200,7 +200,7 @@
                                                     <div class="info">
                                                         <div class="name">
                                                             <h3>
-                                                                <a href="player.html">
+                                                                <a href="player.php">
                                                                 John Montgomery                    
                                                                 </a>
                                                             </h3>
@@ -223,11 +223,11 @@
                                                         </div>
                                                         <div class="bio">
                                                             <span>
-                                                            <a href="player.html">bio
+                                                            <a href="player.php">bio
                                                             </a>
                                                             </span>
                                                         </div>
-                                                        <a href="player.html">
+                                                        <a href="player.php">
                                                         <img src="images/bd84c3b0e76d2dd99a75ac9ca2f6ec06.jpg" class="img-polaroid" alt="Johnny Thompson" title="Johnny Thompson">
                                                         </a>
                                                         <ul class="socials">
@@ -256,7 +256,7 @@
                                                     <div class="info">
                                                         <div class="name">
                                                             <h3>
-                                                                <a href="player.html">
+                                                                <a href="player.php">
                                                                 Johnny Thompson                    
                                                                 </a>
                                                             </h3>
@@ -279,11 +279,11 @@
                                                         </div>
                                                         <div class="bio">
                                                             <span>
-                                                            <a href="player.html">bio
+                                                            <a href="player.php">bio
                                                             </a>
                                                             </span>
                                                         </div>
-                                                        <a href="player.html">
+                                                        <a href="player.php">
                                                         <img src="images/f9bfc5bc85499506c9e18e5afb2eaf2d.jpg" class="img-polaroid" alt="Benjamin Mendoza" title="Benjamin Mendoza">
                                                         </a>
                                                         <ul class="socials">
@@ -312,7 +312,7 @@
                                                     <div class="info">
                                                         <div class="name">
                                                             <h3>
-                                                                <a href="player.html">
+                                                                <a href="player.php">
                                                                 Benjamin Mendoza                    
                                                                 </a>
                                                             </h3>
@@ -335,11 +335,11 @@
                                                         </div>
                                                         <div class="bio">
                                                             <span>
-                                                            <a href="player.html">bio
+                                                            <a href="player.php">bio
                                                             </a>
                                                             </span>
                                                         </div>
-                                                        <a href="player.html">
+                                                        <a href="player.php">
                                                         <img src="images/70d6fcd7a5ed8edc8acc6b52c76d7ff4.jpg" class="img-polaroid" alt="Joe Perez" title="Joe Perez">
                                                         </a>
                                                         <ul class="socials">
@@ -368,7 +368,7 @@
                                                     <div class="info">
                                                         <div class="name">
                                                             <h3>
-                                                                <a href="player.html">
+                                                                <a href="player.php">
                                                                 Joe Perez                    
                                                                 </a>
                                                             </h3>
@@ -391,11 +391,11 @@
                                                         </div>
                                                         <div class="bio">
                                                             <span>
-                                                            <a href="player.html">bio
+                                                            <a href="player.php">bio
                                                             </a>
                                                             </span>
                                                         </div>
-                                                        <a href="player.html">
+                                                        <a href="player.php">
                                                         <img src="images/450032a6f795065465ebb3d698d74294.jpg" class="img-polaroid" alt="Bobby Guerrero" title="Bobby Guerrero">
                                                         </a>
                                                         <ul class="socials">
@@ -424,7 +424,7 @@
                                                     <div class="info">
                                                         <div class="name">
                                                             <h3>
-                                                                <a href="player.html">
+                                                                <a href="player.php">
                                                                 Bobby Guerrero                    
                                                                 </a>
                                                             </h3>
@@ -447,11 +447,11 @@
                                                         </div>
                                                         <div class="bio">
                                                             <span>
-                                                            <a href="player.html">bio
+                                                            <a href="player.php">bio
                                                             </a>
                                                             </span>
                                                         </div>
-                                                        <a href="player.html">
+                                                        <a href="player.php">
                                                         <img src="images/a0cd8e2687c86ec4810f4adec5724bba.jpg" class="img-polaroid" alt="Douglas Pain" title="Douglas Pain">
                                                         </a>
                                                         <ul class="socials">
@@ -468,7 +468,7 @@
                                                     <div class="info">
                                                         <div class="name">
                                                             <h3>
-                                                                <a href="player.html">
+                                                                <a href="player.php">
                                                                 Douglas Pain                    
                                                                 </a>
                                                             </h3>
@@ -491,11 +491,11 @@
                                                         </div>
                                                         <div class="bio">
                                                             <span>
-                                                            <a href="player.html">bio
+                                                            <a href="player.php">bio
                                                             </a>
                                                             </span>
                                                         </div>
-                                                        <a href="player.html">
+                                                        <a href="player.php">
                                                         <img src="images/8a3d3554567e4859f88a93ac59e1eadc.jpg" class="img-polaroid" alt="Christopher Herrera" title="Christopher Herrera">
                                                         </a>
                                                         <ul class="socials">
@@ -524,7 +524,7 @@
                                                     <div class="info">
                                                         <div class="name">
                                                             <h3>
-                                                                <a href="player.html">
+                                                                <a href="player.php">
                                                                 Christopher Herrera                    
                                                                 </a>
                                                             </h3>
@@ -554,40 +554,40 @@
         <div id="offcanvas" class="uk-offcanvas">
             <div class="uk-offcanvas-bar">
                 <ul class="uk-nav uk-nav-offcanvas">
-                    <li class="uk-parent uk-active"><a href="index-2.html">Home</a>
+                    <li class="uk-parent uk-active"><a href="index-2.php">Home</a>
                         <ul class="uk-nav-sub">
-                            <li><a class="yellow-scheme" href="index-2.html">Yellow Color Scheme</a>
+                            <li><a class="yellow-scheme" href="index-2.php">Yellow Color Scheme</a>
                             </li>
-                            <li><a class="blue-scheme" href="http://h-sportak.torbara.com/blue/index.html">Blue Color Scheme</a>
+                            <li><a class="blue-scheme" href="http://h-sportak.torbara.com/blue/index.php">Blue Color Scheme</a>
                             </li>
-                            <li><a class="red-scheme" href="http://h-sportak.torbara.com/red/index.html">Red Color Scheme</a>
+                            <li><a class="red-scheme" href="http://h-sportak.torbara.com/red/index.php">Red Color Scheme</a>
                             </li>
-                            <li><a href="offline.html">Offline Page</a>
+                            <li><a href="offline.php">Offline Page</a>
                             </li>
-                            <li><a href="404.html">Error Page</a>
+                            <li><a href="404.php">Error Page</a>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.php">About</a></li>
                     <li class="uk-parent uk-active"><a href="#">Pages</a>
                         <ul class="uk-nav-sub">
-                            <li><a href="players.html">Players</a>
+                            <li><a href="players.php">Players</a>
                             </li>
-                            <li><a href="gallery.html">Gallery</a>
+                            <li><a href="gallery.php">Gallery</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="uk-parent"><a href="match-list.html">Match</a>
+                    <li class="uk-parent"><a href="match-list.php">Match</a>
                         <ul class="uk-nav-sub">
-                            <li><a href="results.html">Results</a>
+                            <li><a href="results.php">Results</a>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="news.html">News</a>
+                    <li><a href="news.php">News</a>
                     </li>
-                    <li><a href="category.html">Shop</a>
+                    <li><a href="category.php">Shop</a>
                     </li>
-                    <li><a href="contact.html">Contact</a>
+                    <li><a href="contact.php">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -612,5 +612,5 @@
 </body>
 
 
-<!-- Mirrored from h-sportak.torbara.com/yellow/players.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Jul 2022 22:44:25 GMT -->
+<!-- Mirrored from h-sportak.torbara.com/yellow/players.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Jul 2022 22:44:25 GMT -->
 </html>

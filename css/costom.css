@@ -1,0 +1,92 @@
+.create {
+    width: 60%;
+    background-color: #ec9659;
+    margin: auto;
+    padding: 100px;
+    border-radius: 10px;
+    margin-top: 1px;
+}
+.form {
+    margin: auto;
+    width: 100%;
+}
+
+.form-input{
+    position: relative;
+    margin: auto;
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 10px;
+}
+select {
+    border-radius: 10px;
+}
+
+label {
+    width: auto;
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 500px) {
+    .create {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        margin-top: 10px;
+
+    }
+
+    .form-input{
+        position: relative;
+        margin: auto;
+        width: 80%;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+    
+}
+@media (max-width: 768px) {
+    .create {
+        width: 80%;
+        margin: auto;
+        padding: 0px;
+        margin-top: 10px;
+
+    }
+
+    .form-input{
+        position: relative;
+        margin: auto;
+        width: 50%;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+    
+}
+@media (max-width: 412px) {
+    .create {
+        width: 100%;
+        margin: auto;
+        padding: 0px;
+        margin-top: 10px;
+
+    }
+
+    .form-input{
+        position: relative;
+        margin: auto;
+        width: 80%;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+    
+}

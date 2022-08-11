@@ -35,11 +35,14 @@
                                                 </li>
                                                 <li><a href="gallery.php">Gallery</a>
                                                 </li>
+                                                <li><a href="teams.php">Teams</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </li>
+                            
                             <li class="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="match-list.php">Match</a>
                                 <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
                                     <div class="uk-grid uk-dropdown-grid">
@@ -54,9 +57,27 @@
                             </li>
                             <li><a href="news.php">News</a>
                             </li>
-                            <li><a href="teams.php">Teams</a>
-                            </li>
+                            
                             <li><a href="contact.php">Contact</a>
+                            </li>
+                            <li class="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="#">Register</a>
+                                <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
+                                    <div class="uk-grid uk-dropdown-grid">
+                                        <div class="uk-width-1-1">
+                                            <ul class="uk-nav uk-nav-navbar">
+                                                <li><a href="create_team.php">Team Registeration</a>
+                                                </li>
+                                                <li><a href="create_player.php">Player Registeration</a>
+                                                </li>
+                                                </li>
+                                                <li><a href="create_coach.php">Coach Registeration</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="contact.php">login</a>
                             </li>
                         </ul>
                         <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas=""></a>

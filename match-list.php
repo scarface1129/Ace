@@ -40,7 +40,7 @@
                     <div class="uk-width-1-1 uk-row-first">
                         <div class="uk-panel">
                             <div class="uk-cover-background uk-position-relative head-match-wrap" style="height: 590px; background-image: url('images/head-bg-match.jpg');">
-                                <img class="uk-invisible" src="../images/head-bg-match.html" alt="">
+                                <img class="uk-invisible" src="../images/head-bg-match.php" alt="">
                                 <div class="uk-position-cover uk-flex-center head-news-title">
                                     <h1>
                                         Match List
@@ -63,7 +63,7 @@
                                                             <div class="half right">
                                                                 <div class="va-wrap">
                                                                     <div class="logo">
-                                                                        <a href="match-single.html">
+                                                                        <a href="match-single.php">
                                                                         <img src="images/team-ava.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                             
                                                                     </div>
                                                                     <div class="team-name">
@@ -78,7 +78,7 @@
                                                                         Amsterdam                    
                                                                     </div>
                                                                     <div class="logo">
-                                                                        <a href="match-single.html">
+                                                                        <a href="match-single.php">
                                                                         <img src="images/team-ava1.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                            
                                                                     </div>
                                                                 </div>
@@ -111,7 +111,7 @@
 
         <div class="uk-container uk-container-center alt">
             <ul class="uk-breadcrumb">
-                <li><a href="http://h-sportak.torbara.com/index.html">Home</a></li>
+                <li><a href="http://h-sportak.torbara.com/index.php">Home</a></li>
                 <li class="uk-active"><span>Match list</span></li>
             </ul>
         </div>
@@ -127,7 +127,7 @@
                                     Nov                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                     
                                 </div>
                                 <div class="team-name">
@@ -144,7 +144,7 @@
                                     Amsterdam                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava1.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                    
                                 </div>
                                 <div class="location">
@@ -153,7 +153,7 @@
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.html">view</a>
+                                    <a class="view-article" href="match-single.php">view</a>
                                 </div>
                             </div>
                             <div class="match-list-item">
@@ -162,7 +162,7 @@
                                     Nov                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava2.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                     
                                 </div>
                                 <div class="team-name">
@@ -173,7 +173,7 @@
                                     china                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava3.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                    
                                 </div>
                                 <div class="location">
@@ -182,7 +182,7 @@
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.html">view</a>
+                                    <a class="view-article" href="match-single.php">view</a>
                                 </div>
                             </div>
                             <div class="match-list-item">
@@ -191,7 +191,7 @@
                                     Nov                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava4.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-20)" title="Cambridgehire VS china (2015-11-20)"></a>                                     
                                 </div>
                                 <div class="team-name">
@@ -202,7 +202,7 @@
                                     china                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava5.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-20)" title="Cambridgehire VS china (2015-11-20)"></a>                                    
                                 </div>
                                 <div class="location">
@@ -211,7 +211,7 @@
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.html">view</a>
+                                    <a class="view-article" href="match-single.php">view</a>
                                 </div>
                             </div>
                             <div class="match-list-item">
@@ -220,7 +220,7 @@
                                     Nov                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                     
                                 </div>
                                 <div class="team-name">
@@ -231,7 +231,7 @@
                                     Amsterdam                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava1.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                    
                                 </div>
                                 <div class="location">
@@ -240,7 +240,7 @@
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.html">view</a>
+                                    <a class="view-article" href="match-single.php">view</a>
                                 </div>
                             </div>
                             <div class="match-list-item">
@@ -249,7 +249,7 @@
                                     Nov                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava2.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                     
                                 </div>
                                 <div class="team-name">
@@ -260,7 +260,7 @@
                                     china                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava3.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                    
                                 </div>
                                 <div class="location">
@@ -269,7 +269,7 @@
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.html">view</a>
+                                    <a class="view-article" href="match-single.php">view</a>
                                 </div>
                             </div>
                             <div class="match-list-item">
@@ -278,7 +278,7 @@
                                     Nov                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava4.png" class="img-polaroid" alt="King VS china (2015-11-20)" title="King VS china (2015-11-20)"></a>                                     
                                 </div>
                                 <div class="team-name">
@@ -289,7 +289,7 @@
                                     china                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava5.png" class="img-polaroid" alt="King VS china (2015-11-20)" title="King VS china (2015-11-20)"></a>                                    
                                 </div>
                                 <div class="location">
@@ -298,7 +298,7 @@
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.html">view</a>
+                                    <a class="view-article" href="match-single.php">view</a>
                                 </div>
                             </div>
                             <div class="match-list-item">
@@ -307,7 +307,7 @@
                                     Nov                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                     
                                 </div>
                                 <div class="team-name">
@@ -318,7 +318,7 @@
                                     Amsterdam                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava1.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                    
                                 </div>
                                 <div class="location">
@@ -327,7 +327,7 @@
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.html">view</a>
+                                    <a class="view-article" href="match-single.php">view</a>
                                 </div>
                             </div>
                             <div class="match-list-item">
@@ -336,7 +336,7 @@
                                     Nov                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava2.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                     
                                 </div>
                                 <div class="team-name">
@@ -347,7 +347,7 @@
                                     china                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava3.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                    
                                 </div>
                                 <div class="location">
@@ -356,7 +356,7 @@
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.html">view</a>
+                                    <a class="view-article" href="match-single.php">view</a>
                                 </div>
                             </div>
                             <div class="match-list-item">
@@ -365,7 +365,7 @@
                                     Nov                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava4.png" class="img-polaroid" alt="King VS china (2015-11-20)" title="King VS china (2015-11-20)"></a>                                     
                                 </div>
                                 <div class="team-name">
@@ -376,7 +376,7 @@
                                     china                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava5.png" class="img-polaroid" alt="King VS china (2015-11-20)" title="King VS china (2015-11-20)"></a>                                    
                                 </div>
                                 <div class="location">
@@ -385,7 +385,7 @@
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.html">view</a>
+                                    <a class="view-article" href="match-single.php">view</a>
                                 </div>
                             </div>
                             <div class="match-list-item">
@@ -394,7 +394,7 @@
                                     Nov                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                     
                                 </div>
                                 <div class="team-name">
@@ -405,7 +405,7 @@
                                     Amsterdam                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava2.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                    
                                 </div>
                                 <div class="location">
@@ -414,7 +414,7 @@
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.html">view</a>
+                                    <a class="view-article" href="match-single.php">view</a>
                                 </div>
                             </div>
                             <div class="match-list-item">
@@ -423,7 +423,7 @@
                                     Nov                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava3.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                     
                                 </div>
                                 <div class="team-name">
@@ -434,7 +434,7 @@
                                     china                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava4.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                    
                                 </div>
                                 <div class="location">
@@ -443,7 +443,7 @@
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.html">view</a>
+                                    <a class="view-article" href="match-single.php">view</a>
                                 </div>
                             </div>
                             <div class="match-list-item">
@@ -452,7 +452,7 @@
                                     Nov                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava5.png" class="img-polaroid" alt="King VS china (2015-11-20) - Copy" title="King VS china (2015-11-20) - Copy"></a>                                     
                                 </div>
                                 <div class="team-name">
@@ -463,7 +463,7 @@
                                     china                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava.png" class="img-polaroid" alt="King VS china (2015-11-20) - Copy" title="King VS china (2015-11-20) - Copy"></a>                                    
                                 </div>
                                 <div class="location">
@@ -472,7 +472,7 @@
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.html">view</a>
+                                    <a class="view-article" href="match-single.php">view</a>
                                 </div>
                             </div>
                             <div class="match-list-item">
@@ -481,7 +481,7 @@
                                     Nov                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava1.png" class="img-polaroid" alt="Italy VS Chalenger (2015-11-12)" title="Italy VS Chalenger (2015-11-12)"></a>                                     
                                 </div>
                                 <div class="team-name">
@@ -492,7 +492,7 @@
                                     Chalenger                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava2.png" class="img-polaroid" alt="Italy VS Chalenger (2015-11-12)" title="Italy VS Chalenger (2015-11-12)"></a>                                    
                                 </div>
                                 <div class="location">
@@ -501,7 +501,7 @@
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.html">view</a>
+                                    <a class="view-article" href="match-single.php">view</a>
                                 </div>
                             </div>
                             <div class="match-list-item">
@@ -510,7 +510,7 @@
                                     Nov                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava3.png" class="img-polaroid" alt="Croatia VS Roman (2015-11-12)" title="Croatia VS Roman (2015-11-12)"></a>                                     
                                 </div>
                                 <div class="team-name">
@@ -521,7 +521,7 @@
                                     Roman                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava4.png" class="img-polaroid" alt="Croatia VS Roman (2015-11-12)" title="Croatia VS Roman (2015-11-12)"></a>                                    
                                 </div>
                                 <div class="location">
@@ -530,7 +530,7 @@
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.html">view</a>
+                                    <a class="view-article" href="match-single.php">view</a>
                                 </div>
                             </div>
                             <div class="match-list-item">
@@ -539,7 +539,7 @@
                                     Nov                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava5.png" class="img-polaroid" alt="Uventus VS Chalenger (2015-11-12)" title="Uventus VS Chalenger (2015-11-12)"></a>                                     
                                 </div>
                                 <div class="team-name">
@@ -550,7 +550,7 @@
                                     Chalenger                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.html">
+                                    <a href="match-single.php">
                                     <img src="images/team-ava.png" class="img-polaroid" alt="Uventus VS Chalenger (2015-11-12)" title="Uventus VS Chalenger (2015-11-12)"></a>                                    
                                 </div>
                                 <div class="location">
@@ -559,7 +559,7 @@
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.html">view</a>
+                                    <a class="view-article" href="match-single.php">view</a>
                                 </div>
                             </div>
                         </div>
@@ -571,34 +571,34 @@
                         <div>
                             <ul class="nav menu">
                                 <li class="item-3">             
-                                    <a href="news.html">
+                                    <a href="news.php">
                                     Overall <span class="label">(3)</span>
                                     </a>            
                                 </li>
                                 <li class="item-4">             
-                                    <a href="news.html">
+                                    <a href="news.php">
                                     Players <span class="label">(2)</span>
                                     </a>            
                                 </li>
                                 <li class="item-2">             
-                                    <a href="news.html">
+                                    <a href="news.php">
                                     Life <span class="label">(4)</span>
                                     </a>            
                                 </li>
                                 <li class="item-5 parent">
-                                    <a href="news.html">
+                                    <a href="news.php">
                                     Entertainment <span class="label">(1)</span>
                                     </a>            
                                     <ul class="">
                                         <li class="item-7">
-                                            <a href="news.html">
+                                            <a href="news.php">
                                             Art Style <span class="label">(3)</span>
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="item-6">             
-                                    <a href="news.html">
+                                    <a href="news.php">
                                     Uncategorized <span class="label">(3)</span>
                                     </a>            
                                 </li>
@@ -647,7 +647,7 @@
                         <article class="has-context ">
                             <div class="latest-news-wrap">
                                 <div class="img-wrap">
-                                    <a href="news-single.html">
+                                    <a href="news-single.php">
                                     <img src="images/35b8bf93115eb2b8da9f8b4f41fdb0fd.jpg" class="img-polaroid" alt="">
                                     </a>        
                                 </div>
@@ -657,7 +657,7 @@
                                     </div>
                                     <div class="name">
                                         <h4>
-                                            <a href="news-single.html">
+                                            <a href="news-single.php">
                                             Suspendisse purus enim, dictum sed lorem ac, sodales maximus est                    </a>        
                                         </h4>
                                     </div>
@@ -667,7 +667,7 @@
                         <article class="has-context ">
                             <div class="latest-news-wrap">
                                 <div class="img-wrap">
-                                    <a href="news-single.html">
+                                    <a href="news-single.php">
                                     <img src="images/4e9ed1f24d1f63b923e67456774158a3.jpg" class="img-polaroid" alt="">
                                     </a>        
                                 </div>
@@ -677,7 +677,7 @@
                                     </div>
                                     <div class="name">
                                         <h4>
-                                            <a href="news-single.html">
+                                            <a href="news-single.php">
                                             Suspendisse purus enim, dictum sed lorem ac, sodales maximus est                    </a>        
                                         </h4>
                                     </div>
@@ -687,7 +687,7 @@
                         <article class="has-context ">
                             <div class="latest-news-wrap">
                                 <div class="img-wrap">
-                                    <a href="news-single.html">
+                                    <a href="news-single.php">
                                     <img src="images/19896c58825d0206bd858f7e50bf51b2.jpg" class="img-polaroid" alt="">
                                     </a>        
                                 </div>
@@ -697,7 +697,7 @@
                                     </div>
                                     <div class="name">
                                         <h4>
-                                            <a href="news-single.html">
+                                            <a href="news-single.php">
                                             Cum sociis natoque penatibus et magnis dis parturient                    </a>       
                                         </h4>
                                     </div>
@@ -727,40 +727,40 @@
         <div id="offcanvas" class="uk-offcanvas">
             <div class="uk-offcanvas-bar">
                 <ul class="uk-nav uk-nav-offcanvas">
-                    <li class="uk-parent"><a href="index-2.html">Home</a>
+                    <li class="uk-parent"><a href="index-2.php">Home</a>
                         <ul class="uk-nav-sub">
-                            <li><a class="yellow-scheme" href="index-2.html">Yellow Color Scheme</a>
+                            <li><a class="yellow-scheme" href="index-2.php">Yellow Color Scheme</a>
                             </li>
-                            <li><a class="blue-scheme" href="http://h-sportak.torbara.com/blue/index.html">Blue Color Scheme</a>
+                            <li><a class="blue-scheme" href="http://h-sportak.torbara.com/blue/index.php">Blue Color Scheme</a>
                             </li>
-                            <li><a class="red-scheme" href="http://h-sportak.torbara.com/red/index.html">Red Color Scheme</a>
+                            <li><a class="red-scheme" href="http://h-sportak.torbara.com/red/index.php">Red Color Scheme</a>
                             </li>
-                            <li><a href="offline.html">Offline Page</a>
+                            <li><a href="offline.php">Offline Page</a>
                             </li>
-                            <li><a href="404.html">Error Page</a>
+                            <li><a href="404.php">Error Page</a>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.php">About</a></li>
                     <li class="uk-parent"><a href="#">Pages</a>
                         <ul class="uk-nav-sub">
-                            <li><a href="players.html">Players</a>
+                            <li><a href="players.php">Players</a>
                             </li>
-                            <li><a href="gallery.html">Gallery</a>
+                            <li><a href="gallery.php">Gallery</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="uk-parent uk-active"><a href="match-list.html">Match</a>
+                    <li class="uk-parent uk-active"><a href="match-list.php">Match</a>
                         <ul class="uk-nav-sub">
-                            <li><a href="results.html">Results</a>
+                            <li><a href="results.php">Results</a>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="news.html">News</a>
+                    <li><a href="news.php">News</a>
                     </li>
-                    <li><a href="category.html">Shop</a>
+                    <li><a href="category.php">Shop</a>
                     </li>
-                    <li><a href="contact.html">Contact</a>
+                    <li><a href="contact.php">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -814,5 +814,5 @@
 </body>
 
 
-<!-- Mirrored from h-sportak.torbara.com/yellow/match-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Jul 2022 23:30:29 GMT -->
+<!-- Mirrored from h-sportak.torbara.com/yellow/match-list.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Jul 2022 23:30:29 GMT -->
 </html>

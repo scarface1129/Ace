@@ -44,7 +44,7 @@
                                 <div class="uk-slidenav-position" data-uk-slideshow="{height: 'auto', animation: 'swipe', duration: '500', autoplay: false, autoplayInterval: '7000', videoautoplay: true, videomute: true, kenburns: false}">
                                     <ul class="uk-slideshow uk-overlay-active">
                                         <li aria-hidden="false" class="uk-height-viewport uk-active">
-                                            <div style="background-image: url(images/main-slider-img.jpg);" class="uk-cover-background uk-position-cover"></div><img style="width: 100%; height: auto; opacity: 0;" class="uk-invisible" src="images/main-slider-img.jpg" alt="">
+                                            <div style="background-image: url(images/main-slider-img1.jpg);" class="uk-cover-background uk-position-cover"></div><img style="width: 100%; height: auto; opacity: 0;" class="uk-invisible" src="images/main-slider-img.jpg" alt="">
                                             <div class="uk-position-cover uk-flex-middle">
                                                 <div class="uk-container uk-container-center uk-position-cover">
                                                     <div class="va-promo-text uk-width-6-10 uk-push-4-10">
@@ -56,7 +56,7 @@
                                             </div>
                                         </li>
                                         <li aria-hidden="true" class="uk-height-viewport">
-                                            <div style="background-image: url(images/main-slider-img1.html);" class="uk-cover-background uk-position-cover"></div><img style="width: 100%; height: auto; opacity: 0;" class="uk-invisible" src="images/main-slider-img1.jpg" alt="">
+                                            <div style="background-image: url(images/main-slider-img.jpg);" class="uk-cover-background uk-position-cover"></div><img style="width: 100%; height: auto; opacity: 0;" class="uk-invisible" src="images/main-slider-img1.jpg" alt="">
                                             <div class="uk-position-cover uk-flex-middle">
                                                 <div class="uk-container uk-container-center uk-position-cover">
                                                     <div class="va-promo-text uk-width-6-10 uk-push-4-10">
@@ -68,7 +68,7 @@
                                             </div>
                                         </li>
                                         <li aria-hidden="true" class="uk-height-viewport">
-                                            <div style="background-image: url(images/main-slider-img2.html);" class="uk-cover-background uk-position-cover"></div><img style="width: 100%; height: auto; opacity: 0;" class="uk-invisible" src="images/main-slider-img2.jpg" alt="">
+                                            <div style="background-image: url(images/main-slider-img2.php);" class="uk-cover-background uk-position-cover"></div><img style="width: 100%; height: auto; opacity: 0;" class="uk-invisible" src="images/main-slider-img2.jpg" alt="">
                                             <div class="uk-position-cover uk-flex-middle">
                                                 <div class="uk-container uk-container-center uk-position-cover">
                                                     <div class="va-promo-text uk-width-6-10 uk-push-4-10">
@@ -120,7 +120,7 @@
                                     <div class="uk-container uk-container-center">
                                         <div class="uk-grid uk-flex uk-flex-middle">
                                             <div class="uk-width-2-12 center">
-                                                <a href="results.html">
+                                                <a href="results.php">
                                                     <img src="images/club-logo.png" class="img-polaroid" alt="" title="">
                                                 </a>
                                             </div>
@@ -141,7 +141,7 @@
                                                     china </div>
                                             </div>
                                             <div class="uk-width-2-12 center">
-                                                <a href="results.html">
+                                                <a href="results.php">
                                                    <img src="images/club-logo1.png" class="img-polaroid" alt="" title="">
                                                 </a>
                                             </div>
@@ -159,7 +159,7 @@
                                         <div class="uk-grid">
                                             <div class="uk-width-1-1">
                                                 <div class="btn-wrap uk-container-center">
-                                                    <a class="read-more" href="results.html">More Info</a>
+                                                    <a class="read-more" href="results.php">More Info</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -187,7 +187,7 @@
                                     </div>
                                     <p>Nam quis purus sed est interdum sagittis sed in leo. Nunc feugiat enim nunc, sit amet placerat erat consectetur in. Cras consequat enim nunc, sit amet venenatis massa volutpat ut. Cras vitae facilisis nulla. </p>
                                     <p>Nulla pharetra lobortis nisl, vitae pretium nunc congue eget. Nunc imperdiet consequat nibh pharetra venenatis. Duis vitae lacinia nibh, et egestas leo. Proin sed mi sit amet dolor rhoncus tristique. Maecenas rhoncus felis vel congue commodo.</p>
-                                    <a class="read-more" href="about.html">read more</a>
+                                    <a class="read-more" href="about.php">read more</a>
                                 </div>
                             </div>
                         </div>
@@ -311,7 +311,7 @@
                                                     </div>
                                                     <div class="clear"></div>
                                                     <div class="logo">
-                                                        <a href="match-single.html">
+                                                        <a href="match-single.php">
                                                             <img src="images/team-ava.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
                                                         </a>
                                                     </div>
@@ -320,7 +320,7 @@
 
                                                     <div class="team-name">Amsterdam </div>
                                                     <div class="logo">
-                                                        <a href="match-single.html">
+                                                        <a href="match-single.php">
                                                             <img src="images/team-ava1.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
                                                         </a>
                                                     </div>
@@ -339,7 +339,7 @@
                                                 <div class="date">November 29, 2015 </div>
                                                 <div class="wrapper">
                                                     <div class="logo">
-                                                        <a href="match-single.html">
+                                                        <a href="match-single.php">
                                                             <img src="images/team-ava.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
                                                         </a>
                                                     </div>
@@ -348,7 +348,7 @@
 
                                                     <div class="team-name">china </div>
                                                     <div class="logo">
-                                                        <a href="match-single.html">
+                                                        <a href="match-single.php">
                                                             <img src="images/team-ava1.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
                                                         </a>
                                                     </div>
@@ -360,7 +360,7 @@
                                                 <div class="date">November 20, 2015 </div>
                                                 <div class="wrapper">
                                                     <div class="logo">
-                                                        <a href="match-single.html">
+                                                        <a href="match-single.php">
                                                             <img src="images/team-ava2.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-20)" title="Cambridgehire VS china (2015-11-20)">
                                                         </a>
                                                     </div>
@@ -370,7 +370,7 @@
                                                     <div class="team-name">
                                                         china </div>
                                                     <div class="logo">
-                                                        <a href="match-single.html">
+                                                        <a href="match-single.php">
                                                             <img src="images/team-ava3.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-20)" title="Cambridgehire VS china (2015-11-20)">
                                                         </a>
                                                     </div>
@@ -382,7 +382,7 @@
                                                 <div class="date">November 14, 2015 </div>
                                                 <div class="wrapper">
                                                     <div class="logo">
-                                                        <a href="match-single.html">
+                                                        <a href="match-single.php">
                                                             <img src="images/team-ava4.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
                                                         </a>
                                                     </div>
@@ -391,7 +391,7 @@
 
                                                     <div class="team-name">Amsterdam </div>
                                                     <div class="logo">
-                                                        <a href="match-single.html">
+                                                        <a href="match-single.php">
                                                             <img src="images/team-ava5.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
                                                         </a>
                                                     </div>
@@ -403,7 +403,7 @@
                                                 <div class="date">November 29, 2015 </div>
                                                 <div class="wrapper">
                                                     <div class="logo">
-                                                        <a href="match-single.html">
+                                                        <a href="match-single.php">
                                                             <img src="images/team-ava.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
                                                         </a>
                                                     </div>
@@ -413,7 +413,7 @@
                                                     <div class="team-name">
                                                         china </div>
                                                     <div class="logo">
-                                                        <a href="match-single.html">
+                                                        <a href="match-single.php">
                                                             <img src="images/team-ava1.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
                                                         </a>
                                                     </div>
@@ -425,7 +425,7 @@
                                                 <div class="date">November 20, 2015 </div>
                                                 <div class="wrapper">
                                                     <div class="logo">
-                                                        <a href="match-single.html">
+                                                        <a href="match-single.php">
                                                             <img src="images/team-ava2.png" class="img-polaroid" alt="King VS china (2015-11-20)" title="King VS china (2015-11-20)">
                                                         </a>
                                                     </div>
@@ -434,7 +434,7 @@
 
                                                     <div class="team-name">china </div>
                                                     <div class="logo">
-                                                        <a href="match-single.html">
+                                                        <a href="match-single.php">
                                                             <img src="images/team-ava3.png" class="img-polaroid" alt="King VS china (2015-11-20)" title="King VS china (2015-11-20)">
                                                         </a>
                                                     </div>
@@ -446,7 +446,7 @@
                                                 <div class="date">November 14, 2015 </div>
                                                 <div class="wrapper">
                                                     <div class="logo">
-                                                        <a href="match-single.html">
+                                                        <a href="match-single.php">
                                                             <img src="images/team-ava4.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
                                                         </a>
                                                     </div>
@@ -455,7 +455,7 @@
 
                                                     <div class="team-name">Amsterdam </div>
                                                     <div class="logo">
-                                                        <a href="match-single.html">
+                                                        <a href="match-single.php">
                                                             <img src="images/team-ava5.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
                                                         </a>
                                                     </div>
@@ -467,7 +467,7 @@
                                                 <div class="date">November 29, 2015 </div>
                                                 <div class="wrapper">
                                                     <div class="logo">
-                                                        <a href="match-single.html">
+                                                        <a href="match-single.php">
                                                             <img src="images/team-ava.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
                                                         </a>
                                                     </div>
@@ -476,7 +476,7 @@
 
                                                     <div class="team-name">china </div>
                                                     <div class="logo">
-                                                        <a href="match-single.html">
+                                                        <a href="match-single.php">
                                                             <img src="images/team-ava.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
                                                         </a>
                                                     </div>
@@ -513,7 +513,7 @@
                                         <div class="img-wrap uk-cover-background uk-position-relative" style="background-image: url(images/853d071dfa2f869fbd2a70dbcb3a8f5e.jpg); min-height: 280px;">
 
 
-                                            <a href="news-single.html"></a>
+                                            <a href="news-single.php"></a>
                                             <img class="uk-invisible" src="images/853d071dfa2f869fbd2a70dbcb3a8f5e.jpg" alt="">
 
                                         </div>
@@ -522,12 +522,12 @@
                                                 Nov 20, 2015 </div>
                                             <div class="name">
                                                 <h4>
-                                                    <a href="news-single.html">Nullam enim ante, volutpat non viverra eget </a>	
+                                                    <a href="news-single.php">Nullam enim ante, volutpat non viverra eget </a>	
                                                 </h4>
                                             </div>
                                             <div class="text">
                                                 <p>Vivamus hendrerit, tortor sed luctus maximus, nunc urna hendrerit nibh, sit amet efficitur libero lorem quis mauris. Nunc a pulvinar lectus.</p>
-                                                <div class="read-more"><a href="news-single.html">Read More</a>
+                                                <div class="read-more"><a href="news-single.php">Read More</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -539,7 +539,7 @@
                                         <div class="img-wrap uk-cover-background uk-position-relative" style="background-image: url(images/534579b3c373c09398691a46025fe5e6.jpg); min-height: 280px;">
 
 
-                                            <a href="news-single.html"></a>
+                                            <a href="news-single.php"></a>
                                             <img class="uk-invisible" src="images/534579b3c373c09398691a46025fe5e6.jpg" alt="">
 
                                         </div>
@@ -548,12 +548,12 @@
                                                 Nov 20, 2015 </div>
                                             <div class="name">
                                                 <h4>
-                                                    <a href="news-single.html">Cum sociis natoque penatibus et magnis dis parturient</a>		
+                                                    <a href="news-single.php">Cum sociis natoque penatibus et magnis dis parturient</a>		
                                                 </h4>
                                             </div>
                                             <div class="text">
                                                 <p>Vivamus hendrerit, tortor sed luctus maximus, nunc urna hendrerit nibh, sit amet efficitur libero lorem quis mauris. Nunc a pulvinar lectus.</p>
-                                                <div class="read-more"><a href="news-single.html">Read More</a>
+                                                <div class="read-more"><a href="news-single.php">Read More</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -562,7 +562,7 @@
 
                                 </div>
                             </div>
-                            <div class="all-news-btn"><a href="news.html"><span>All News</span></a>
+                            <div class="all-news-btn"><a href="news.php"><span>All News</span></a>
                             </div>
 
                         </div>
@@ -913,9 +913,9 @@
                                                     <div class="img-wrap">
                                                         <div class="player-number"><span>21</span>
                                                         </div>
-                                                        <div class="bio"><span><a href="player.html">bio</a></span>
+                                                        <div class="bio"><span><a href="player.php">bio</a></span>
                                                         </div>
-                                                        <a href="player.html">
+                                                        <a href="player.php">
                                                             <img src="images/494a6c4fd56d9d2af64b92b6337db693.jpg" class="img-polaroid" alt="Steven Webb" title="Steven Webb">
                                                         </a>
                                                         <ul class="socials">
@@ -944,7 +944,7 @@
                                                     <div class="info">
                                                         <div class="name">
                                                             <h3>
-                                                                <a href="player.html">Steven Webb </a>
+                                                                <a href="player.php">Steven Webb </a>
                                                             </h3>
                                                         </div>
                                                         <div class="position">DEFENDER </div>
@@ -961,9 +961,9 @@
                                                         <div class="player-number">
                                                             <span>19</span>
                                                         </div>
-                                                        <div class="bio"><span><a href="player.html">bio</a></span>
+                                                        <div class="bio"><span><a href="player.php">bio</a></span>
                                                         </div>
-                                                        <a href="player.html">
+                                                        <a href="player.php">
                                                             <img src="images/df207a70fca3a58b07082ce9aca2c538.jpg" class="img-polaroid" alt="John Montgomery" title="John Montgomery">
                                                         </a>
                                                         <ul class="socials">
@@ -992,7 +992,7 @@
                                                     <div class="info">
                                                         <div class="name">
                                                             <h3>
-                                                                <a href="player.html">John Montgomery </a>
+                                                                <a href="player.php">John Montgomery </a>
                                                             </h3>
                                                         </div>
                                                         <div class="position">STRIKER</div>
@@ -1009,9 +1009,9 @@
                                                         <div class="player-number">
                                                             <span>35</span>
                                                         </div>
-                                                        <div class="bio"><span><a href="player.html">bio</a></span>
+                                                        <div class="bio"><span><a href="player.php">bio</a></span>
                                                         </div>
-                                                        <a href="player.html">
+                                                        <a href="player.php">
                                                             <img src="images/bd84c3b0e76d2dd99a75ac9ca2f6ec06.jpg" class="img-polaroid" alt="Johnny Thompson" title="Johnny Thompson">
                                                         </a>
                                                         <ul class="socials">
@@ -1039,7 +1039,7 @@
                                                     </div>
                                                     <div class="info">
                                                         <div class="name">
-                                                            <h3><a href="player.html">Johnny Thompson</a></h3>
+                                                            <h3><a href="player.php">Johnny Thompson</a></h3>
                                                         </div>
                                                         <div class="position">goalkeeper </div>
                                                     </div>
@@ -1054,9 +1054,9 @@
                                                     <div class="img-wrap">
                                                         <div class="player-number"><span>07</span>
                                                         </div>
-                                                        <div class="bio"><span><a href="player.html">bio</a></span>
+                                                        <div class="bio"><span><a href="player.php">bio</a></span>
                                                         </div>
-                                                        <a href="player.html">
+                                                        <a href="player.php">
                                                             <img src="images/f9bfc5bc85499506c9e18e5afb2eaf2d.jpg" class="img-polaroid" alt="Benjamin Mendoza" title="Benjamin Mendoza">
                                                         </a>
                                                         <ul class="socials">
@@ -1085,7 +1085,7 @@
                                                     <div class="info">
                                                         <div class="name">
                                                             <h3>
-                                                                <a href="player.html">Benjamin Mendoza </a>
+                                                                <a href="player.php">Benjamin Mendoza </a>
                                                             </h3>
                                                         </div>
                                                         <div class="position">DEFENDER </div>
@@ -1101,9 +1101,9 @@
                                                     <div class="img-wrap">
                                                         <div class="player-number"><span>47 </span>
                                                         </div>
-                                                        <div class="bio"><span><a href="player.html">bio</a></span>
+                                                        <div class="bio"><span><a href="player.php">bio</a></span>
                                                         </div>
-                                                        <a href="player.html">
+                                                        <a href="player.php">
                                                             <img src="images/70d6fcd7a5ed8edc8acc6b52c76d7ff4.jpg" class="img-polaroid" alt="Joe Perez" title="Joe Perez">
                                                         </a>
                                                         <ul class="socials">
@@ -1132,7 +1132,7 @@
                                                     <div class="info">
                                                         <div class="name">
                                                             <h3>
-                                                                <a href="player.html">Joe Perez </a>
+                                                                <a href="player.php">Joe Perez </a>
                                                             </h3>
                                                         </div>
                                                         <div class="position">STRIKER </div>
@@ -1148,9 +1148,9 @@
                                                     <div class="img-wrap">
                                                         <div class="player-number"><span>23 </span>
                                                         </div>
-                                                        <div class="bio"><span><a href="player.html">bio</a></span>
+                                                        <div class="bio"><span><a href="player.php">bio</a></span>
                                                         </div>
-                                                        <a href="player.html">
+                                                        <a href="player.php">
                                                             <img src="images/450032a6f795065465ebb3d698d74294.jpg" class="img-polaroid" alt="Bobby Guerrero" title="Bobby Guerrero">
                                                         </a>
                                                         <ul class="socials">
@@ -1179,7 +1179,7 @@
                                                     <div class="info">
                                                         <div class="name">
                                                             <h3>
-                                                                <a href="player.html">Bobby Guerrero  </a>
+                                                                <a href="player.php">Bobby Guerrero  </a>
                                                             </h3>
                                                         </div>
                                                         <div class="position">MIDFIELDER </div>
@@ -1195,9 +1195,9 @@
                                                     <div class="img-wrap">
                                                         <div class="player-number"><span>14 </span>
                                                         </div>
-                                                        <div class="bio"><span><a href="player.html">bio</a></span>
+                                                        <div class="bio"><span><a href="player.php">bio</a></span>
                                                         </div>
-                                                        <a href="player.html">
+                                                        <a href="player.php">
                                                             <img src="images/a0cd8e2687c86ec4810f4adec5724bba.jpg" class="img-polaroid" alt="Douglas Pain" title="Douglas Pain">
                                                         </a>
                                                         <ul class="socials">
@@ -1214,7 +1214,7 @@
                                                     <div class="info">
                                                         <div class="name">
                                                             <h3>
-                                                                <a href="player.html">Douglas Pain </a>
+                                                                <a href="player.php">Douglas Pain </a>
                                                             </h3>
                                                         </div>
                                                         <div class="position">DEFENDER </div>
@@ -1230,9 +1230,9 @@
                                                     <div class="img-wrap">
                                                         <div class="player-number"><span>36 </span>
                                                         </div>
-                                                        <div class="bio"><span><a href="player.html">bio</a></span>
+                                                        <div class="bio"><span><a href="player.php">bio</a></span>
                                                         </div>
-                                                        <a href="player.html">
+                                                        <a href="player.php">
                                                             <img src="images/8a3d3554567e4859f88a93ac59e1eadc.jpg" class="img-polaroid" alt="Christopher Herrera" title="Christopher Herrera">
                                                         </a>
                                                         <ul class="socials">
@@ -1261,7 +1261,7 @@
                                                     <div class="info">
                                                         <div class="name">
                                                             <h3>
-                                                                <a href="player.html">Christopher Herrera</a>
+                                                                <a href="player.php">Christopher Herrera</a>
                                                             </h3>
                                                         </div>
                                                         <div class="position">STRIKER </div>
@@ -1273,7 +1273,7 @@
                                     </div>
                                 </div>
 
-                                <div class="our-team-btn"><a href="players.html"><span>More Info</span></a>
+                                <div class="our-team-btn"><a href="players.php"><span>More Info</span></a>
                                 </div>
                             </div>
 
@@ -1423,40 +1423,40 @@
         <div id="offcanvas" class="uk-offcanvas">
             <div class="uk-offcanvas-bar">
                 <ul class="uk-nav uk-nav-offcanvas">
-                    <li class="uk-parent uk-active"><a href="index-2.html">Home</a>
+                    <li class="uk-parent uk-active"><a href="index-2.php">Home</a>
                         <ul class="uk-nav-sub">
-                            <li><a class="yellow-scheme" href="index-2.html">Yellow Color Scheme</a>
+                            <li><a class="yellow-scheme" href="index-2.php">Yellow Color Scheme</a>
                             </li>
-                            <li><a class="blue-scheme" href="http://h-sportak.torbara.com/blue/index.html">Blue Color Scheme</a>
+                            <li><a class="blue-scheme" href="http://h-sportak.torbara.com/blue/index.php">Blue Color Scheme</a>
                             </li>
-                            <li><a class="red-scheme" href="http://h-sportak.torbara.com/red/index.html">Red Color Scheme</a>
+                            <li><a class="red-scheme" href="http://h-sportak.torbara.com/red/index.php">Red Color Scheme</a>
                             </li>
-                            <li><a href="offline.html">Offline Page</a>
+                            <li><a href="offline.php">Offline Page</a>
                             </li>
-                            <li><a href="404.html">Error Page</a>
+                            <li><a href="404.php">Error Page</a>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.php">About</a></li>
                     <li class="uk-parent"><a href="#">Pages</a>
                         <ul class="uk-nav-sub">
-                            <li><a href="players.html">Players</a>
+                            <li><a href="players.php">Players</a>
                             </li>
-                            <li><a href="gallery.html">Gallery</a>
+                            <li><a href="gallery.php">Gallery</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="uk-parent"><a href="match-list.html">Match</a>
+                    <li class="uk-parent"><a href="match-list.php">Match</a>
                         <ul class="uk-nav-sub">
-                            <li><a href="results.html">Results</a>
+                            <li><a href="results.php">Results</a>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="news.html">News</a>
+                    <li><a href="news.php">News</a>
                     </li>
-                    <li><a href="category.html">Shop</a>
+                    <li><a href="category.php">Shop</a>
                     </li>
-                    <li><a href="contact.html">Contact</a>
+                    <li><a href="contact.php">Contact</a>
                     </li>
                 </ul>
             </div>
