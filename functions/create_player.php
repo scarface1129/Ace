@@ -104,9 +104,9 @@ $Fb = mysqli_real_escape_string($conn,$facebook);
 $sql = "INSERT INTO players(`name`,teamId, age, profilePicture,position,jerseyNumber) VALUES ('$Name', '8', '$Players_age','$Picture','$Players_position','$Jersey_number')";
 
 if (mysqli_query($conn, $sql)) {
-    $destfile = 'images/uploads/'. $picture;
-    $filepath = $picture['tmp_name'];
-    move_uploaded_file($filepath,$destfile);
+    // $destfile = 'images/uploads/'. $picture;
+    // $filepath = $picture['tmp_name'];
+    // move_uploaded_file($filepath,$destfile);
     $sql = 'SELECT id FROM players ORDER BY id DESC LIMIT 1';
     $result = mysqli_query($conn, $sql);
     $value = mysqli_fetch_all($result, MYSQLI_ASSOC)[0];

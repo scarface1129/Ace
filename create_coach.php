@@ -1,4 +1,11 @@
-<?php include('templates/header.php');?>
+<?php include('templates/header.php');
+session_start();
+if( isset( $_SESSION['coach_errors'] ) ) {
+    $errors = $_SESSION['coach_errors'];
+    $values = $_SESSION['coach_values'];
+ }
+
+?>
 <link href="css/costom.css" rel="stylesheet" type="text/css" />
     <div class="over-wrap">
         <div class="toolbar-wrap">
@@ -42,7 +49,7 @@
                             <div class="uk-cover-background uk-position-relative head-wrap" style="height: 290px; background-image: url('images/head-bg.jpg');">
                                 <img class="uk-invisible" src="images/head-bg.jpg" alt="" height="290" width="1920">
                                 <div class="uk-position-cover uk-flex uk-flex-center head-title">
-                                    <h1>Register Player</h1>
+                                    <h1>Coach Registration</h1>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +62,7 @@
             <ul class="uk-breadcrumb">
                 <li><a href="index-2.php">Home</a>
                 </li>
-                <li class="uk-active"><span>Register Player</span>
+                <li class="uk-active"><span>Register Coach</span>
                 </li>
             </ul>
         </div>
@@ -68,7 +75,7 @@
 
                         <div class="uk-container uk-container-center tt-gallery-top">
                             <div class="uk-grid" data-uk-grid-match="">
-                                <div class="uk-width-medium-3-10 uk-width-small-1-1 title">Go Ahead And Get Your Player Registered</div>
+                                <div class="uk-width-medium-3-10 uk-width-small-1-1 title">Go Ahead And Get Your Coach Registered</div>
                                 <div class="uk-width-medium-7-10 uk-width-small-1-1 text">Aenean aliquam, dolor eu lacinia pellentesque, dui arcu condimentum nisl, quis sollicitudin mi lorem quis leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis sapien a ante rutrum pulvinar quis ac tellus. Proin facilisis dui at mollis tincidunt. Sed dignissim orci non arcu luctus pretium. Donec at ex aliquet, porttitor lacus eget, ullamcorper quam. Integer pellentesque egestas arcu, nec molestie leo sollicitudin et</div>
                             </div>
                         </div>
@@ -84,61 +91,56 @@
                             </div>
                             <section class="create">
                                 <div class="form">
-                                    <form action="" method="post" enctype="multipart/form-data">
+                                    <form action="functions/create_coach.php" method="post" enctype="multipart/form-data">
                                     <h3>Personal Information</h3>
                                         <div class="line"></div>
                                         <div class="form-input">
                                             <label for="name">Name</label>
-                                            <input type="text" name="name" id="name">
+                                            <div style="color: red;"><?= $errors['name'] ?? '' ?></div>
+                                            <input type="text"value='<?= $values['name'] ?? '' ?>' name="name" id="name">
                                         </div>
                                         <div class="form-input">
                                             <label for="team">Team</label>
-                                            <select name="team" id="team">
-                                                <option value="">select your team</option>
-                                                <option value="">Barcalona Fc</option>
-                                                <option value="">Barcalona Fc</option>
-                                                <option value="">Barcalona Fc</option>
-                                                <option value="">Barcalona Fc</option>
-                                                <option value="">Barcalona Fc</option>
-                                                <option value="">Barcalona Fc</option>
-                                                <option value="">Barcalona Fc</option>
+                                            <div style="color: red;"><?= $errors['team'] ?? '' ?></div>
+                                            <select name="team" value='<?= $values['team'] ?? '' ?>' id="team">
+                                                <option value="<?= $values['team'] ?? '' ?>"><?= $values['team'] ?? 'select the team you are coaching' ?></option>
+                                                <option value="Barcalona1">Barcalona Fc</option>
+                                                <option value="Barcalona2">Barcalona Fc</option>
+                                                <option value="Barcalona3">Barcalona Fc</option>
+                                                <option value="Barcalona4">Barcalona Fc</option>
+                                                <option value="Barcalona5">Barcalona Fc</option>
+                                                <option value="Barcalona6">Barcalona Fc</option>
+                                                <option value="Barcalona7">Barcalona Fc</option>
                                             </select>
                                         </div>
                                         <div class="form-input">
                                             <label for="picture">Upload a Picture</label>
+                                            <div style="color: red;"><?= $errors['picture'] ?? '' ?></div>
                                             <input type="file" name="picture" id="picture">
                                         </div>
-                                        
                                         <div class="form-input">
-                                            <label for="role">Role</label>
-                                            <select name="role" id="role">
-                                                <option value="">Select Role </option>
-                                                <option value="">Coach</option>
-                                                <option value="">Assistant Coach</option>
-                                                
+                                            <label for="age">Age </label>
+                                            <div style="color: red;"><?= $errors['age'] ?? '' ?></div>
+                                            <select name="age" value='<?= $values['age'] ?? '' ?>' id="age">
+                                                <option value="<?= $values['age'] ?? '' ?>"><?= $values['age'] ?? 'Select age' ?></option>
+                                                <option value="30">29-30</option>
+                                                <option value="35">31-35</option>
+                                                <option value="40">36-40</option>
                                             </select>
                                         </div>
-                                        
-                                        <h3>Contact Information</h3>
-                                        <div class="line"></div>
                                         <div class="form-input">
                                             <label for="phone">Phone Number </label>
-                                            <input type="text" name="phone" id="phone">
+                                            <div style="color: red;"><?= $errors['phone'] ?? '' ?></div>
+                                            <input type="text" value='<?= $values['phone'] ?? '' ?>' name="phone" id="phone">
                                         </div>
                                         <div class="form-input">
                                             <label for="email">Email  </label>
-                                            <input type="text" name="email" id="email">
+                                            <div style="color: red;"><?= $errors['email'] ?? '' ?></div>
+                                            <input type="text" value='<?= $values['email'] ?? '' ?>' name="email" id="email">
                                         </div>
+                                        
                                         <div class="form-input">
-                                            <label for="instagram">Instagram Handle </label>
-                                            <input type="text" name="instagram" id="instagram">
-                                        </div>
-                                        <div class="form-input">
-                                            <label for="facebook">Facebook Link </label>
-                                            <input type="text" name="facebook" id="facebook">
-                                        </div>
-                                        <div class="form-input">
-                                        <button>Submit</button>
+                                        <input class="button" type="submit" name="submit">
                                         </div>
                                     </form>
                                 </div>
@@ -154,8 +156,8 @@
 
             <?php include('templates/footer.php');?>
 
-
             <?php include('templates/bottom.php');?>
+        
     </div>
 
     
@@ -172,7 +174,10 @@
 <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
 
 <script type="text/javascript" src="js/theme.js"></script>
-
+<?php
+   unset($_SESSION['coach_errors']);
+   unset($_SESSION['coach_values']);
+?>
 </body>
 
 

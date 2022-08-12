@@ -71,8 +71,7 @@ foreach($team_errors as $error){
     }
 
 }
-print_r($team_errors);
-die();
+
 $Name = mysqli_real_escape_string($conn,$name);
 $Players = mysqli_real_escape_string($conn,$numberOfPlayers);
 $Logo = mysqli_real_escape_string($conn,$logo['name']);
