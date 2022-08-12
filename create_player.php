@@ -1,4 +1,11 @@
-<?php include('templates/header.php');?>
+<?php include('templates/header.php');
+session_start();
+if( isset( $_SESSION['player_errors'] ) ) {
+    $errors = $_SESSION['player_errors'];
+    $values = $_SESSION['player_values'];
+ }
+
+?>
 <link href="css/costom.css" rel="stylesheet" type="text/css" />
     <div class="over-wrap">
         <div class="toolbar-wrap">
@@ -84,79 +91,87 @@
                             </div>
                             <section class="create">
                                 <div class="form">
-                                    <form action="" method="post">
+                                    <form action="functions/create_player.php" method="post" enctype="multipart/form-data">
                                     <h3>Personal Information</h3>
                                         <div class="line"></div>
                                         <div class="form-input">
                                             <label for="name">Name</label>
-                                            <input type="text" name="name" id="name">
+                                            <div style="color: red;"><?= $errors['name'] ?? '' ?></div>
+                                            <input type="text"value='<?= $values['name'] ?? '' ?>' name="name" id="name">
                                         </div>
                                         <div class="form-input">
                                             <label for="team">Team</label>
-                                            <select name="team" id="team">
-                                                <option value="">select your team</option>
-                                                <option value="">Barcalona Fc</option>
-                                                <option value="">Barcalona Fc</option>
-                                                <option value="">Barcalona Fc</option>
-                                                <option value="">Barcalona Fc</option>
-                                                <option value="">Barcalona Fc</option>
-                                                <option value="">Barcalona Fc</option>
-                                                <option value="">Barcalona Fc</option>
+                                            <div style="color: red;"><?= $errors['team'] ?? '' ?></div>
+                                            <select name="team" value='<?= $values['team'] ?? '' ?>' id="team">
+                                                <option value="<?= $values['team'] ?? '' ?>"><?= $values['team'] ?? 'select your team' ?></option>
+                                                <option value="Barcalona1">Barcalona Fc</option>
+                                                <option value="Barcalona2">Barcalona Fc</option>
+                                                <option value="Barcalona3">Barcalona Fc</option>
+                                                <option value="Barcalona4">Barcalona Fc</option>
+                                                <option value="Barcalona5">Barcalona Fc</option>
+                                                <option value="Barcalona6">Barcalona Fc</option>
+                                                <option value="Barcalona7">Barcalona Fc</option>
                                             </select>
                                         </div>
                                         <div class="form-input">
                                             <label for="jersey_number">Jercey Number </label>
-                                            <input type="text" name="jersey_number" id="jersey_number">
+                                            <div style="color: red;"><?= $errors['jersey_number'] ?? '' ?></div>
+                                            <input type="text" value='<?= $values['jersey_number'] ?? '' ?>' name="jersey_number" id="jersey_number">
                                         </div>
                                         <div class="form-input">
                                             <label for="picture">Upload a Picture</label>
+                                            <div style="color: red;"><?= $errors['picture'] ?? '' ?></div>
                                             <input type="file" name="picture" id="picture">
                                         </div>
                                         
                                         <div class="form-input">
                                             <label for="players_age">Players Age</label>
-                                            <select name="players_age" id="players_age">
-                                                <option value="">Select players age</option>
-                                                <option value="">18</option>
-                                                <option value="">19</option>
-                                                <option value="">20</option>
-                                                <option value="">21</option>
-                                                <option value="">22</option>
-                                                <option value="">23</option>
-                                                <option value="">24</option>
+                                            <div style="color: red;"><?= $errors['players_age'] ?? '' ?></div>
+                                            <select name="players_age" value='<?= $values['players_age'] ?? '' ?>' id="players_age">
+                                                <option value="<?= $values['players_age'] ?? '' ?>"><?= $values['players_age'] ?? 'Select players age' ?></option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
                                             </select>
                                         </div>
                                         <div class="form-input">
-                                            <label for="players_age">Players Position</label>
-                                            <select name="players_age" id="players_age">
-                                                <option value="">Select players position</option>
-                                                <option value="">Goal Keeper</option>
-                                                <option value="">Defender</option>
-                                                <option value="">Stricker</option>
-                                                <option value="">Midfilder</option>
-                                                <option value="">Others</option>
+                                            <label for="players_position">Players Position</label>
+                                            <div style="color: red;"><?= $errors['players_position'] ?? '' ?></div>
+                                            <select name="players_position" value='<?= $values['players_position'] ?? '' ?>' id="players_position">
+                                                <option value="<?= $values['players_position'] ?? '' ?>"><?= $values['players_position'] ?? 'Select players position' ?></option>
+                                                <option value="Goal Keeper">Goal Keeper</option>
+                                                <option value="Defender">Defender</option>
+                                                <option value="Stricker">Stricker</option>
+                                                <option value="Midfilder">Midfilder</option>
+                                                <option value="Others">Others</option>
                                             </select>
                                         </div>
                                         <h3>Contact Information</h3>
                                         <div class="line"></div>
                                         <div class="form-input">
                                             <label for="phone">Phone Number </label>
-                                            <input type="text" name="phone" id="phone">
+                                            <div style="color: red;"><?= $errors['phone'] ?? '' ?></div>
+                                            <input type="text" value='<?= $values['phone'] ?? '' ?>' name="phone" id="phone">
                                         </div>
                                         <div class="form-input">
                                             <label for="email">Email  </label>
-                                            <input type="text" name="email" id="email">
+                                            <div style="color: red;"><?= $errors['email'] ?? '' ?></div>
+                                            <input type="text" value='<?= $values['email'] ?? '' ?>' name="email" id="email">
                                         </div>
                                         <div class="form-input">
                                             <label for="instagram">Instagram Handle </label>
-                                            <input type="text" name="instagram" id="instagram">
+                                            <input type="text" value='<?= $values['instagram'] ?? '' ?>' name="instagram" id="instagram">
                                         </div>
                                         <div class="form-input">
                                             <label for="facebook">Facebook Link </label>
-                                            <input type="text" name="facebook" id="facebook">
+                                            <input type="text" value='<?= $values['facebook'] ?? '' ?>' name="facebook" id="facebook">
                                         </div>
                                         <div class="form-input">
-                                        <button>Submit</button>
+                                        <input class="button" type="submit" name="submit">
                                         </div>
                                     </form>
                                 </div>
@@ -190,7 +205,10 @@
 <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
 
 <script type="text/javascript" src="js/theme.js"></script>
-
+<?php
+   unset($_SESSION['player_errors']);
+   unset($_SESSION['player_values']);
+?>
 </body>
 
 

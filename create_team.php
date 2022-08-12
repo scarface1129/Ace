@@ -1,4 +1,13 @@
-<?php include('templates/header.php');?>
+<?php include('templates/header.php');
+session_start();
+if( isset( $_SESSION['team_errors'] ) ) {
+    $errors = $_SESSION['team_errors'];
+    $values = $_SESSION['team_values'];
+ }
+
+?>
+
+
 <link href="css/costom.css" rel="stylesheet" type="text/css" />
     <div class="over-wrap">
         <div class="toolbar-wrap">
@@ -84,46 +93,54 @@
                             </div>
                             <section class="create">
                                 <div class="form">
-                                    <form action="" method="post">
+                                    <form action="functions/create_team.php" method="post" enctype="multipart/form-data">
                                         <h3>Team Information</h3>
                                         <div class="line"></div>
                                         <div class="form-input">
                                             <label for="name">Name</label>
-                                            <input type="text" name="name" id="name">
+                                            <div style="color: red;"><?= $errors['name'] ?? '' ?></div>
+                                            <input type="text" name="name" id="name" value="<?= $values['name'] ?? '' ?>">
                                         </div>
                                         <div class="form-input">
                                             <label for="players">Number Of Players</label>
-                                            <input type="text" name="players" id="players">
+                                            <div style="color: red;"><?= $errors['numberOfPlayers'] ?? '' ?></div>
+                                            <input type="text" name="players" value="<?= $values['numberOfPlayers'] ?? '' ?>" id="players">
                                         </div>
                                         <div class="form-input">
                                             <label for="logo">Team Logo</label>
+                                            <div style="color: red;"><?= $errors['logo'] ?? '' ?></div>
                                             <input type="file" name="logo" id="logo">
                                         </div>
                                         
                                         <div class="form-input">
                                             <label for="seeking_players">Seeking Players?</label>
                                             <select name="seeking_players" id="seeking_players">
-                                                <option value="True">Yes</option>
                                                 <option value="False">No</option>
+                                                <option value="True">Yes</option>
                                             </select>
                                         </div>
                                         <h3>Contact Information</h3>
                                         <div class="line"></div>
                                         <div class="form-input">
                                             <label for="phone">Phone Number </label>
-                                            <input type="text" name="phone" id="phone">
+                                            <div style="color: red;"><?= $errors['phone'] ?? '' ?></div>
+                                            <input type="text" value="<?= $values['phone'] ?? '' ?>" name="phone" id="phone">
                                         </div>
                                         <div class="form-input">
                                             <label for="email">Email  </label>
-                                            <input type="text" name="email" id="email">
+                                            <div style="color: red;"><?= $errors['email'] ?? '' ?></div>
+                                            <input type="text" value="<?= $values['email'] ?? '' ?>" name="email" id="email">
                                         </div>
                                         <div class="form-input">
                                             <label for="instagram">Instagram Handle </label>
-                                            <input type="text" name="instagram" id="instagram">
+                                            <input type="text" value="<?= $values['instagram'] ?? '' ?>" name="instagram" id="instagram">
                                         </div>
                                         <div class="form-input">
                                             <label for="facebook">Facebook Link </label>
-                                            <input type="text" name="facebook" id="facebook">
+                                            <input type="text" name="facebook" value="<?= $values['facebook'] ?? '' ?>" id="facebook">
+                                        </div>
+                                        <div class="form-input">
+                                        <input class="button" type="submit" name="submit">
                                         </div>
                                         
                                         
@@ -160,7 +177,10 @@
 <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
 
 <script type="text/javascript" src="js/theme.js"></script>
-
+<?php
+   unset($_SESSION['team_errors']);
+   unset($_SESSION['team_values']);
+?>
 </body>
 
 

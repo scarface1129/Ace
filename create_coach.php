@@ -84,7 +84,7 @@
                             </div>
                             <section class="create">
                                 <div class="form">
-                                    <form action="" method="post">
+                                    <form action="" method="post" enctype="multipart/form-data">
                                     <h3>Personal Information</h3>
                                         <div class="line"></div>
                                         <div class="form-input">
