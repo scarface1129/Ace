@@ -77,6 +77,23 @@
                                     </div>
                                 </div>
                             </li>
+                            <li class="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="#">Admin</a>
+                                <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
+                                    <div class="uk-grid uk-dropdown-grid">
+                                        <div class="uk-width-1-1">
+                                            <ul class="uk-nav uk-nav-navbar">
+                                                <li><a href="match_form.php">Fix Match</a>
+                                                </li>
+                                                <li><a href="create_player.php">Update Match</a>
+                                                </li>
+                                                </li>
+                                                <li><a href="create_coach.php">Create News</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
                             <li><a href="contact.php">login</a>
                             </li>
                         </ul>

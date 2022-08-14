@@ -42,6 +42,7 @@
 .button:hover {
     background-color: aliceblue;
     border-color: #ec9659;
+    cursor: pointer;
 }
 select {
     border-radius: 10px;

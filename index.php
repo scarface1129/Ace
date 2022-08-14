@@ -206,7 +206,7 @@
                                             <h3>Trainers</h3>
                                         </div>
                                         <ul class="uk-grid uk-slideset uk-grid-width-1-1">
-                                            <li class="uk-active" style="">
+                                            <li class="uk-active">
                                                 <div class="img-wrap"><img src="images/trainer-slider/trainer-img.jpg" alt="">
                                                 </div>
                                                 <div class="name">Bernard <span>Fernandez</span>
