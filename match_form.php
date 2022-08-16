@@ -116,6 +116,11 @@ if( isset( $_SESSION['match_errors'] ) ) {
                                             <input type="text" value='<?= $values['team2'] ?? '' ?>' name="team2" id="team2">
                                         </div>
                                         <div class="form-input">
+                                            <label for="about_match">About Match </label>
+                                            <div style="color: red;"><?= $errors['about_match'] ?? '' ?></div>
+                                            <textarea type="text" value='<?= $values['about_match'] ?? '' ?>' name="about_match" id="about_match"></textarea>
+                                        </div>
+                                        <div class="form-input">
                                             <label for="location">Location </label>
                                             <div style="color: red;"><?= $errors['location'] ?? '' ?></div>
                                             <input type="text" value='<?= $values['location'] ?? '' ?>' name="location" id="location">

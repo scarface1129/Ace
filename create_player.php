@@ -1,9 +1,13 @@
 <?php include('templates/header.php');
+include('./functions/dbconnect.php');
+include('./functions/functions.php');
 session_start();
 if( isset( $_SESSION['player_errors'] ) ) {
     $errors = $_SESSION['player_errors'];
     $values = $_SESSION['player_values'];
  }
+$teamNames = getTeams($conn);
+
 
 ?>
 <link href="css/costom.css" rel="stylesheet" type="text/css" />
@@ -102,15 +106,13 @@ if( isset( $_SESSION['player_errors'] ) ) {
                                         <div class="form-input">
                                             <label for="team">Team</label>
                                             <div style="color: red;"><?= $errors['team'] ?? '' ?></div>
-                                            <select name="team" value='<?= $values['team'] ?? '' ?>' id="team">
+                                            <select name="team"  id="team">
                                                 <option value="<?= $values['team'] ?? '' ?>"><?= $values['team'] ?? 'select your team' ?></option>
-                                                <option value="Barcalona1">Barcalona Fc</option>
-                                                <option value="Barcalona2">Barcalona Fc</option>
-                                                <option value="Barcalona3">Barcalona Fc</option>
-                                                <option value="Barcalona4">Barcalona Fc</option>
-                                                <option value="Barcalona5">Barcalona Fc</option>
-                                                <option value="Barcalona6">Barcalona Fc</option>
-                                                <option value="Barcalona7">Barcalona Fc</option>
+                                                <?php if($teamNames):?>
+                                                <?php foreach($teamNames as $team) :?>
+                                                <option value="<?= $team['id'] ?? ''?>"><?= $team['name'] ?? ''?></option>
+                                                <?php endforeach?>
+                                                <?php endif?>
                                             </select>
                                         </div>
                                         <div class="form-input">

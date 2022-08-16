@@ -1,4 +1,8 @@
-<?php include('templates/header.php');?>
+<?php 
+include('templates/header.php');
+include('./functions/home.php');
+
+?>
 
 
     <div class="over-wrap">
@@ -310,43 +314,46 @@
 
                                                     </div>
                                                     <div class="clear"></div>
+                                                    <?php if($nextMatch) :?>
                                                     <div class="logo">
                                                         <a href="match-single.php">
-                                                            <img src="images/team-ava.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
+                                                            <img src="images/team-ava.png" class="img-polaroid" alt="<?= $nextMatch['team1_id']['info'][0]['name'] ?? ''?> VS <?= $nextMatch['team2_id']['info'][0]['name'] ?? ''?> <?= $nextMatch['date'] ?? ''?>" title="<?= $nextMatch['team1_id']['info'][0]['name'] ?? ''?> VS <?= $nextMatch['team2_id']['info'][0]['name'] ?? ''?> <?= $nextMatch['date'] ?? ''?>">
                                                         </a>
                                                     </div>
-                                                    <div class="team-name">England </div>
+                                                    <div class="team-name"><?= $nextMatch['team1_id']['info'][0]['name'] ?? ''?> </div>
                                                     <div class="versus">VS</div>
 
-                                                    <div class="team-name">Amsterdam </div>
+                                                    <div class="team-name"><?= $nextMatch['team2_id']['info'][0]['name'] ?? ''?> </div>
                                                     <div class="logo">
                                                         <a href="match-single.php">
-                                                            <img src="images/team-ava1.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
+                                                            <img src="images/team-ava1.png" class="img-polaroid" alt="<?= $nextMatch['team1_id']['info'][0]['name'] ?? ''?> VS <?= $nextMatch['team2_id']['info'][0]['name'] ?? ''?> <?= $nextMatch['date'] ?? ''?>" title="<?= $nextMatch['team1_id']['info'][0]['name'] ?? ''?> VS <?= $nextMatch['team2_id']['info'][0]['name'] ?? ''?> <?= $nextMatch['date'] ?? ''?>">
                                                         </a>
                                                     </div>
                                                     <div class="clear"></div>
-                                                    <div class="date">November 14, 2015 | 12:00 am </div>
+                                                    <div class="date"><?= date('F d, Y', strtotime($nextMatch['date'])) ?? ''?> | <?= $nextMatch['time'] ?? ''?> </div>
                                                     <div class="clear"></div>
-                                                    <div class="location"><address>Cambridgeshire UK<br><br></address> </div>
+                                                    <div class="location"><address><?= $nextMatch['location'] ?? ''?><br><br></address> </div>
+                                                    <?php endif ?>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="uk-width-medium-1-2 uk-width-small-1-1 va-list-next-match">
                                         <div class="match-list-wrap">
-
+                                            <?php if($matches) :?>
+                                            <?php foreach($matches as $match) :?>
                                             <div class="match-list-item alt">
-                                                <div class="date">November 29, 2015 </div>
+                                                <div class="date"><?= $match['date'] ?? ''?> </div>
                                                 <div class="wrapper">
                                                     <div class="logo">
                                                         <a href="match-single.php">
                                                             <img src="images/team-ava.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
                                                         </a>
                                                     </div>
-                                                    <div class="team-name">Cambridgehire </div>
+                                                    <div class="team-name"><?= $match['team1_id']['info'][0]['name'] ?? '' ?> </div>
                                                     <div class="versus">VS</div>
 
-                                                    <div class="team-name">china </div>
+                                                    <div class="team-name"><?= $match['team2_id']['info'][0]['name'] ?? '' ?> </div>
                                                     <div class="logo">
                                                         <a href="match-single.php">
                                                             <img src="images/team-ava1.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
@@ -355,133 +362,9 @@
                                                 </div>
                                             </div>
 
-
-                                            <div class="match-list-item alt">
-                                                <div class="date">November 20, 2015 </div>
-                                                <div class="wrapper">
-                                                    <div class="logo">
-                                                        <a href="match-single.php">
-                                                            <img src="images/team-ava2.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-20)" title="Cambridgehire VS china (2015-11-20)">
-                                                        </a>
-                                                    </div>
-                                                    <div class="team-name">Cambridgehire </div>
-                                                    <div class="versus">VS</div>
-
-                                                    <div class="team-name">
-                                                        china </div>
-                                                    <div class="logo">
-                                                        <a href="match-single.php">
-                                                            <img src="images/team-ava3.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-20)" title="Cambridgehire VS china (2015-11-20)">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="match-list-item alt">
-                                                <div class="date">November 14, 2015 </div>
-                                                <div class="wrapper">
-                                                    <div class="logo">
-                                                        <a href="match-single.php">
-                                                            <img src="images/team-ava4.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
-                                                        </a>
-                                                    </div>
-                                                    <div class="team-name">England </div>
-                                                    <div class="versus">VS</div>
-
-                                                    <div class="team-name">Amsterdam </div>
-                                                    <div class="logo">
-                                                        <a href="match-single.php">
-                                                            <img src="images/team-ava5.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="match-list-item alt">
-                                                <div class="date">November 29, 2015 </div>
-                                                <div class="wrapper">
-                                                    <div class="logo">
-                                                        <a href="match-single.php">
-                                                            <img src="images/team-ava.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
-                                                        </a>
-                                                    </div>
-                                                    <div class="team-name">Cambridgehire </div>
-                                                    <div class="versus">VS</div>
-
-                                                    <div class="team-name">
-                                                        china </div>
-                                                    <div class="logo">
-                                                        <a href="match-single.php">
-                                                            <img src="images/team-ava1.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="match-list-item alt">
-                                                <div class="date">November 20, 2015 </div>
-                                                <div class="wrapper">
-                                                    <div class="logo">
-                                                        <a href="match-single.php">
-                                                            <img src="images/team-ava2.png" class="img-polaroid" alt="King VS china (2015-11-20)" title="King VS china (2015-11-20)">
-                                                        </a>
-                                                    </div>
-                                                    <div class="team-name">King </div>
-                                                    <div class="versus">VS</div>
-
-                                                    <div class="team-name">china </div>
-                                                    <div class="logo">
-                                                        <a href="match-single.php">
-                                                            <img src="images/team-ava3.png" class="img-polaroid" alt="King VS china (2015-11-20)" title="King VS china (2015-11-20)">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="match-list-item alt">
-                                                <div class="date">November 14, 2015 </div>
-                                                <div class="wrapper">
-                                                    <div class="logo">
-                                                        <a href="match-single.php">
-                                                            <img src="images/team-ava4.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
-                                                        </a>
-                                                    </div>
-                                                    <div class="team-name">England </div>
-                                                    <div class="versus">VS</div>
-
-                                                    <div class="team-name">Amsterdam </div>
-                                                    <div class="logo">
-                                                        <a href="match-single.php">
-                                                            <img src="images/team-ava5.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="match-list-item alt">
-                                                <div class="date">November 29, 2015 </div>
-                                                <div class="wrapper">
-                                                    <div class="logo">
-                                                        <a href="match-single.php">
-                                                            <img src="images/team-ava.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
-                                                        </a>
-                                                    </div>
-                                                    <div class="team-name">Cambridgehire </div>
-                                                    <div class="versus">VS</div>
-
-                                                    <div class="team-name">china </div>
-                                                    <div class="logo">
-                                                        <a href="match-single.php">
-                                                            <img src="images/team-ava.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <?php endforeach ?>
+                                            <?php endif?>
+                                            
 
                                         </div>
                                     </div>

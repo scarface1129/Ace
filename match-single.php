@@ -1,4 +1,9 @@
-<?php include('templates/header.php');?>
+<?php include('templates/header.php');
+include('./functions/match-single.php');
+
+
+
+?>
 
 
     <div class="over-wrap">
@@ -42,7 +47,7 @@
                                 <img class="uk-invisible" src="images/head-bg-match.jpg" alt="">
                                 <div class="uk-position-cover uk-flex-center head-news-title">
                                     <h1>
-                                        England VS Amsterdam
+                                        <?= $matches[0]['team1_id']['info'][0]['name'] ?? ''?> VS <?= $matches[0]['team2_id']['info'][0]['name'] ?? ""?>
                                     </h1>
                                     <div class="clear"></div>
                                     <div class="uk-container uk-container-center">
@@ -63,10 +68,10 @@
                                                                 <div class="va-wrap">
                                                                     <div class="logo">
                                                                         <a href="match-single.php">
-                                                                        <img src="images/team-ava.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                             
+                                                                        <img src="images/team-ava.png" class="img-polaroid" alt="<?= $matches[0]['team1_id']['info'][0]['name'] ?? ''?> VS <?= $matches[0]['team2_id']['info'][0]['name'] ?? ""?> (2015-11-14)" title="<?= $matches[0]['team1_id']['info'][0]['name'] ?? ''?> VS <?= $matches[0]['team2_id']['info'][0]['name'] ?? ""?> (2015-11-14)"></a>                                             
                                                                     </div>
                                                                     <div class="team-name">
-                                                                        England                    
+                                                                    <?= $matches[0]['team1_id']['info'][0]['name'] ?? ''?>                    
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -74,24 +79,24 @@
                                                             <div class="half left">
                                                                 <div class="va-wrap">
                                                                     <div class="team-name">
-                                                                        Amsterdam                    
+                                                                    <?= $matches[0]['team2_id']['info'][0]['name'] ?? ""?>                    
                                                                     </div>
                                                                     <div class="logo">
                                                                         <a href="match-single.php">
-                                                                        <img src="images/team-ava1.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                            
+                                                                        <img src="images/team-ava1.png" class="img-polaroid" alt="<?= $matches[0]['team1_id']['info'][0]['name'] ?? ''?> VS <?= $matches[0]['team2_id']['info'][0]['name'] ?? ""?> (2015-11-14)" title="<?= $matches[0]['team1_id']['info'][0]['name'] ?? ''?> VS <?= $matches[0]['team2_id']['info'][0]['name'] ?? ""?> (2015-11-14)"></a>                                            
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="clear"></div>
                                                             <div class="date">
                                                                 <i class="uk-icon-calendar"></i>
-                                                                November 14, 2015 | 12:00 am            
+                                                                <?= date('F d, Y', strtotime($matches[0]['date'])) ?? ''?> | <?= $matches[0]['time'] ?? ''?>            
                                                             </div>
                                                             <div class="clear"></div>
                                                             <div class="location">
                                                                 <i class="uk-icon-map-marker"></i>
                                                                 <address>
-                                                                    Cambridgeshire UK               <br><br>
+                                                                    <?= $matches[0]['location'] ?? ''?>              <br><br>
                                                                 </address>
                                                             </div>
                                                         </div>
@@ -112,7 +117,7 @@
             <ul class="uk-breadcrumb">
                 <li><a href="index-2.php">Home</a></li>
                 <li><a href="match-list.php">Match list</a></li>
-                <li class="uk-active"><span>England VS Amsterdam</span></li>
+                <li class="uk-active"><span><?= $matches[0]['team1_id']['info'][0]['name'] ?? ''?> VS <?= $matches[0]['team2_id']['info'][0]['name'] ?? ""?></span></li>
             </ul>
         </div>
 
@@ -124,20 +129,20 @@
                             <article class="match-article ">
                                 <div class="clearfix"></div>
                                 <div class="uk-grid">
-                                    <div class="uk-width-6-10">
+                                    <div class="uk-width-10-10">
                                         <div class="top-text article-single-text">
                                             <div class="big-title">About <span>Match</span></div>
-                                            <p>Vivamus hendrerit, tortor sed luctus maximus, nunc urna hendrerit nibh, sit amet efficitur libero lorem quis mauris. Nunc a pulvinar lectus. Pellentesque aliquam justo ut rhoncus lobortis. In sed venenatis massa. Sed sodales faucibus odio, eget tempus nibh accumsan ut. Fusce tincidunt semper finibus. Nullam consequat non leo interdum pulvinar.</p>
+                                            <p><?= $matches[0]['about_match']?></p>
                                         </div>
                                     </div>
                                     <div class="uk-width-medium-4-10">
-                                        <script>
+                                        <!-- <script>
                                             window.map = false;
                                                                     
                                             
                                                                     
                                             function initialize(){
-                                                var myLatlng = new google.maps.LatLng(50.3915097,-4.1306689);
+                                                var myLatlng = new google.maps.LatLng(9.0820,8.6753);
                                             
                                                 var mapOptions = {
                                                     zoom:16,
@@ -156,16 +161,16 @@
                                             }
                                         
                                             google.maps.event.addDomListener(window, 'load', initialize);
-                                        </script>            
-                                        <div id="map1"></div>
+                                        </script>             -->
+                                        <!-- <div id="map1"></div> -->
                                     </div>
                                 </div>
                                 <div class="uk-grid">
-                                    <div class="uk-width-1-1">
+                                    <!-- <div class="uk-width-1-1">
                                         <div class="middle-text article-single-text">
                                             <p>Suspendisse odio erat, suscipit vel aliquam tristique, dapibus at neque. Aliquam lectus tellus, feugiat non sodales nec, rhoncus a est. Etiam hendrerit, eros nec mollis blandit, velit sem aliquet ex, id tristique metus ligula tincidunt nisi. Ut porta augue at molestie feugiat. Donec quis neque molestie, interdum sapien at, dictum diam. Nam aliquam diam vitae purus vestibulum, sit amet rutrum tortor aliquet. Curabitur rhoncus consectetur tempor. Vivamus volutpat, mauris non auctor molestie, est ex auctor eros, vel egestas eros tellus non dui.</p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="uk-width-1-1">
                                         <div class="match-gallery">
                                             <div dir="ltr" class="uk-slidenav-position" data-uk-slider="">
@@ -213,81 +218,8 @@
                     </main>
                 </div>
                 <aside class="tm-sidebar-a uk-width-medium-1-4 uk-pull-3-4 uk-row-first">
-                    <div class="uk-panel categories-sidebar">
-                        <h3 class="uk-panel-title">Categories</h3>
-                        <div>
-                            <ul class="nav menu">
-                                <li class="item-3">             
-                                    <a href="news.php">
-                                    Overall <span class="label">(3)</span>
-                                    </a>            
-                                </li>
-                                <li class="item-4">             
-                                    <a href="news.php">
-                                    Players <span class="label">(2)</span>
-                                    </a>            
-                                </li>
-                                <li class="item-2">             
-                                    <a href="news.php">
-                                    Life <span class="label">(4)</span>
-                                    </a>            
-                                </li>
-                                <li class="item-5 parent">
-                                    <a href="news.php">
-                                    Entertainment <span class="label">(1)</span>
-                                    </a>            
-                                    <ul class="">
-                                        <li class="item-7">
-                                            <a href="news.php">
-                                            Art Style <span class="label">(3)</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="item-6">             
-                                    <a href="news.php">
-                                    Uncategorized <span class="label">(3)</span>
-                                    </a>            
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="uk-panel newsletter-sidebar">
-                        <h3 class="uk-panel-title">Newsletter</h3>
-                        <div class="acymailing_modulenewsletter-sidebar" id="acymailing_module_formAcymailing40192">
-                            <div class="acymailing_fulldiv" id="acymailing_fulldiv_formAcymailing40192">
-                                <form id="formAcymailing40192" onsubmit="return submitacymailingform('optin','formAcymailing40192')" method="post" name="formAcymailing40192">
-                                    <div class="acymailing_module_form">
-                                        <div class="mail-title">Newsletters</div>
-                                        <div class="acymailing_introtext">Donec at ex aliquet, porttitor lacus eget</div>
-                                        <div class="clear"></div>
-                                        <div class="space"></div>
-                                        <table class="acymailing_form">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="acyfield_email acy_requiredField">
-                                                        <span class="mail-wrap">
-                                                        <input id="user_email_formAcymailing40192" onfocus="if(this.value == 'Email') this.value = '';" onblur="if(this.value=='') this.value='Email';" class="inputbox" name="user[email]" style="width:80%" value="Email" title="Email" type="text">
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="acysubbuttons">
-                                                        <span class="submit-wrap">
-                                                        <span class="submit-wrapper">
-                                                        <input class="button subbutton btn btn-primary" value=" " name="Submit" onclick="try{ return submitacymailingform('optin','formAcymailing40192'); }catch(err){alert('The form could not be submitted '+err);return false;}" type="submit">
-                                                        </span>
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    
                     <div class="uk-panel news-sidebar">
                         <h3 class="uk-panel-title">Latest News</h3>
                         int(3)

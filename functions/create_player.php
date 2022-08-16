@@ -1,6 +1,7 @@
 <?php   
 include('dbconnect.php');
 $player_errors = ['name'=>'','team'=>'','picture'=>'','jersey_number'=>'','players_age'=>'','players_position'=>'','phone'=>'','email'=>''];
+$len = count($player_errors);
 if(isset($_POST['submit'])){
     $name               =   $_POST['name'];
     $team               =   $_POST['team'];
@@ -24,29 +25,37 @@ $player_values = ['name'=>$name,
             'facebook'=>$facebook];
 if (empty($name)) {
     $player_errors['name'] = 'Name Field Is Required';
+    $len++;
 }else{
     if(!preg_match('/^[a-zA-Z\s]+$/',$name)){
         $player_errors['name'] = "The Name Field Must contain alphabets only";
+        $len++;
     }
 }
 if (empty($team)){
     $player_errors['team'] = 'Please Identify with a team';
+    $len++;
 }
 if (empty($jersey_number)) {
     $player_errors['jersey_number'] = 'Your Jersey number is needed';
+    $len++;
 }else{
     if(!preg_match('/^[0-9]+$/',$jersey_number)){
         $player_errors['jersey_number'] = "This Filed Can Only Take Positive Integers";
+        $len++;
     }
 }
 if (empty($players_age)) {
     $player_errors['players_age'] = 'Indicate your age';
+    $len++;
 }
 if (empty($players_position)) {
     $player_errors['players_position'] = 'Indicate your Wing';
+    $len++;
 }
 if ($picture['name'] == null) {
     $player_errors['picture'] = 'Please Upload a Profile Image';
+    $len++;
 }else{
     $valid = ['jpeg','png','jpg'];
     $exploded = explode('.',$picture['name']);
@@ -59,39 +68,42 @@ if ($picture['name'] == null) {
     
     if (!$file_type){
         $player_errors['picture'] = "Invalid File Format";
+        $len++;
     }else if (($picture["size"] > 2000000)) {
         $player_errors['picture'] = "Picture Size is Bigger than 2MB";
+        $len++;
     }else if ($width > "2048" || $height > "2048") {
         $player_errors['picture'] = "Picture Dimmension is Bigger than 2048 X 2048";
+        $len++;
     }
   
 }
 if(empty($phone)){
     $player_errors['phone'] = 'Phone Number is needed';
+    $len++;
 }else{
     if(!preg_match('/((^090)([23589]))|((^070)([1-9]))|((^080)([2-9]))|((^081)([0-9]))(\d{7})/',$phone)){
         $player_errors['phone'] = "Enter a Valid Phone Number";
+        $len++;
     }
 }
 if (empty($email)) {
     $player_errors['email'] = 'Email Field Is Required';
+    $len++;
 }else{
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         $player_errors['email'] =  "Enter a Valid Email";
+        $len++;
     }
 }
 
-
-foreach($player_errors as $error){
-    if ($error){
+    if ($len > count($player_errors)){
         session_start();
         $_SESSION['player_errors'] = $player_errors;
         $_SESSION['player_values'] = $player_values;
         header('Location:../create_player.php');
-    }
-
-}
-$Name = mysqli_real_escape_string($conn,$name);
+    }else{
+        $Name = mysqli_real_escape_string($conn,$name);
 $team = mysqli_real_escape_string($conn,$team);
 $Picture = mysqli_real_escape_string($conn,$picture['name']);
 $Jersey_number = mysqli_real_escape_string($conn,$jersey_number);
@@ -125,6 +137,14 @@ if (mysqli_query($conn, $sql)) {
     header('Location:../index.php?error=data couldnt be saved ');
     exit();
 }
+    }
+
+
+
+
+
+
+
 
 }
 ?>
