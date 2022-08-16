@@ -1,5 +1,9 @@
 <?php include('templates/header.php');
-include('./functions/match-single.php');
+include('./functions/dbconnect.php');
+include('./functions/functions.php');
+
+$matches = getMatch($conn,$_GET['id']);
+
 
 
 
@@ -67,7 +71,7 @@ include('./functions/match-single.php');
                                                             <div class="half right">
                                                                 <div class="va-wrap">
                                                                     <div class="logo">
-                                                                        <a href="match-single.php">
+                                                                        <a href="#">
                                                                         <img src="images/team-ava.png" class="img-polaroid" alt="<?= $matches[0]['team1_id']['info'][0]['name'] ?? ''?> VS <?= $matches[0]['team2_id']['info'][0]['name'] ?? ""?> (2015-11-14)" title="<?= $matches[0]['team1_id']['info'][0]['name'] ?? ''?> VS <?= $matches[0]['team2_id']['info'][0]['name'] ?? ""?> (2015-11-14)"></a>                                             
                                                                     </div>
                                                                     <div class="team-name">
@@ -82,7 +86,7 @@ include('./functions/match-single.php');
                                                                     <?= $matches[0]['team2_id']['info'][0]['name'] ?? ""?>                    
                                                                     </div>
                                                                     <div class="logo">
-                                                                        <a href="match-single.php">
+                                                                        <a href="#">
                                                                         <img src="images/team-ava1.png" class="img-polaroid" alt="<?= $matches[0]['team1_id']['info'][0]['name'] ?? ''?> VS <?= $matches[0]['team2_id']['info'][0]['name'] ?? ""?> (2015-11-14)" title="<?= $matches[0]['team1_id']['info'][0]['name'] ?? ''?> VS <?= $matches[0]['team2_id']['info'][0]['name'] ?? ""?> (2015-11-14)"></a>                                            
                                                                     </div>
                                                                 </div>
@@ -130,10 +134,17 @@ include('./functions/match-single.php');
                                 <div class="clearfix"></div>
                                 <div class="uk-grid">
                                     <div class="uk-width-10-10">
+                                        <?php if($matches[0]['about_match']) :?>
                                         <div class="top-text article-single-text">
                                             <div class="big-title">About <span>Match</span></div>
-                                            <p><?= $matches[0]['about_match']?></p>
+                                            <p><?= $matches[0]['about_match'] ??''?></p>
                                         </div>
+                                        <?php else :?>
+                                        <div class="top-text article-single-text">
+                                            <div class="big-title">About <span>Match</span></div>
+                                            <p>NO DETAILS</p>
+                                        </div>
+                                        <?php endif ?>
                                     </div>
                                     <div class="uk-width-medium-4-10">
                                         <!-- <script>

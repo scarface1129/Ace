@@ -31,12 +31,11 @@
                                     <div class="uk-grid uk-dropdown-grid">
                                         <div class="uk-width-1-1">
                                             <ul class="uk-nav uk-nav-navbar">
-                                                <li><a href="players.php">Players</a>
+                                                <li><a href="team.php">Teams</a>
                                                 </li>
                                                 <li><a href="gallery.php">Gallery</a>
                                                 </li>
-                                                <li><a href="teams.php">Teams</a>
-                                                </li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -84,10 +83,11 @@
                                             <ul class="uk-nav uk-nav-navbar">
                                                 <li><a href="match_form.php">Fix Match</a>
                                                 </li>
-                                                <li><a href="create_player.php">Update Match</a>
-                                                </li>
+                                                <li><a href="update-match.php?id=1">Update Match</a>
                                                 </li>
                                                 <li><a href="create_coach.php">Create News</a>
+                                                </li>
+                                                <li><a href="create_coach.php">New Stadium</a>
                                                 </li>
                                             </ul>
                                         </div>

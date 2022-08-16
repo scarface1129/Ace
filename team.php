@@ -42,7 +42,7 @@
                             <div class="uk-cover-background uk-position-relative head-wrap" style="height: 290px; background-image: url('images/head-bg.jpg');">
                                 <img class="uk-invisible" src="images/head-bg.jpg" alt="" height="290" width="1920">
                                 <div class="uk-position-cover uk-flex uk-flex-center head-title">
-                                    <h1>Players</h1>
+                                    <h1>Team</h1>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
             <ul class="uk-breadcrumb">
                 <li><a href="index-2.php">Home</a>
                 </li>
-                <li class="uk-active"><span>Players</span>
+                <li class="uk-active"><span>Team</span>
                 </li>
             </ul>
         </div>
@@ -64,15 +64,65 @@
         <div class="uk-container uk-container-center">
             <div id="tm-middle" class="tm-middle uk-grid" data-uk-grid-match="" data-uk-grid-margin="">
                 <div class="tm-main uk-width-medium-1-1 uk-row-first">
-                    <main id="tm-content" class="tm-content">
+                    <main id="tm-content" class="tm-content">                        
+                        <div class="tm-top-c-box tm-full-width  home-about">
+                            <div class="uk-container uk-container-center">
+                                <section id="tm-top-c" class="tm-top-c uk-grid uk-grid-collapse" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
 
-                        <div class="uk-container uk-container-center tt-gallery-top">
-                            <div class="uk-grid" data-uk-grid-match="">
-                                <div class="uk-width-medium-3-10 uk-width-small-1-1 title">Morbi velit vel nisl blandit</div>
-                                <div class="uk-width-medium-7-10 uk-width-small-1-1 text">Aenean aliquam, dolor eu lacinia pellentesque, dui arcu condimentum nisl, quis sollicitudin mi lorem quis leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis sapien a ante rutrum pulvinar quis ac tellus. Proin facilisis dui at mollis tincidunt. Sed dignissim orci non arcu luctus pretium. Donec at ex aliquet, porttitor lacus eget, ullamcorper quam. Integer pellentesque egestas arcu, nec molestie leo sollicitudin et</div>
+                                    <div class="uk-width-1-1 uk-width-large-1-2">
+                                        <div class="uk-panel">
+                                            <div class="va-about-wrap clearfix uk-cover-background uk-position-relative">
+                                                <div class="va-about-text">
+                                                    <div class="title">About <span>Team</span>
+                                                    </div>
+                                                    <p>Nam quis purus sed est interdum sagittis sed in leo. Nunc feugiat enim nunc, sit amet placerat erat consectetur in. Cras consequat enim nunc, sit amet venenatis massa volutpat ut. Cras vitae facilisis nulla. </p>
+                                                    <p>Nulla pharetra lobortis nisl, vitae pretium nunc congue eget. Nunc imperdiet consequat nibh pharetra venenatis. Duis vitae lacinia nibh, et egestas leo. Proin sed mi sit amet dolor rhoncus tristique. Maecenas rhoncus felis vel congue commodo.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="uk-width-1-1 uk-width-large-1-2">
+                                        <div style="min-height: 497px;" class="uk-panel">
+                                            <div class="trainers-module tm-trainers-slider ">
+                                                <div class="trainer-wrapper">
+                                                    <div data-uk-slideset="{default: 1, animation: 'fade', duration: 400}">
+                                                        <div class="trainer-top">
+                                                            <div class="trainers-btn">
+                                                                <a href="http://h-sportak.torbara.com/" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideset-item="previous"></a>
+                                                                <a href="http://h-sportak.torbara.com/" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideset-item="next"></a>
+                                                            </div>
+                                                            <h3>Trainers</h3>
+                                                        </div>
+                                                        <ul class="uk-grid uk-slideset uk-grid-width-1-1">
+                                                            <li class="uk-active">
+                                                                <div class="img-wrap"><img src="images/trainer-slider/trainer-img.jpg" alt="">
+                                                                </div>
+                                                                <div class="name">Bernard <span>Fernandez</span>
+                                                                </div>
+                                                            </li>
+                                                            <li style="display: none;">
+                                                                <div class="img-wrap"><img src="images/trainer-slider/trainer-img1.jpg" alt="">
+                                                                </div>
+                                                                <div class="name">Fernand <span>Bernardez</span>
+                                                                </div>
+                                                            </li>
+                                                            <li style="display: none;">
+                                                                <div class="img-wrap"><img src="images/trainer-slider/trainer-img2.jpg" alt="">
+                                                                </div>
+                                                                <div class="name">Martin <span>Huanez</span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
                             </div>
                         </div>
-
+                        <div style="height: 80px;"></div>
                         <div class="list-players-wrapper">
                             <div class="uk-sticky-placeholder">
                                 <div class="button-group filter-button-group" data-uk-sticky="{top:70, boundary: true}">
@@ -541,7 +591,7 @@
                             </div>
                         </div>
 
-           
+        
                     </main>
                 </div>
             </div>
