@@ -18,6 +18,18 @@ function getTeam($conn,  $id){
         exit();
     }
 }
+function getAllTeam($conn){
+    $sql = "SELECT * FROM teams";
+    $result = mysqli_query($conn, $sql);
+    $value = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    
+    if($value){
+        return $value;
+    }else{
+        header('Location:./404.php');
+        exit();
+    }
+}
 function getCoach($conn,$id){
     $sql = "SELECT * FROM coach WHERE teamId='$id'";
     $result = mysqli_query($conn, $sql);
