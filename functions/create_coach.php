@@ -1,31 +1,47 @@
 <?php   
 include('dbconnect.php');
-$coach_errors = ['name'=>'','team'=>'','picture'=>'','age'=>'','phone'=>'','email'=>''];
+$coach_errors = ['first_name'=>'','last_name'=>'','team'=>'','picture'=>'','age'=>'','phone'=>'','email'=>'','about_coach'=>''];
 $len = count($coach_errors);
 if(isset($_POST['submit'])){
-    $name               =   $_POST['name'];
+    $first_name               =   $_POST['first_name'];
+    $last_name               =   $_POST['last_name'];
     $team               =   $_POST['team'];
     $picture            =   $_FILES['picture'];
     $age                =   $_POST['age'];
     $phone              =   $_POST['phone'];
     $email              =   $_POST['email'];
-$coach_values = ['name'=>$name,
+    $about_coach              =   $_POST['about_coach'];
+$coach_values = ['first_name'=>$first_name,
+            'last_name'=>$last_name,
             'team'=>$team,
             'picture'=>$picture['name'],
             'age'=>$age,
             'phone'=>$phone,
-            'email'=>$email];
-if (empty($name)) {
-    $coach_errors['name'] = 'Name Field Is Required';
+            'email'=>$email,
+            'about_coach'=>$about_coach];
+if (empty($first_name)) {
+    $coach_errors['first_name'] = 'Name Field Is Required';
     $len++;
 }else{
-    if(!preg_match('/^[a-zA-Z\s]+$/',$name)){
-        $coach_errors['name'] = "The Name Field Must contain alphabets only";
+    if(!preg_match('/^[a-zA-Z\s]+$/',$first_name)){
+        $coach_errors['first_name'] = "The Name Field Must contain alphabets only";
+        $len++;
+    }
+}
+if (empty($last_name)) {
+    $coach_errors['last_name'] = 'Name Field Is Required';
+    $len++;
+}else{
+    if(!preg_match('/^[a-zA-Z\s]+$/',$last_name)){
+        $coach_errors['last_name'] = "The Name Field Must contain alphabets only";
         $len++;
     }
 }
 if (empty($team)){
     $coach_errors['team'] = 'Please Identify with a team';
+    $len++;
+}if (empty($about_coach)){
+    $coach_errors['about_coach'] = 'Please Write something about yourself';
     $len++;
 }
 
@@ -84,13 +100,15 @@ if (empty($email)) {
         $_SESSION['coach_values'] = $coach_values;
         header('Location:../create_coach.php');
     }else{
-        $Name = mysqli_real_escape_string($conn,$name);
+$First_name = mysqli_real_escape_string($conn,$first_name);
+$Last_name = mysqli_real_escape_string($conn,$last_name);
 $team = mysqli_real_escape_string($conn,$team);
 $Picture = mysqli_real_escape_string($conn,$picture['name']);
 $age = mysqli_real_escape_string($conn,$age);
 $Phone = mysqli_real_escape_string($conn,$phone);
 $Email = mysqli_real_escape_string($conn,$email);
-$sql = "INSERT INTO coach(`name`,teamId, age, email,phone,picture) VALUES ('$Name', '8', '$age','$Email','$Phone','$Picture')";
+$About = mysqli_real_escape_string($conn,$about_coach);
+$sql = "INSERT INTO coach(`first_name`,last_name,teamId, age, email,phone,picture,about_coach) VALUES ('$First_name','$Last_name', '$team', '$age','$Email','$Phone','$Picture','$About')";
 
 if (mysqli_query($conn, $sql)) {
     // $destfile = 'images/uploads/'. $picture;
@@ -105,7 +123,6 @@ if (mysqli_query($conn, $sql)) {
     exit();
 }
     }
-
 
 
 

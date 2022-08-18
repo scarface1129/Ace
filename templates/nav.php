@@ -31,7 +31,7 @@
                                     <div class="uk-grid uk-dropdown-grid">
                                         <div class="uk-width-1-1">
                                             <ul class="uk-nav uk-nav-navbar">
-                                                <li><a href="team.php">Teams</a>
+                                                <li><a href="teams.php">Teams</a>
                                                 </li>
                                                 <li><a href="gallery.php">Gallery</a>
                                                 </li>

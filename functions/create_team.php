@@ -1,18 +1,19 @@
 <?php   
 include('dbconnect.php');
 
-$team_errors = ['name'=>'','numberOfPlayers'=>'','logo'=>'','seeking_players'=>'','phone'=>'','email'=>''];
+$team_errors = ['name'=>'','numberOfPlayers'=>'','logo'=>'','seeking_players'=>'','phone'=>'','email'=>'','about_team'=>''];
 $len = count($team_errors);
 if(isset($_POST['submit'])){
     $name               =   $_POST['name'];
     $numberOfPlayers    =   $_POST['players'];
+    $about_team    =   $_POST['about_team'];
     $logo               =   $_FILES['logo'];
     $seeking_players    =   $_POST['seeking_players'];
     $phone              =   $_POST['phone'];
     $email              =   $_POST['email'];
     $instagram          =   $_POST['instagram'];
     $facebook           =   $_POST['facebook'];
-$team_values = ['name'=>$name,'numberOfPlayers'=>$numberOfPlayers,'logo'=>$logo['name'],'seeking_players'=>$seeking_players,'phone'=>$phone,'email'=>$email,'instagram'=>$instagram,'facebook'=>$facebook];
+$team_values = ['name'=>$name,'numberOfPlayers'=>$numberOfPlayers,'about_team'=>$about_team,'logo'=>$logo['name'],'seeking_players'=>$seeking_players,'phone'=>$phone,'email'=>$email,'instagram'=>$instagram,'facebook'=>$facebook];
 if (empty($name)) {
     $team_errors['name'] = 'Name Field Is Required';
     $len++;
@@ -22,6 +23,10 @@ if (empty($name)) {
     $len++;
 
     }
+}
+if (empty($about_team)) {
+    $team_errors['about_team'] = 'Say something about team ';
+    $len++;
 }
 if (empty($numberOfPlayers)) {
     $team_errors['numberOfPlayers'] = 'Number Of Players Field Is Required';
@@ -91,27 +96,18 @@ if (empty($email)) {
 $Players = mysqli_real_escape_string($conn,$numberOfPlayers);
 $Logo = mysqli_real_escape_string($conn,$logo['name']);
 $Seeking_players = mysqli_real_escape_string($conn,$seeking_players);
+$About_team = mysqli_real_escape_string($conn,$about_team);
 $Phone = mysqli_real_escape_string($conn,$phone);
 $Email = mysqli_real_escape_string($conn,$email);
 $Insta = mysqli_real_escape_string($conn,$instagram);
 $Fb = mysqli_real_escape_string($conn,$facebook);
-$sql = "INSERT INTO teams(`name`,numberOfPlayers, seekingPlayers, logo) VALUES ('$Name', '$Players', '$Seeking_players','$Logo')";
+$sql = "INSERT INTO teams(`name`,numberOfPlayers, seekingPlayers, logo,about_team,facebookLink,instagramHandle,phoneNumber,email) VALUES ('$Name', '$Players', '$Seeking_players','$Logo','$About_team','$Fb','$Insta','$Phone','$email')";
 
 if (mysqli_query($conn, $sql)) {
-    $sql = 'SELECT id FROM teams ORDER BY id DESC LIMIT 1';
-    $result = mysqli_query($conn, $sql);
-    $value = mysqli_fetch_all($result, MYSQLI_ASSOC)[0];
-    $id = $value['id'];
-    mysqli_free_result($result);
-    $sql = "INSERT INTO team_contact(teamId,facebookLink,instagramHandle,phoneNumber,email) VALUES ('$id','$Fb','$Insta','$Phone','$email')";
-    if (mysqli_query($conn, $sql)) {
+    
     header('Location:../index.php');
     exit();
-    }
-    else{
-        header('Location:../index.php?error=Contact info couldnt be saved ');
-        exit();
-    }
+    
 }else{
     header('Location:../index.php?error=data couldnt be saved ');
     exit();

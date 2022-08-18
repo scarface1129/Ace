@@ -99,9 +99,14 @@ $teamNames = getTeams($conn);
                                     <h3>Personal Information</h3>
                                         <div class="line"></div>
                                         <div class="form-input">
-                                            <label for="name">Name</label>
-                                            <div style="color: red;"><?= $errors['name'] ?? '' ?></div>
-                                            <input type="text"value='<?= $values['name'] ?? '' ?>' name="name" id="name">
+                                            <label for="first_name">First Name</label>
+                                            <div style="color: red;"><?= $errors['first_name'] ?? '' ?></div>
+                                            <input type="text"value='<?= $values['first_name'] ?? '' ?>' name="first_name" id="first_name">
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="last_name">Last Name</label>
+                                            <div style="color: red;"><?= $errors['last_name'] ?? '' ?></div>
+                                            <input type="text"value='<?= $values['last_name'] ?? '' ?>' name="last_name" id="last_name">
                                         </div>
                                         <div class="form-input">
                                             <label for="team">Team</label>
@@ -139,6 +144,11 @@ $teamNames = getTeams($conn);
                                             <label for="email">Email  </label>
                                             <div style="color: red;"><?= $errors['email'] ?? '' ?></div>
                                             <input type="text" value='<?= $values['email'] ?? '' ?>' name="email" id="email">
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="about_coach">About Coach </label>
+                                            <div style="color: red;"><?= $errors['about_coach'] ?? '' ?></div>
+                                            <textarea type="text" value='<?= $values['about_coach'] ?? '' ?>' name="about_coach" id="about_coach"><?= $values['about_coach'] ?? '' ?></textarea>
                                         </div>
                                         
                                         <div class="form-input">

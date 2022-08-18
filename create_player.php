@@ -145,11 +145,10 @@ $teamNames = getTeams($conn);
                                             <div style="color: red;"><?= $errors['players_position'] ?? '' ?></div>
                                             <select name="players_position" value='<?= $values['players_position'] ?? '' ?>' id="players_position">
                                                 <option value="<?= $values['players_position'] ?? '' ?>"><?= $values['players_position'] ?? 'Select players position' ?></option>
-                                                <option value="Goal Keeper">Goal Keeper</option>
-                                                <option value="Defender">Defender</option>
-                                                <option value="Stricker">Stricker</option>
-                                                <option value="Midfilder">Midfilder</option>
-                                                <option value="Others">Others</option>
+                                                <option value="GOALKEEPER">Goal Keeper</option>
+                                                <option value="DEFENDER">Defender</option>
+                                                <option value="STRIKER">Stricker</option>
+                                                <option value="MIDFIELDER">Midfilder</option>
                                             </select>
                                         </div>
                                         <h3>Contact Information</h3>

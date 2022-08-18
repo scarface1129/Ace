@@ -10828,6 +10828,7 @@ q {
 .trainers-module .img-wrap {
   float: right;
   border: 1px solid #c56119;
+  width: 200px;
 }
 .trainers-module .name {
   position: absolute;
@@ -13443,6 +13444,8 @@ q {
 }
 .player-top .wrap .socials .linkedin a {
   background: url("../images/socials-linkedin.jpg");
+}.player-top .wrap .socials .instagram a {
+  background: url("../images/socials-instagram.jpg");
 }
 .player-top {
   padding-bottom: 29px;
@@ -13689,6 +13692,10 @@ q {
 }
 .player-article .img-wrap .socials .facebook a:before {
   content: '\f09a';
+}.player-article .img-wrap .socials .phone a:before {
+  content: '\f095';
+}.player-article .img-wrap .socials .email a:before {
+  content: '\f1a0';
 }
 .player-article .img-wrap .socials .google-plus a:before {
   content: '\f0d5';
@@ -13698,6 +13705,8 @@ q {
 }
 .player-article .img-wrap .socials .linkedin a:before {
   content: '\f0e1';
+}.player-article .img-wrap .socials .instagram a:before {
+  content: '\f16d';
 }
 .player-article:hover .socials {
   top: 50%;

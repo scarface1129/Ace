@@ -119,6 +119,11 @@ if( isset( $_SESSION['team_errors'] ) ) {
                                                 <option value="True">Yes</option>
                                             </select>
                                         </div>
+                                        <div class="form-input">
+                                            <label for="about_team">About Coach </label>
+                                            <div style="color: red;"><?= $errors['about_team'] ?? '' ?></div>
+                                            <textarea type="text" value='<?= $values['about_team'] ?? '' ?>' name="about_team" id="about_team"><?= $values['about_team'] ?? '' ?></textarea>
+                                        </div>
                                         <h3>Contact Information</h3>
                                         <div class="line"></div>
                                         <div class="form-input">

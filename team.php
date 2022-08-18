@@ -1,5 +1,15 @@
-<?php include('templates/header.php');?>
+<?php include('templates/header.php');
 
+include('./functions/dbconnect.php');
+include('./functions/functions.php');
+
+$team = getTeam($conn,$_GET['id']);
+$coach = getCoach($conn,$team['id']);
+$players = getPlayers($conn,$team['id']);
+// print_r($players);
+// die()
+?>
+<link href="css/costom.css" rel="stylesheet" type="text/css" />
     <div class="over-wrap">
         <div class="toolbar-wrap">
             <div class="uk-container uk-container-center">
@@ -53,7 +63,7 @@
 
         <div class="uk-container uk-container-center alt">
             <ul class="uk-breadcrumb">
-                <li><a href="index-2.php">Home</a>
+                <li><a href="index.php">Home</a>
                 </li>
                 <li class="uk-active"><span>Team</span>
                 </li>
@@ -64,7 +74,10 @@
         <div class="uk-container uk-container-center">
             <div id="tm-middle" class="tm-middle uk-grid" data-uk-grid-match="" data-uk-grid-margin="">
                 <div class="tm-main uk-width-medium-1-1 uk-row-first">
-                    <main id="tm-content" class="tm-content">                        
+                    <main id="tm-content" class="tm-content">  
+                        <div class='team_name'>
+                            <h2><?= $team['name']?></h2>
+                        </div>                      
                         <div class="tm-top-c-box tm-full-width  home-about">
                             <div class="uk-container uk-container-center">
                                 <section id="tm-top-c" class="tm-top-c uk-grid uk-grid-collapse" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
@@ -75,8 +88,9 @@
                                                 <div class="va-about-text">
                                                     <div class="title">About <span>Team</span>
                                                     </div>
-                                                    <p>Nam quis purus sed est interdum sagittis sed in leo. Nunc feugiat enim nunc, sit amet placerat erat consectetur in. Cras consequat enim nunc, sit amet venenatis massa volutpat ut. Cras vitae facilisis nulla. </p>
-                                                    <p>Nulla pharetra lobortis nisl, vitae pretium nunc congue eget. Nunc imperdiet consequat nibh pharetra venenatis. Duis vitae lacinia nibh, et egestas leo. Proin sed mi sit amet dolor rhoncus tristique. Maecenas rhoncus felis vel congue commodo.</p>
+                                                    <p style="color: #fff;"><?=$team['about_team'] ?? ''?></p>
+                                                    <h4 style="color: #fff;">About Coach</h4>
+                                                    <p style="color: #fff;"><?=$coach['about_coach'] ?? ''?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -88,20 +102,20 @@
                                                 <div class="trainer-wrapper">
                                                     <div data-uk-slideset="{default: 1, animation: 'fade', duration: 400}">
                                                         <div class="trainer-top">
-                                                            <div class="trainers-btn">
+                                                            <!-- <div class="trainers-btn">
                                                                 <a href="http://h-sportak.torbara.com/" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideset-item="previous"></a>
                                                                 <a href="http://h-sportak.torbara.com/" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideset-item="next"></a>
-                                                            </div>
+                                                            </div> -->
                                                             <h3>Trainers</h3>
                                                         </div>
                                                         <ul class="uk-grid uk-slideset uk-grid-width-1-1">
                                                             <li class="uk-active">
-                                                                <div class="img-wrap"><img src="images/trainer-slider/trainer-img.jpg" alt="">
+                                                                <div class="img-wrap"><img src="images/trainer-slider/trainer-img.jpg" alt="coaches image">
                                                                 </div>
-                                                                <div class="name">Bernard <span>Fernandez</span>
+                                                                <div class="name"><?= $coach['first_name'] ?? ''?> <span><?= $coach['last_name'] ?? ''?></span>
                                                                 </div>
                                                             </li>
-                                                            <li style="display: none;">
+                                                            <!-- <li style="display: none;">
                                                                 <div class="img-wrap"><img src="images/trainer-slider/trainer-img1.jpg" alt="">
                                                                 </div>
                                                                 <div class="name">Fernand <span>Bernardez</span>
@@ -112,7 +126,7 @@
                                                                 </div>
                                                                 <div class="name">Martin <span>Huanez</span>
                                                                 </div>
-                                                            </li>
+                                                            </li> -->
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -130,13 +144,13 @@
                                         <div class="label-menu">OUR team</div>
                                         <button class="active" data-filter="*">all
                                         </button>
-                                        <button data-filter=".tt_2a195f12da9f3f36da06e6097be7e451">DEFENDER
+                                        <button data-filter=".DEFENDER">DEFENDER
                                         </button>
-                                        <button data-filter=".tt_22c19cd174143e3b4c7ef40ae23c5d1a">STRIKER
+                                        <button data-filter=".STRIKER">STRIKER
                                         </button>
-                                        <button data-filter=".tt_81747b4426a9882884c1f83eda78844f">goalkeeper
+                                        <button data-filter=".GOALKEEPER">GOALKEEPER
                                         </button>
-                                        <button data-filter=".tt_4d957768dcc72908ab3b9e28dc867052">MIDFIELDER
+                                        <button data-filter=".MIDFIELDER">MIDFIELDER
                                         </button>
                                     </div>
                                 </div>
@@ -150,18 +164,20 @@
                                 </div>
                                 <div class="uk-container uk-container-center alt">
                                     <div class="uk-grid grid1 players-list">
-                                        <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-2 player-item tt_2a195f12da9f3f36da06e6097be7e451">
+                                        <?php if($players) :?>
+                                        <?php foreach($players as $player) :?>
+                                        <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-2 player-item <?= $player['position'] ?? ''?>">
                                             <div class="player-article">
                                                 <div class="wrapper">
                                                     <div class="img-wrap">
                                                         <div class="player-number">
                                                             <span>
-                                                            21                
+                                                            <?= $player['jerseyNumber'] ?? ''?>                
                                                             </span>
                                                         </div>
                                                         <div class="bio">
                                                             <span>
-                                                            <a href="player.php">bio
+                                                            <a href="player.php?id=<?= $player['id'] ?? ''?>">bio
                                                             </a>
                                                             </span>
                                                         </div>
@@ -169,7 +185,7 @@
                                                         <img src="images/494a6c4fd56d9d2af64b92b6337db693.jpg" class="img-polaroid" alt="Steven Webb" title="Steven Webb">
                                                         </a>
                                                         <ul class="socials">
-                                                            <li class="twitter">
+                                                            <li class="instagram">
                                                                 <a href="http://twitter.com/" target="_blank" rel="nofollow">
                                                                 </a>
                                                             </li>
@@ -177,36 +193,42 @@
                                                                 <a href="http://facebook.com/" target="_blank" rel="nofollow">
                                                                 </a>
                                                             </li>
-                                                            <li class="google-plus">
+                                                            <li class="phone">
                                                                 <a href="https://plus.google.com/" target="_blank" rel="nofollow">
                                                                 </a>
                                                             </li>
-                                                            <li class="pinterest">
+                                                            <li class="email">
                                                                 <a href="https://www.pinterest.com/" target="_blank" rel="nofollow">
                                                                 </a>
                                                             </li>
-                                                            <li class="linkedin">
+                                                            <!-- <li class="linkedin">
                                                                 <a href="https://www.linkedin.com/" target="_blank" rel="nofollow">
                                                                 </a>
-                                                            </li>
+                                                            </li> -->
                                                         </ul>
                                                     </div>
                                                     <div class="info">
                                                         <div class="name">
                                                             <h3>
-                                                                <a href="player.php">
-                                                                Steven Webb                    
+                                                                <a href="player.php?id=<?= $player['id'] ?? ''?>">
+                                                                <?= $player['name'] ?? ''?>                    
                                                                 </a>
                                                             </h3>
                                                         </div>
                                                         <div class="position">
-                                                            DEFENDER 
+                                                        <?= $player['position'] ?? ''?> 
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-2 player-item tt_22c19cd174143e3b4c7ef40ae23c5d1a">
+                                        <?php endforeach?>
+                                        <?php endif?>
+
+
+
+
+                                        <!-- <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-2 player-item STRIKER">
                                             <div class="player-article">
                                                 <div class="wrapper">
                                                     <div class="img-wrap">
@@ -262,7 +284,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-2 player-item tt_81747b4426a9882884c1f83eda78844f">
+                                        <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-2 player-item GOALKEEPER">
                                             <div class="player-article">
                                                 <div class="wrapper">
                                                     <div class="img-wrap">
@@ -318,7 +340,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-2 player-item tt_2a195f12da9f3f36da06e6097be7e451">
+                                        <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-2 player-item DEFENDER">
                                             <div class="player-article">
                                                 <div class="wrapper">
                                                     <div class="img-wrap">
@@ -374,7 +396,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-2 player-item tt_22c19cd174143e3b4c7ef40ae23c5d1a">
+                                        <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-2 player-item STRIKER">
                                             <div class="player-article">
                                                 <div class="wrapper">
                                                     <div class="img-wrap">
@@ -430,7 +452,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-2 player-item tt_4d957768dcc72908ab3b9e28dc867052">
+                                        <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-2 player-item MIDFIELDER">
                                             <div class="player-article">
                                                 <div class="wrapper">
                                                     <div class="img-wrap">
@@ -486,7 +508,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-2 player-item tt_2a195f12da9f3f36da06e6097be7e451">
+                                        <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-2 player-item DEFENDER">
                                             <div class="player-article">
                                                 <div class="wrapper">
                                                     <div class="img-wrap">
@@ -530,7 +552,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-2 player-item tt_22c19cd174143e3b4c7ef40ae23c5d1a">
+                                        <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-2 player-item STRIKER">
                                             <div class="player-article">
                                                 <div class="wrapper">
                                                     <div class="img-wrap">
@@ -585,13 +607,11 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-        
                     </main>
                 </div>
             </div>

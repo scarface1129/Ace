@@ -55,7 +55,19 @@ label {
     font-size: 1.125rem;
     margin-bottom: 0.5rem;
 }
+.team_name{
+    width: 100%;
+    margin: -30px auto;
+    background: #ec9659;
+}
+.team_name h2 {
+    color: #000;
+    width: 40%;
+    margin: auto;
+    font-weight: 700;
+    padding: 10px 0;
 
+}
 @media (max-width: 500px) {
     .create {
         width: 100%;

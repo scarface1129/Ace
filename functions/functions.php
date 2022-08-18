@@ -6,8 +6,38 @@ function getTeams($conn){
     $value = mysqli_fetch_all($result, MYSQLI_ASSOC);
     return $value;
 }
-
-
+function getTeam($conn,  $id){
+    $sql = "SELECT * FROM teams WHERE id='$id'";
+    $result = mysqli_query($conn, $sql);
+    $value = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    
+    if($value){
+        return $value[0];
+    }else{
+        header('Location:./404.php');
+        exit();
+    }
+}
+function getCoach($conn,$id){
+    $sql = "SELECT * FROM coach WHERE teamId='$id'";
+    $result = mysqli_query($conn, $sql);
+    $coach = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if($coach){
+        return $coach[0];
+    }else{
+        return Null ;
+    }
+}
+function getPlayers($conn,$id){
+    $sql = "SELECT * FROM players WHERE teamId='$id'";
+    $result = mysqli_query($conn, $sql);
+    $players = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if($players){
+        return $players;
+    }else{
+        return Null ;
+    }
+}
 function getMatch($conn,$id){
     $sql = "SELECT * FROM matches where id='$id'";
     $result = mysqli_query($conn, $sql);
