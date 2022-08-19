@@ -1,4 +1,25 @@
-<?php include('templates/header.php');?>
+<?php include('templates/header.php');
+include('./functions/dbconnect.php');
+include('./functions/functions.php');
+
+$id = $_GET['id'];
+if(!$id){
+    header('Location:./404.php');
+        exit();
+}
+
+$results = getMatchDetail($conn, $id);
+$team1 = getTeamName($conn, $results['team1_id']);
+$team2 = getTeamName($conn, $results['team2_id']);
+$matchResults = getMatchResults($conn);
+// print_r($matchResults);
+// print_r($team1);
+// print_r($team2);
+// die();
+
+
+
+?>
 
     <div class="over-wrap">
         <div class="toolbar-wrap">
@@ -50,11 +71,11 @@
                                                 <h3>Latest <span>Results</span></h3>
                                                 <div class="tournament">
                                                     <address>
-                                                        Cambridgeshire UK               <br><br>
+                                                        <?=$results['location'] ??''?><br><br>
                                                     </address>
                                                 </div>
                                                 <div class="date">
-                                                    November 29, 2015 | 12:00 am            
+                                                <?= date('F d, Y', strtotime($results['date'])) ?? ''?> | <?= $results['time'] ?? ''?>            
                                                 </div>
                                             </div>
                                         </div>
@@ -62,30 +83,30 @@
                                             <div class="uk-container uk-container-center">
                                                 <div class="uk-grid uk-flex uk-flex-middle">
                                                     <div class="uk-width-2-12 center">
-                                                        <a href="match-single.php">
-                                                        <img src="images/team-ava.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                    
+                                                        <a href="match-single.php?id=<?= $results['id']?? ''?>">
+                                                        <img src="images/team-ava.png" class="img-polaroid" alt="<?=$team1['name'] ??''?> VS <?=$team2['name'] ??''?> <?= $results['date']?>" title="<?=$team1['name'] ??''?> VS <?=$team2['name'] ??''?> <?= $results['date']?>"></a>                                    
                                                     </div>
                                                     <div class="uk-width-3-12 name uk-vertical-align">
                                                         <div class="wrap uk-vertical-align-middle">
-                                                            Cambridgehire                    
+                                                        <?=$team1['name'] ??''?>                    
                                                         </div>
                                                     </div>
                                                     <div class="uk-width-2-12 score">
                                                         <div class="title">score</div>
                                                         <div class="table">
-                                                            <div class="left">3</div>
-                                                            <div class="right">5</div>
+                                                            <div class="left"><?=$results['team1_score'] ??''?></div>
+                                                            <div class="right"><?=$results['team2_score'] ??''?></div>
                                                             <div class="uk-clearfix"></div>
                                                         </div>
                                                     </div>
                                                     <div class="uk-width-3-12 name alt uk-vertical-align">
                                                         <div class="wrap uk-vertical-align-middle">
-                                                            china                    
+                                                        <?=$team2['name'] ??''?>                    
                                                         </div>
                                                     </div>
                                                     <div class="uk-width-2-12 center">
-                                                        <a href="match-single.php">
-                                                        <img src="images/team-ava1.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                    
+                                                        <a href="match-single.php?id=<?= $results['id']?? ''?>">
+                                                        <img src="images/team-ava1.png" class="img-polaroid" alt="<?=$team1['name'] ??''?> VS <?=$team2['name'] ??''?> <?= $results['date']?>" title="<?=$team1['name'] ??''?> VS <?=$team2['name'] ??''?> <?= $results['date']?>"></a>                                    
                                                     </div>
                                                 </div>
                                             </div>
@@ -100,7 +121,7 @@
                                                 <div class="uk-grid">
                                                     <div class="uk-width-1-1">
                                                         <div class="btn-wrap uk-container-center">
-                                                            <a class="read-more" href="http://h-sportak.torbara.com/index.php/component/cobalt/item/13-results/59-cambridgehire-vs-china-2015-11-29?Itemid=119">More Info</a>
+                                                            <a class="read-more" href="#">Final Score</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -118,7 +139,7 @@
         <div class="uk-container uk-container-center alt">
             <ul class="uk-breadcrumb">
                 <li><a href="index-2.php">Home</a></li>
-                <li class="uk-active"><span>Match list</span></li>
+                <li class="uk-active"><span>Match Result</span></li>
             </ul>
         </div>
 
@@ -127,610 +148,59 @@
                 <div class="tm-main uk-width-medium-3-4 uk-push-1-4">
                     <main id="tm-content" class="tm-content">
                         <div class="match-list-wrap">
+                            <?php if($matchResults) :?>
+                            <?php foreach($matchResults as $matchResult) :?>
                             <div class="match-list-item">
                                 <div class="date">
-                                    <span>14</span>
-                                    Nov                
+                                    <span><?=date('d', strtotime($matchResult['date'])) ?? ''?></span>
+                                    <?=substr(date('F', strtotime($matchResult['date'])), 0, 3) ?? ''?>                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                     
+                                    <a href="match-single.php?id=<?= $matchResult['id']?? ''?>">
+                                    <img src="images/team-ava.png" class="img-polaroid" alt="<?php $name=getTeamName($conn, $matchResult['team1_id']);
+                                    echo $name['name']?> VS <?php $name=getTeamName($conn, $matchResult['team2_id']);
+                                    echo $name['name']?>  <?= date('F d, Y', strtotime($matchResult['date'])) ?? ''?> | <?= $matchResult['time'] ?? ''?>" title="<?php $name=getTeamName($conn, $matchResult['team1_id']);
+                                    echo $name['name']?> VS <?php $name=getTeamName($conn, $matchResult['team2_id']);
+                                    echo $name['name']?>  <?= date('F d, Y', strtotime($matchResult['date'])) ?? ''?> | <?= $matchResult['time'] ?? ''?>"></a>                                     
                                 </div>
                                 <div class="team-name">
-                                    England                
+                                    <?php $name=getTeamName($conn, $matchResult['team1_id']);
+                                    echo $name['name']?>                
                                 </div>
                                 <div class="team-score">
-                                    2                    
+                                <?= $matchResult['team1_score'] ?? ''?>                    
                                 </div>
                                 <div class="score-separator">:</div>
                                 <div class="team-score">
-                                    0                    
+                                <?= $matchResult['team2_score'] ?? ''?>                    
                                 </div>
                                 <div class="team-name">
-                                    Amsterdam                
+                                <?php $name=getTeamName($conn, $matchResult['team2_id']);
+                                    echo $name['name']?>                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava1.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                    
+                                    <a href="match-single.php?id=<?= $matchResult['id']?? ''?>">
+                                    <img src="images/team-ava1.png" class="img-polaroid" alt="<?php $name=getTeamName($conn, $matchResult['team1_id']);
+                                    echo $name['name']?> VS <?php $name=getTeamName($conn, $matchResult['team2_id']);
+                                    echo $name['name']?>  <?= date('F d, Y', strtotime($matchResult['date'])) ?? ''?> | <?= $matchResult['time'] ?? ''?>" title="<?php $name=getTeamName($conn, $matchResult['team1_id']);
+                                    echo $name['name']?> VS <?php $name=getTeamName($conn, $matchResult['team2_id']);
+                                    echo $name['name']?>  <?= date('F d, Y', strtotime($matchResult['date'])) ?? ''?> | <?= $matchResult['time'] ?? ''?>"></a>                                    
                                 </div>
                                 <div class="location">
                                     <address>
-                                        Cambridgeshire UK               <br><br>
+                                        <?= $matchResult['location'] ?? ''?>               <br><br>
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.php">view</a>
+                                    <a class="view-article" href="match-single.php?id=<?= $matchResult['id']?? ''?>">view</a>
                                 </div>
                             </div>
-                            <div class="match-list-item">
-                                <div class="date">
-                                    <span>29</span>
-                                    Nov                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava2.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                     
-                                </div>
-                                <div class="team-name">
-                                    Cambridgehire                
-                                </div>
-                                <div class="team-score">
-                                    2                    
-                                </div>
-                                <div class="score-separator">:</div>
-                                <div class="team-score">
-                                    2                   
-                                </div>
-                                <div class="team-name">
-                                    china                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava3.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                    
-                                </div>
-                                <div class="location">
-                                    <address>
-                                        Cambridgeshire UK               <br><br>
-                                    </address>
-                                </div>
-                                <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.php">view</a>
-                                </div>
-                            </div>
-                            <div class="match-list-item">
-                                <div class="date">
-                                    <span>20</span>
-                                    Nov                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava4.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-20)" title="Cambridgehire VS china (2015-11-20)"></a>                                     
-                                </div>
-                                <div class="team-name">
-                                    Cambridgehire                
-                                </div>
-                                <div class="team-score">
-                                    1                    
-                                </div>
-                                <div class="score-separator">:</div>
-                                <div class="team-score">
-                                    0                    
-                                </div>
-                                <div class="team-name">
-                                    china                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava5.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-20)" title="Cambridgehire VS china (2015-11-20)"></a>                                    
-                                </div>
-                                <div class="location">
-                                    <address>
-                                        Cambridgeshire UK               <br><br>
-                                    </address>
-                                </div>
-                                <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.php">view</a>
-                                </div>
-                            </div>
-                            <div class="match-list-item">
-                                <div class="date">
-                                    <span>14</span>
-                                    Nov                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                     
-                                </div>
-                                <div class="team-name">
-                                    England                
-                                </div>
-                                <div class="team-score">
-                                    2                    
-                                </div>
-                                <div class="score-separator">:</div>
-                                <div class="team-score">
-                                    4                    
-                                </div>
-                                <div class="team-name">
-                                    Amsterdam                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava1.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                    
-                                </div>
-                                <div class="location">
-                                    <address>
-                                        Cambridgeshire UK               <br><br>
-                                    </address>
-                                </div>
-                                <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.php">view</a>
-                                </div>
-                            </div>
-                            <div class="match-list-item">
-                                <div class="date">
-                                    <span>29</span>
-                                    Nov                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava2.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                     
-                                </div>
-                                <div class="team-name">
-                                    Cambridgehire                
-                                </div>
-                                <div class="team-score">
-                                    0                    
-                                </div>
-                                <div class="score-separator">:</div>
-                                <div class="team-score">
-                                    0                    
-                                </div>
-                                <div class="team-name">
-                                    china                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava3.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                    
-                                </div>
-                                <div class="location">
-                                    <address>
-                                        Cambridgeshire UK               <br><br>
-                                    </address>
-                                </div>
-                                <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.php">view</a>
-                                </div>
-                            </div>
-                            <div class="match-list-item">
-                                <div class="date">
-                                    <span>20</span>
-                                    Nov                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava4.png" class="img-polaroid" alt="King VS china (2015-11-20)" title="King VS china (2015-11-20)"></a>                                     
-                                </div>
-                                <div class="team-name">
-                                    King                
-                                </div>
-                                <div class="team-score">
-                                    2                    
-                                </div>
-                                <div class="score-separator">:</div>
-                                <div class="team-score">
-                                    0                    
-                                </div>
-                                <div class="team-name">
-                                    china                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava5.png" class="img-polaroid" alt="King VS china (2015-11-20)" title="King VS china (2015-11-20)"></a>                                    
-                                </div>
-                                <div class="location">
-                                    <address>
-                                        Cambridgeshire UK               <br><br>
-                                    </address>
-                                </div>
-                                <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.php">view</a>
-                                </div>
-                            </div>
-                            <div class="match-list-item">
-                                <div class="date">
-                                    <span>14</span>
-                                    Nov                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                     
-                                </div>
-                                <div class="team-name">
-                                    England                
-                                </div>
-                                <div class="team-score">
-                                    2                    
-                                </div>
-                                <div class="score-separator">:</div>
-                                <div class="team-score">
-                                    1                    
-                                </div>
-                                <div class="team-name">
-                                    Amsterdam                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava1.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                    
-                                </div>
-                                <div class="location">
-                                    <address>
-                                        Cambridgeshire UK               <br><br>
-                                    </address>
-                                </div>
-                                <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.php">view</a>
-                                </div>
-                            </div>
-                            <div class="match-list-item">
-                                <div class="date">
-                                    <span>29</span>
-                                    Nov                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava2.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                     
-                                </div>
-                                <div class="team-name">
-                                    Cambridgehire                
-                                </div>
-                                <div class="team-score">
-                                    2                    
-                                </div>
-                                <div class="score-separator">:</div>
-                                <div class="team-score">
-                                    0                    
-                                </div>
-                                <div class="team-name">
-                                    china                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava3.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                    
-                                </div>
-                                <div class="location">
-                                    <address>
-                                        Cambridgeshire UK               <br><br>
-                                    </address>
-                                </div>
-                                <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.php">view</a>
-                                </div>
-                            </div>
-                            <div class="match-list-item">
-                                <div class="date">
-                                    <span>20</span>
-                                    Nov                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava4.png" class="img-polaroid" alt="King VS china (2015-11-20)" title="King VS china (2015-11-20)"></a>                                     
-                                </div>
-                                <div class="team-name">
-                                    King                
-                                </div>
-                                <div class="team-score">
-                                    2                    
-                                </div>
-                                <div class="score-separator">:</div>
-                                <div class="team-score">
-                                    5                    
-                                </div>
-                                <div class="team-name">
-                                    china                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava5.png" class="img-polaroid" alt="King VS china (2015-11-20)" title="King VS china (2015-11-20)"></a>                                    
-                                </div>
-                                <div class="location">
-                                    <address>
-                                        Cambridgeshire UK               <br><br>
-                                    </address>
-                                </div>
-                                <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.php">view</a>
-                                </div>
-                            </div>
-                            <div class="match-list-item">
-                                <div class="date">
-                                    <span>14</span>
-                                    Nov                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                     
-                                </div>
-                                <div class="team-name">
-                                    England                
-                                </div>
-                                <div class="team-score">
-                                    1                    
-                                </div>
-                                <div class="score-separator">:</div>
-                                <div class="team-score">
-                                    1                    
-                                </div>
-                                <div class="team-name">
-                                    Amsterdam                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava2.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)"></a>                                    
-                                </div>
-                                <div class="location">
-                                    <address>
-                                        Cambridgeshire UK               <br><br>
-                                    </address>
-                                </div>
-                                <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.php">view</a>
-                                </div>
-                            </div>
-                            <div class="match-list-item">
-                                <div class="date">
-                                    <span>29</span>
-                                    Nov                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava3.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                     
-                                </div>
-                                <div class="team-name">
-                                    Cambridgehire                
-                                </div>
-                                <div class="team-score">
-                                    2                    
-                                </div>
-                                <div class="score-separator">:</div>
-                                <div class="team-score">
-                                    1                    
-                                </div>
-                                <div class="team-name">
-                                    china                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava4.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)"></a>                                    
-                                </div>
-                                <div class="location">
-                                    <address>
-                                        Cambridgeshire UK               <br><br>
-                                    </address>
-                                </div>
-                                <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.php">view</a>
-                                </div>
-                            </div>
-                            <div class="match-list-item">
-                                <div class="date">
-                                    <span>20</span>
-                                    Nov                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava5.png" class="img-polaroid" alt="King VS china (2015-11-20) - Copy" title="King VS china (2015-11-20) - Copy"></a>                                     
-                                </div>
-                                <div class="team-name">
-                                    King                
-                                </div>
-                                <div class="team-score">
-                                    2                    
-                                </div>
-                                <div class="score-separator">:</div>
-                                <div class="team-score">
-                                    0                    
-                                </div>
-                                <div class="team-name">
-                                    china                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava.png" class="img-polaroid" alt="King VS china (2015-11-20) - Copy" title="King VS china (2015-11-20) - Copy"></a>                                    
-                                </div>
-                                <div class="location">
-                                    <address>
-                                        Cambridgeshire UK               <br><br>
-                                    </address>
-                                </div>
-                                <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.php">view</a>
-                                </div>
-                            </div>
-                            <div class="match-list-item">
-                                <div class="date">
-                                    <span>12</span>
-                                    Nov                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava1.png" class="img-polaroid" alt="Italy VS Chalenger (2015-11-12)" title="Italy VS Chalenger (2015-11-12)"></a>                                     
-                                </div>
-                                <div class="team-name">
-                                    Italy                
-                                </div>
-                                <div class="team-score">
-                                    0                    
-                                </div>
-                                <div class="score-separator">:</div>
-                                <div class="team-score">
-                                    0                    
-                                </div>
-                                <div class="team-name">
-                                    Chalenger                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava2.png" class="img-polaroid" alt="Italy VS Chalenger (2015-11-12)" title="Italy VS Chalenger (2015-11-12)"></a>                                    
-                                </div>
-                                <div class="location">
-                                    <address>
-                                        Cambridgeshire UK               <br><br>
-                                    </address>
-                                </div>
-                                <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.php">view</a>
-                                </div>
-                            </div>
-                            <div class="match-list-item">
-                                <div class="date">
-                                    <span>12</span>
-                                    Nov                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava3.png" class="img-polaroid" alt="Croatia VS Roman (2015-11-12)" title="Croatia VS Roman (2015-11-12)"></a>                                     
-                                </div>
-                                <div class="team-name">
-                                    Croatia                
-                                </div>
-                                <div class="team-score">
-                                    2                    
-                                </div>
-                                <div class="score-separator">:</div>
-                                <div class="team-score">
-                                    0                    
-                                </div>
-                                <div class="team-name">
-                                    Roman                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava4.png" class="img-polaroid" alt="Croatia VS Roman (2015-11-12)" title="Croatia VS Roman (2015-11-12)"></a>                                    
-                                </div>
-                                <div class="location">
-                                    <address>
-                                        Cambridgeshire UK               <br><br>
-                                    </address>
-                                </div>
-                                <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.php">view</a>
-                                </div>
-                            </div>
-                            <div class="match-list-item">
-                                <div class="date">
-                                    <span>12</span>
-                                    Nov                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava5.png" class="img-polaroid" alt="Uventus VS Chalenger (2015-11-12)" title="Uventus VS Chalenger (2015-11-12)"></a>                                     
-                                </div>
-                                <div class="team-name">
-                                    Uventus                
-                                </div>
-                                <div class="team-score">
-                                    2                    
-                                </div>
-                                <div class="score-separator">:</div>
-                                <div class="team-score">
-                                    0                    
-                                </div>
-                                <div class="team-name">
-                                    Chalenger                
-                                </div>
-                                <div class="logo">
-                                    <a href="match-single.php">
-                                    <img src="images/team-ava.png" class="img-polaroid" alt="Uventus VS Chalenger (2015-11-12)" title="Uventus VS Chalenger (2015-11-12)"></a>                                    
-                                </div>
-                                <div class="location">
-                                    <address>
-                                        Cambridgeshire UK               <br><br>
-                                    </address>
-                                </div>
-                                <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.php">view</a>
-                                </div>
-                            </div>
+                            <?php endforeach?>
+                            <?php endif?>
                         </div>
                     </main>
                 </div>
                 <aside class="tm-sidebar-a uk-width-medium-1-4 uk-pull-3-4 uk-row-first">
-                    <div class="uk-panel categories-sidebar">
-                        <h3 class="uk-panel-title">Categories</h3>
-                        <div>
-                            <ul class="nav menu">
-                                <li class="item-3">             
-                                    <a href="news.php">
-                                    Overall <span class="label">(3)</span>
-                                    </a>            
-                                </li>
-                                <li class="item-4">             
-                                    <a href="news.php">
-                                    Players <span class="label">(2)</span>
-                                    </a>            
-                                </li>
-                                <li class="item-2">             
-                                    <a href="news.php">
-                                    Life <span class="label">(4)</span>
-                                    </a>            
-                                </li>
-                                <li class="item-5 parent">
-                                    <a href="news.php">
-                                    Entertainment <span class="label">(1)</span>
-                                    </a>            
-                                    <ul class="">
-                                        <li class="item-7">
-                                            <a href="news.php">
-                                            Art Style <span class="label">(3)</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="item-6">             
-                                    <a href="news.php">
-                                    Uncategorized <span class="label">(3)</span>
-                                    </a>            
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="uk-panel newsletter-sidebar">
-                        <h3 class="uk-panel-title">Newsletter</h3>
-                        <div class="acymailing_modulenewsletter-sidebar" id="acymailing_module_formAcymailing40192">
-                            <div class="acymailing_fulldiv" id="acymailing_fulldiv_formAcymailing40192">
-                                <form id="formAcymailing40192" action="http://h-sportak.torbara.com/index.php/match" onsubmit="return submitacymailingform('optin','formAcymailing40192')" method="post" name="formAcymailing40192">
-                                    <div class="acymailing_module_form">
-                                        <div class="mail-title">Newsletters</div>
-                                        <div class="acymailing_introtext">Donec at ex aliquet, porttitor lacus eget</div>
-                                        <div class="clear"></div>
-                                        <div class="space"></div>
-                                        <table class="acymailing_form">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="acyfield_email acy_requiredField">
-                                                        <span class="mail-wrap">
-                                                        <input id="user_email_formAcymailing40192" onfocus="if(this.value == 'Email') this.value = '';" onblur="if(this.value=='') this.value='Email';" class="inputbox" name="user[email]" style="width:80%" value="Email" title="Email" type="text">
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="acysubbuttons">
-                                                        <span class="submit-wrap">
-                                                        <span class="submit-wrapper">
-                                                        <input class="button subbutton btn btn-primary" value=" " name="Submit" onclick="try{ return submitacymailingform('optin','formAcymailing40192'); }catch(err){alert('The form could not be submitted '+err);return false;}" type="submit">
-                                                        </span>
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
                     <div class="uk-panel news-sidebar">
                         <h3 class="uk-panel-title">Latest News</h3>
                         int(3)

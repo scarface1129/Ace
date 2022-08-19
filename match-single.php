@@ -215,13 +215,13 @@ $matches = getMatch($conn,$_GET['id']);
                                             <p>Suspendisse odio erat, suscipit vel aliquam tristique, dapibus at neque. Aliquam lectus tellus, feugiat non sodales nec, rhoncus a est. Etiam hendrerit, eros nec mollis blandit, velit sem aliquet ex, id tristique metus ligula tincidunt nisi. Ut porta augue at molestie feugiat. Donec quis neque molestie, interdum sapien at, dictum diam. Nam aliquam diam vitae purus vestibulum, sit amet rutrum tortor aliquet. Curabitur rhoncus consectetur tempor. Vivamus volutpat, mauris non auctor molestie, est ex auctor eros, vel egestas eros tellus non dui.</p>
                                         </div>
                                     </div>
-                                    <div class="uk-width-1-1">
+                                    <!-- <div class="uk-width-1-1">
                                         <div class="share-wrap">
                                             <div class="share-title">share</div>
                                             <script type="text/javascript" src="../../yastatic.net/share/share.js" charset="utf-8"></script>
                                             <div class="yashare-auto-init" data-yasharel10n="en" data-yasharetype="none" data-yasharequickservices="facebook,twitter,gplus"><span class="b-share"><a rel="nofollow" target="_blank" title="Facebook" class="b-share__handle b-share__link b-share-btn__facebook" href="https://share.yandex.net/go.xml?service=facebook&amp;url=http%3A%2F%2Fsport.statiolh.bget.ru%2Findex.php%2Fmatch%2Fitem%2F14-future-matches%2F4-england-vs-amsterdam-2015-11-14&amp;title=Your%20Joomla!%20Site%20-%20England%20VS%20Amsterdam%20(2015-11-14)%20-%20Future%20matches%20-%20Match%20list%20view" data-service="facebook"><span class="b-share-icon b-share-icon_facebook"></span></a><a rel="nofollow" target="_blank" title="Twitter" class="b-share__handle b-share__link b-share-btn__twitter" href="https://share.yandex.net/go.xml?service=twitter&amp;url=http%3A%2F%2Fsport.statiolh.bget.ru%2Findex.php%2Fmatch%2Fitem%2F14-future-matches%2F4-england-vs-amsterdam-2015-11-14&amp;title=Your%20Joomla!%20Site%20-%20England%20VS%20Amsterdam%20(2015-11-14)%20-%20Future%20matches%20-%20Match%20list%20view" data-service="twitter"><span class="b-share-icon b-share-icon_twitter"></span></a><a rel="nofollow" target="_blank" title="Google Plus" class="b-share__handle b-share__link b-share-btn__gplus" href="https://share.yandex.net/go.xml?service=gplus&amp;url=http%3A%2F%2Fsport.statiolh.bget.ru%2Findex.php%2Fmatch%2Fitem%2F14-future-matches%2F4-england-vs-amsterdam-2015-11-14&amp;title=Your%20Joomla!%20Site%20-%20England%20VS%20Amsterdam%20(2015-11-14)%20-%20Future%20matches%20-%20Match%20list%20view" data-service="gplus"><span class="b-share-icon b-share-icon_gplus"></span></a></span></div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </article>
                         </div>

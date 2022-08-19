@@ -1,7 +1,14 @@
 <?php 
 include('templates/header.php');
+include('./functions/dbconnect.php');
+include('./functions/functions.php');
 include('./functions/home.php');
-
+$upNext = getLastPlayedMatch($conn);
+$team1 = getTeamName($conn, $upNext['team1_id']);
+$team2 = getTeamName($conn, $upNext['team2_id']);
+// print_r($team1);
+// print_r($team2);
+// die()
 ?>
 
 
@@ -115,37 +122,37 @@ include('./functions/home.php');
                                     <div class="va-latest-top">
                                         <h3>Latest <span>Results</span></h3>
                                         <div class="tournament">
-                                            <address>Cambridgeshire UK<br><br></address> </div>
+                                            <address><?=$upNext['location'] ?? ''?><br><br></address> </div>
                                         <div class="date">
-                                            November 29, 2015 | 12:00 am </div>
+                                        <?= date('F d, Y', strtotime($upNext['date'])) ?? ''?> | <?= $upNext['time'] ?? ''?></div>
                                     </div>
                                 </div>
                                 <div class="va-latest-middle uk-flex uk-flex-middle">
                                     <div class="uk-container uk-container-center">
                                         <div class="uk-grid uk-flex uk-flex-middle">
                                             <div class="uk-width-2-12 center">
-                                                <a href="results.php">
+                                                <a href="results.php?id=<?= $upNext['id'] ?? ''?>">
                                                     <img src="images/club-logo.png" class="img-polaroid" alt="" title="">
                                                 </a>
                                             </div>
                                             <div class="uk-width-3-12 name uk-vertical-align">
                                                 <div class="wrap uk-vertical-align-middle">
-                                                    Cambridgehire </div>
+                                                <?=$team1['name'] ?? ''?> </div>
                                             </div>
                                             <div class="uk-width-2-12 score">
                                                 <div class="title">score</div>
                                                 <div class="table">
-                                                    <div class="left"> 3</div>
-                                                    <div class="right"> 5</div>
+                                                    <div class="left"> <?=$upNext['team1_score'] ?? ''?></div>
+                                                    <div class="right"> <?=$upNext['team2_score'] ?? ''?></div>
                                                     <div class="uk-clearfix"></div>
                                                 </div>
                                             </div>
                                             <div class="uk-width-3-12 name alt uk-vertical-align">
                                                 <div class="wrap uk-vertical-align-middle">
-                                                    china </div>
+                                                <?=$team2['name'] ?? ''?> </div>
                                             </div>
                                             <div class="uk-width-2-12 center">
-                                                <a href="results.php">
+                                                <a href="results.php?id=<?= $upNext['id'] ?? ''?>">
                                                    <img src="images/club-logo1.png" class="img-polaroid" alt="" title="">
                                                 </a>
                                             </div>
@@ -163,7 +170,7 @@ include('./functions/home.php');
                                         <div class="uk-grid">
                                             <div class="uk-width-1-1">
                                                 <div class="btn-wrap uk-container-center">
-                                                    <a class="read-more" href="results.php">More Info</a>
+                                                    <a class="read-more" href="results.php?id=<?= $upNext['id'] ?? ''?>">More Info</a>
                                                 </div>
                                             </div>
                                         </div>

@@ -1,7 +1,7 @@
 <?php 
 include('./functions/dbconnect.php');
 
-$sql = 'SELECT * FROM matches LIMIT 7';
+$sql = 'SELECT * FROM matches WHERE `date` > NOW()  ORDER BY `date` LIMIT 7';
 $result = mysqli_query($conn, $sql);
 $matches = mysqli_fetch_all($result,MYSQLI_ASSOC);
 $count = 0;

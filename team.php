@@ -186,19 +186,19 @@ $players = getPlayers($conn,$team['id']);
                                                         </a>
                                                         <ul class="socials">
                                                             <li class="instagram">
-                                                                <a href="http://twitter.com/" target="_blank" rel="nofollow">
+                                                                <a href="http://instagram.com/<?= $player['instagramHandle']?? ''?>" target="_blank" rel="nofollow">
                                                                 </a>
                                                             </li>
                                                             <li class="facebook">
-                                                                <a href="http://facebook.com/" target="_blank" rel="nofollow">
+                                                                <a href="http://facebook.com/<?= $player['facebookLink'] ??""?>" target="_blank" rel="nofollow">
                                                                 </a>
                                                             </li>
                                                             <li class="phone">
-                                                                <a href="https://plus.google.com/" target="_blank" rel="nofollow">
+                                                                <a href="tel:<?= $player['phoneNumber'] ?? ''?>" target="_blank" rel="nofollow">
                                                                 </a>
                                                             </li>
                                                             <li class="email">
-                                                                <a href="https://www.pinterest.com/" target="_blank" rel="nofollow">
+                                                                <a href="mailto:<?=$player['email'] ?? ''?>" target="_blank" rel="nofollow">
                                                                 </a>
                                                             </li>
                                                             <!-- <li class="linkedin">
