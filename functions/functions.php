@@ -156,4 +156,24 @@ function getMatchResults($conn){
     }
 }
 
+
+function getAward($conn,$id){
+    $sql = "SELECT * FROM `awards` WHERE winnerId='$id'";
+    $result = mysqli_query($conn, $sql);
+    $name = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if($name){
+        return $name;
+    }else{
+        return null;
+    }
+}function getAwardDetails($conn,$id){
+    $sql = "SELECT * FROM `awards` WHERE id='$id'";
+    $result = mysqli_query($conn, $sql);
+    $name = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if($name){
+        return $name[0];
+    }else{
+        return null;
+    }
+}
 ?>

@@ -1,6 +1,6 @@
 <?php include('templates/header.php');
-include('./functions/dbconnect.php');
-include('./functions/functions.php');
+// include('./functions/dbconnect.php');
+// include('./functions/functions.php');
 
 $id = $_GET['id'];
 if(!$id){
@@ -22,27 +22,8 @@ $matchResults = getMatchResults($conn);
 ?>
 
     <div class="over-wrap">
-        <div class="toolbar-wrap">
-            <div class="uk-container uk-container-center">
-                <div class="tm-toolbar uk-clearfix uk-hidden-small">
+    <?php include('templates/socials.php')?>
 
-                    <div class="uk-float-right">
-                        <div class="uk-panel">
-                            <div class="social-top">
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-facebook"></span></a>
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-twitter"></span></a>
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-google"></span></a>
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-pinterest"></span></a>
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-youtube"></span></a>
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-instagram"></span></a>
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-flickr"></span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
 
         <div class="tm-menu-box">
 
@@ -156,7 +137,7 @@ $matchResults = getMatchResults($conn);
                                     <?=substr(date('F', strtotime($matchResult['date'])), 0, 3) ?? ''?>                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.php?id=<?= $matchResult['id']?? ''?>">
+                                    <a href="results.php?id=<?= $matchResult['id']?? ''?>">
                                     <img src="images/team-ava.png" class="img-polaroid" alt="<?php $name=getTeamName($conn, $matchResult['team1_id']);
                                     echo $name['name']?> VS <?php $name=getTeamName($conn, $matchResult['team2_id']);
                                     echo $name['name']?>  <?= date('F d, Y', strtotime($matchResult['date'])) ?? ''?> | <?= $matchResult['time'] ?? ''?>" title="<?php $name=getTeamName($conn, $matchResult['team1_id']);
@@ -179,7 +160,7 @@ $matchResults = getMatchResults($conn);
                                     echo $name['name']?>                
                                 </div>
                                 <div class="logo">
-                                    <a href="match-single.php?id=<?= $matchResult['id']?? ''?>">
+                                    <a href="results.php?id=<?= $matchResult['id']?? ''?>">
                                     <img src="images/team-ava1.png" class="img-polaroid" alt="<?php $name=getTeamName($conn, $matchResult['team1_id']);
                                     echo $name['name']?> VS <?php $name=getTeamName($conn, $matchResult['team2_id']);
                                     echo $name['name']?>  <?= date('F d, Y', strtotime($matchResult['date'])) ?? ''?> | <?= $matchResult['time'] ?? ''?>" title="<?php $name=getTeamName($conn, $matchResult['team1_id']);
@@ -192,7 +173,7 @@ $matchResults = getMatchResults($conn);
                                     </address>
                                 </div>
                                 <div class="va-view-wrap">
-                                    <a class="view-article" href="match-single.php?id=<?= $matchResult['id']?? ''?>">view</a>
+                                    <a class="view-article" href="results.php?id=<?= $matchResult['id']?? ''?>">view</a>
                                 </div>
                             </div>
                             <?php endforeach?>

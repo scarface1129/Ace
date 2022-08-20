@@ -1,3 +1,10 @@
+
+<?php 
+
+$pastMatchResults = getMatchResults($conn);
+
+
+?>
 <div class="bottom-wrapper">
             <div class="tm-bottom-f-box  ">
                 <div class="uk-container uk-container-center">
@@ -6,17 +13,14 @@
                         <div class="uk-width-1-1">
                             <div class="uk-panel">
                                 <div class="footer-logo">
-                                    <a href="http://h-sportak.torbara.com/"><img src="images/logo1.png" style="width: 90px; height:90px;margin-bottom:18px;" alt=""><span>ACE</span>.INC</a>
+                                    <a href="index.php"><img src="images/logo1.png" style="width: 90px; height:90px;margin-bottom:18px;" alt=""><span>ACE</span>.INC</a>
                                 </div>
                                 <div class="footer-socials">
                                     <div class="social-top">
                                         <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-facebook"></span></a>
-                                        <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-twitter"></span></a>
+                                        <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-phone"></span></a>
                                         <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-google"></span></a>
-                                        <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-pinterest"></span></a>
-                                        <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-youtube"></span></a>
                                         <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-instagram"></span></a>
-                                        <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-flickr"></span></a>
                                     </div>
                                 </div>
                                 <div class="clear"></div>
@@ -47,190 +51,33 @@
                                             <div class="clear"></div>
                                         </div>
                                         <ul class="uk-slideshow">
+                                            <?php if($pastMatchResults) :?>
+                                            <?php foreach($pastMatchResults as $result) :?>
                                             <li class="" aria-hidden="true">
                                                 <div class="match-list-item alt foot">
                                                     <div class="wrapper">
                                                         <div class="logo">
-                                                            <a href="match-single.html">
-                                                                <img src="images/team-ava.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
+                                                            <a href="match-single.php?id=<?=$result['id'] ?? ''?>">
+                                                                <img src="images/team-ava.png" class="img-polaroid" alt="<?php $name=getTeamName($conn,$result['team1_id']); echo($name['name'])?> VS <?php $name=getTeamName($conn,$result['team2_id']); echo($name['name'])?> <?= ($result['date']) ?? ''?>" title="<?php $name=getTeamName($conn,$result['team1_id']); echo($name['name'])?> VS <?php $name=getTeamName($conn,$result['team2_id']); echo($name['name'])?> <?= ($result['date']) ?? ''?>">
                                                             </a>
                                                         </div>
                                                         <div class="team-name">
-                                                            England </div>
+                                                            <?php $name=getTeamName($conn,$result['team1_id']); echo($name['name'])?> </div>
                                                         <div class="versus">VS</div>
 
                                                         <div class="team-name">
-                                                            Amsterdam </div>
+                                                        <?php $name=getTeamName($conn,$result['team2_id']); echo($name['name'])?> </div>
                                                         <div class="logo">
-                                                            <a href="match-single.html">
-                                                                <img src="images/team-ava1.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
+                                                            <a href="match-single.php?id=<?=$result['id'] ?? ''?>">
+                                                                <img src="images/team-ava1.png" class="img-polaroid" alt="<?php $name=getTeamName($conn,$result['team1_id']); echo($name['name'])?> VS <?php $name=getTeamName($conn,$result['team2_id']); echo($name['name'])?> <?= ($result['date']) ?? ''?>" title="<?php $name=getTeamName($conn,$result['team1_id']); echo($name['name'])?> VS <?php $name=getTeamName($conn,$result['team2_id']); echo($name['name'])?> <?= ($result['date']) ?? ''?>">
                                                             </a>
                                                         </div>
-                                                        <a class="read-more" href="match-single.html">Read More</a>
+                                                        <a class="read-more" href="match-single.php?id=<?=$result['id'] ?? ''?>">Read More</a>
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li class="" aria-hidden="true">
-                                                <div class="match-list-item alt foot">
-                                                    <div class="wrapper">
-                                                        <div class="logo">
-                                                            <a href="match-single.html">
-                                                                <img src="images/team-ava2.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
-                                                            </a>
-                                                        </div>
-                                                        <div class="team-name">
-                                                            Cambridgehire </div>
-                                                        <div class="versus">VS</div>
-
-                                                        <div class="team-name">
-                                                            china </div>
-                                                        <div class="logo">
-                                                            <a href="match-single.html">
-                                                                <img src="images/team-ava3.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
-                                                            </a>
-                                                        </div>
-                                                        <a class="read-more" href="match-single.html">Read More</a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="" aria-hidden="true">
-                                                <div class="match-list-item alt foot">
-                                                    <div class="wrapper">
-                                                        <div class="logo">
-                                                            <a href="match-single.html">
-                                                                <img src="images/team-ava4.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-20)" title="Cambridgehire VS china (2015-11-20)">
-                                                            </a>
-                                                        </div>
-                                                        <div class="team-name">
-                                                            Cambridgehire </div>
-                                                        <div class="versus">VS</div>
-
-                                                        <div class="team-name">
-                                                            china </div>
-                                                        <div class="logo">
-                                                            <a href="match-single.html">
-                                                                <img src="images/team-ava5.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-20)" title="Cambridgehire VS china (2015-11-20)">
-                                                            </a>
-                                                        </div>
-                                                        <a class="read-more" href="match-single.html">Read More</a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="" aria-hidden="true">
-                                                <div class="match-list-item alt foot">
-                                                    <div class="wrapper">
-                                                        <div class="logo">
-                                                            <a href="match-single.html">
-                                                                <img src="images/team-ava.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
-                                                            </a>
-                                                        </div>
-                                                        <div class="team-name">
-                                                            England </div>
-                                                        <div class="versus">VS</div>
-
-                                                        <div class="team-name">
-                                                            Amsterdam </div>
-                                                        <div class="logo">
-                                                            <a href="match-single.html">
-                                                                <img src="images/team-ava1.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
-                                                            </a>
-                                                        </div>
-                                                        <a class="read-more" href="match-single.html">Read More</a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li aria-hidden="false">
-                                                <div class="match-list-item alt foot">
-                                                    <div class="wrapper">
-                                                        <div class="logo">
-                                                            <a href="match-single.html">
-                                                                <img src="images/team-ava2.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
-                                                            </a>
-                                                        </div>
-                                                        <div class="team-name">
-                                                            Cambridgehire </div>
-                                                        <div class="versus">VS</div>
-
-                                                        <div class="team-name">
-                                                            china </div>
-                                                        <div class="logo">
-                                                            <a href="match-single.html">
-                                                                <img src="images/team-ava3.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
-                                                            </a>
-                                                        </div>
-                                                        <a class="read-more" href="match-single.html">Read More</a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="" aria-hidden="true">
-                                                <div class="match-list-item alt foot">
-                                                    <div class="wrapper">
-                                                        <div class="logo">
-                                                            <a href="match-single.html">
-                                                                <img src="images/team-ava4.png" class="img-polaroid" alt="King VS china (2015-11-20)" title="King VS china (2015-11-20)">
-                                                            </a>
-                                                        </div>
-                                                        <div class="team-name">
-                                                            King </div>
-                                                        <div class="versus">VS</div>
-
-                                                        <div class="team-name">
-                                                            china </div>
-                                                        <div class="logo">
-                                                            <a href="match-single.html">
-                                                                <img src="images/team-ava5.png" class="img-polaroid" alt="King VS china (2015-11-20)" title="King VS china (2015-11-20)">
-                                                            </a>
-                                                        </div>
-                                                        <a class="read-more" href="match-single.html">Read More</a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="" aria-hidden="true">
-                                                <div class="match-list-item alt foot">
-                                                    <div class="wrapper">
-                                                        <div class="logo">
-                                                            <a href="match-single.html">
-                                                                <img src="images/team-ava.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
-                                                            </a>
-                                                        </div>
-                                                        <div class="team-name">
-                                                            England </div>
-                                                        <div class="versus">VS</div>
-
-                                                        <div class="team-name">
-                                                            Amsterdam </div>
-                                                        <div class="logo">
-                                                            <a href="match-single.html">
-                                                                <img src="images/team-ava1.png" class="img-polaroid" alt="England VS Amsterdam (2015-11-14)" title="England VS Amsterdam (2015-11-14)">
-                                                            </a>
-                                                        </div>
-                                                        <a class="read-more" href="match-single.html">Read More</a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="" aria-hidden="true">
-                                                <div class="match-list-item alt foot">
-                                                    <div class="wrapper">
-                                                        <div class="logo">
-                                                            <a href="match-single.html">
-                                                                <img src="images/team-ava2.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
-                                                            </a>
-                                                        </div>
-                                                        <div class="team-name">
-                                                            Cambridgehire </div>
-                                                        <div class="versus">VS</div>
-
-                                                        <div class="team-name">
-                                                            china </div>
-                                                        <div class="logo">
-                                                            <a href="match-single.html">
-                                                                <img src="images/team-ava3.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
-                                                            </a>
-                                                        </div>
-                                                        <a class="read-more" href="match-single.html">Read More</a>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                            <?php endforeach?>
+                                            <?php endif?>
                                         </ul>
                                     </div>
 
@@ -241,43 +88,7 @@
                             </div>
                         </div>
 
-                        <div class="uk-width-1-1 uk-width-large-1-2">
-                            <div  class="uk-panel">
-                                <div class="acymailing_module" id="acymailing_module_formAcymailing54111">
-                                    <div class="acymailing_fulldiv" id="acymailing_fulldiv_formAcymailing54111">
-                                        <form id="formAcymailing54111" method="post" name="formAcymailing54111">
-                                            <div class="acymailing_module_form">
-                                                <div class="mail-title">Newsletters</div>
-                                                <div class="acymailing_introtext">Suspendisse sodales, magna at dignissim cursus, velit ex porttitor eros.</div>
-                                                <div class="clear"></div>
-                                                <div class="space"></div>
-                                                <table class="acymailing_form">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="acyfield_email acy_requiredField">
-                                                                <span class="mail-wrap">
-                                                                    <input id="user_email_formAcymailing54111" onfocus="if(this.value == 'Enter your email') this.value = '';" onblur="if(this.value=='') this.value='Enter your email';" class="inputbox" name="user[email]" style="width:80%" value="Enter your email" title="Enter your email" type="text">
-                                                            </span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-
-                                                            <td class="acysubbuttons">
-                                                                <span class="submit-wrap">
-                                                                    <span class="submit-wrapper">
-                                                                        <input class="button subbutton btn btn-primary" value="Subscribe" name="Submit" onclick="try{ return submitacymailingform('optin','formAcymailing54111'); }catch(err){alert('The form could not be submitted '+err);return false;}" type="submit">
-                                                                    </span>
-                                                                </span>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </section>
                 </div>
             </div>
@@ -289,19 +100,20 @@
                     <div class="footer-wrap">
                         <div class="foot-menu-wrap">
                             <ul class="nav menu">
-                                <li class="item-165"><a href="about.html">About</a>
+                                <li class="item-165"><a href="about.php">About Ace Inc</a>
                                 </li>
-                                <li class="item-166"><a href="players.html">Players</a>
+                                <li class="item-166"><a href="teams.php">Teams</a>
+                                </li><li class="item-166"><a href="index.php">Home</a>
                                 </li>
-                                <li class="item-167"><a href="match-list.html">Match</a>
-                                </li>
-                                <li class="item-168"><a href="results.html">Results</a>
-                                </li>
-                                <li class="item-169"><  a href="news.html">News</>
-                                </li>
+                                <!-- <li class="item-167"><a href="match-list.php">Match</a>
+                                </li> -->
+                                <!-- <li class="item-168"><a href="results.php">Results</a>
+                                </li> -->
+                                <!-- <li class="item-169"><  a href="news.php">News</>
+                                </li> -->
                             </ul>
                         </div>
-                        <div class="copyrights">Copyright © 2015 <a href="">Sportak Team</a>. All Rights Reserved.</div>
+                        <div class="copyrights">Copyright © 2022 <a href="">ACE INC Team</a>. All Rights Reserved.</div>
                         <div class="clear"></div>
                     </div>
                 </div>

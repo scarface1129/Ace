@@ -1,9 +1,13 @@
-<?php include('templates/header.php');
+<?php 
+include('templates/header.php');
+// include('./functions/dbconnect.php');
+// include('./functions/functions.php');
 session_start();
-if( isset( $_SESSION['match_errors'] ) ) {
-    $errors = $_SESSION['match_errors'];
-    $values = $_SESSION['match_values'];
+if( isset( $_SESSION['award_errors'] ) ) {
+    $errors = $_SESSION['award_errors'];
+    $values = $_SESSION['award_values'];
  }
+$teamNames = getTeams($conn);
 
 ?>
 <link href="css/costom.css" rel="stylesheet" type="text/css" />
@@ -29,7 +33,7 @@ if( isset( $_SESSION['match_errors'] ) ) {
                             <div class="uk-cover-background uk-position-relative head-wrap" style="height: 290px; background-image: url('images/head-bg.jpg');">
                                 <img class="uk-invisible" src="images/head-bg.jpg" alt="" height="290" width="1920">
                                 <div class="uk-position-cover uk-flex uk-flex-center head-title">
-                                    <h1>Fix A Match</h1>
+                                    <h1>Create Award</h1>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +46,7 @@ if( isset( $_SESSION['match_errors'] ) ) {
             <ul class="uk-breadcrumb">
                 <li><a href="index-2.php">Home</a>
                 </li>
-                <li class="uk-active"><span>Fix A Match</span>
+                <li class="uk-active"><span>Award</span>
                 </li>
             </ul>
         </div>
@@ -55,7 +59,7 @@ if( isset( $_SESSION['match_errors'] ) ) {
 
                         <div class="uk-container uk-container-center tt-gallery-top">
                             <div class="uk-grid" data-uk-grid-match="">
-                                <div class="uk-width-medium-3-10 uk-width-small-1-1 title">Match Fixtures</div>
+                                <div class="uk-width-medium-3-10 uk-width-small-1-1 title">Declear an Award </div>
                                 <div class="uk-width-medium-7-10 uk-width-small-1-1 text">Aenean aliquam, dolor eu lacinia pellentesque, dui arcu condimentum nisl, quis sollicitudin mi lorem quis leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis sapien a ante rutrum pulvinar quis ac tellus. Proin facilisis dui at mollis tincidunt. Sed dignissim orci non arcu luctus pretium. Donec at ex aliquet, porttitor lacus eget, ullamcorper quam. Integer pellentesque egestas arcu, nec molestie leo sollicitudin et</div>
                             </div>
                         </div>
@@ -71,50 +75,23 @@ if( isset( $_SESSION['match_errors'] ) ) {
                             </div>
                             <section class="create">
                                 <div class="form">
-                                    <form action="functions/create_match.php" method="post" enctype="multipart/form-data">
-                                    <h3>Match Information</h3>
+                                    <form action="functions/award.php" method="post" enctype="multipart/form-data">
+                                    <h3>Award Information</h3>
                                         <div class="line"></div>
                                         <div class="form-input">
-                                            <label for="name">Date</label>
-                                            <div style="color: red;"><?= $errors['date'] ?? '' ?></div>
-                                            <input type="date"value='<?= $values['date'] ?? '' ?>' name="date" id="date">
+                                            <label for="name">Name</label>
+                                            <div style="color: red;"><?= $errors['name'] ?? '' ?></div>
+                                            <input type="text"value='<?= $values['name'] ?? '' ?>' name="name" id="name">
                                         </div>
                                         <div class="form-input">
-                                            <label for="name">time</label>
-                                            <div style="color: red;"><?= $errors['time'] ?? '' ?></div>
-                                            <input type="time"value='<?= $values['time'] ?? '' ?>' name="time" id="time">
+                                            <label for="image">Award Image</label>
+                                            <div style="color: red;"><?= $errors['image'] ?? '' ?></div>
+                                            <input type="file" name="image" id="image">
                                         </div>
                                         
-                                        <div class="form-input">
-                                            <label for="team1">team 1 </label>
-                                            <div style="color: red;"><?= $errors['team1'] ?? '' ?></div>
-                                            <input type="text" value='<?= $values['team1'] ?? '' ?>' name="team1" id="team1">
-                                        </div>
-                                        <div class="form-input">
-                                            <label for="team2">team 2 </label>
-                                            <div style="color: red;"><?= $errors['team2'] ?? '' ?></div>
-                                            <input type="text" value='<?= $values['team2'] ?? '' ?>' name="team2" id="team2">
-                                        </div>
-                                        <div class="form-input">
-                                            <label for="about_match">About Match </label>
-                                            <div style="color: red;"><?= $errors['about_match'] ?? '' ?></div>
-                                            <textarea type="text" value='<?= $values['about_match'] ?? '' ?>' name="about_match" id="about_match"><?= $values['about_match'] ?? '' ?></textarea>
-                                        </div>
-                                        <div class="form-input">
-                                            <label for="location">Location </label>
-                                            <div style="color: red;"><?= $errors['location'] ?? '' ?></div>
-                                            <input type="text" value='<?= $values['location'] ?? '' ?>' name="location" id="location">
-                                        </div>
-                                        <div class="form-input">
-                                            <input type="hidden" value='0' name="fouls">
-                                        </div>
-                                        <div class="form-input">
-                                            <input type="hidden" value='0' name="team1_score">
-                                        </div>
-                                        <div class="form-input">
-                                            <input type="hidden" value='0' name="team2_score">
-                                        </div>
                                         
+                                        
+                                       
                                         <div class="form-input">
                                         <input class="button" type="submit" name="submit">
                                         </div>
@@ -151,8 +128,8 @@ if( isset( $_SESSION['match_errors'] ) ) {
 
 <script type="text/javascript" src="js/theme.js"></script>
 <?php
-   unset($_SESSION['match_errors']);
-   unset($_SESSION['match_values']);
+   unset($_SESSION['award_errors']);
+   unset($_SESSION['award_values']);
 ?>
 </body>
 

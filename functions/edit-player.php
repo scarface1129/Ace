@@ -102,7 +102,7 @@ if (empty($email)) {
         session_start();
         $_SESSION['player_errors'] = $player_errors;
         $_SESSION['player_values'] = $player_values;
-        header('Location:../edit-players.php');
+        header("Location:../edit-players.php?id=$id");
     }else{
         $Name = mysqli_real_escape_string($conn,$name);
 $team = mysqli_real_escape_string($conn,$team);

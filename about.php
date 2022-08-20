@@ -1,28 +1,8 @@
 <?php include('templates/header.php');?>
 
     <div class="over-wrap">
-        <div class="toolbar-wrap">
-            <div class="uk-container uk-container-center">
-                <div class="tm-toolbar uk-clearfix uk-hidden-small">
+    <?php include('templates/socials.php')?>
 
-
-                    <div class="uk-float-right">
-                        <div class="uk-panel">
-                            <div class="social-top">
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-facebook"></span></a>
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-twitter"></span></a>
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-google"></span></a>
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-pinterest"></span></a>
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-youtube"></span></a>
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-instagram"></span></a>
-                                <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-flickr"></span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
 
         <div class="tm-menu-box">
 
@@ -42,7 +22,7 @@
                             <div class="uk-cover-background uk-position-relative head-wrap" style="height: 290px; background-image: url('images/head-bg.jpg');">
                                 <img class="uk-invisible" src="images/head-bg.jpg" alt="" height="290" width="1920">
                                 <div class="uk-position-cover uk-flex uk-flex-center head-title">
-                                    <h1>About</h1>
+                                    <h1>About Us</h1>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +35,7 @@
             <ul class="uk-breadcrumb">
                 <li><a href="index-2.php">Home</a>
                 </li>
-                <li class="uk-active"><span>About</span>
+                <li class="uk-active"><span>About Ace Inc</span>
                 </li>
             </ul>
         </div>
@@ -70,7 +50,7 @@
                                 <div class="uk-grid">
                                     <div class="uk-width-large-5-10 uk-width-small-1-1 left-part">
                                         <div class="top-title">
-                                            <h2>About <span>team</span></h2>
+                                            <h2>About <span>Ace Inc</span></h2>
                                         </div>
                                         <p class="sub-title">Pellentesque a urna sit amet turpis tristique facilisis. Pellentesque commodo turpis leo, id pulvinar turpis rhoncus interdum. </p>
                                         <p>Nunc ullamcorper varius magna eu tincidunt. Vestibulum eget nisi mattis, feugiat nisl ac, tempor lacus. Proin a velit rhoncus, imperdiet orci quis, tempus orci. Duis tincidunt dui nec orci imperdiet, at scelerisque augue iaculis. Fusce non arcu tortor. Vivamus sapien metus, porta ut ipsum sit amet, accumsan volutpat libero.</p>
@@ -198,7 +178,7 @@
                                                                 <td>15</td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Awards</td>
+                                                                <td>Legues</td>
                                                                 <td>3</td>
                                                             </tr>
                                                             <tr>
@@ -399,7 +379,7 @@
                         <div class="uk-panel our-awards-wrap">
                             <div class="uk-width-1-1">
                                 <div class="our-awards-title">
-                                    <h3>Our <span>Awards</span></h3>
+                                    <h3>Our <span>Championships</span></h3>
                                 </div>
                                 <div class="our-awards-text">Nullam quis eros tellus. Duis sit amet neque nec orci feugiat tincidunt. Lorem ipsum dolor sit amet,
                                     <br> consectetur adipiscing elit. Nulla sed turpis aliquet, pharetra enim sit amet, congue erat. </div>

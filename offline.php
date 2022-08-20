@@ -22,7 +22,7 @@
 <body class="uk-height-1-1 uk-vertical-align uk-text-center tt-offline">
     <div class="offline-logo">
         <div class="img"></div>
-        <div class="wrap"><span>Sport</span>.ak</div>
+        <div class="wrap"><span>Ace</span>.Inc</div>
     </div>
     <div class="uk-panel uk-width-1-1 uk-panel-box uk-vertical-align-middle message-offline uk-container-center">
         <div id="system-message-container"></div>

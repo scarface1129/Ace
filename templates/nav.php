@@ -42,7 +42,7 @@
                                 </div>
                             </li>
                             
-                            <li class="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="match-list.php">Match</a>
+                            <!-- <li class="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="match-list.php">Match</a>
                                 <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
                                     <div class="uk-grid uk-dropdown-grid">
                                         <div class="uk-width-1-1">
@@ -53,7 +53,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </li>
+                            </li> -->
                             <li><a href="news.php">News</a>
                             </li>
                             
@@ -87,8 +87,11 @@
                                                 </li>
                                                 <li><a href="create_coach.php">Create News</a>
                                                 </li>
-                                                <li><a href="create_coach.php">New Stadium</a>
+                                                <li><a href="create-award.php">New Award</a>
                                                 </li>
+                                                <li><a href="edit-award.php">Update Award</a>
+                                                </li>
+                                                
                                             </ul>
                                         </div>
                                     </div>

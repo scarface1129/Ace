@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     $location               =   $_POST['location'];
     $about_match               =   $_POST['about_match'];
     $fouls               =   $_POST['fouls'];
-    $team1_score               =   $_POST['team2_score'];
+    $team1_score               =   $_POST['team1_score'];
     $team2_score               =   $_POST['team2_score'];
     $played               =   $_POST['played'];
     
@@ -56,7 +56,7 @@ $ready = False;
         session_start();
         $_SESSION['match_errors'] = $match_errors;
         $_SESSION['match_values'] = $match_values;
-        header('Location:../match_form.php');
+        header("Location:../update-match.php?id=$id");
     }else{
     $Id = mysqli_real_escape_string($conn,$id);
     $Date = mysqli_real_escape_string($conn,$date);
