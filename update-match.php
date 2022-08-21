@@ -2,7 +2,10 @@
 // include('./functions/dbconnect.php');
 // include('./functions/functions.php');
 session_start();
-if( isset( $_SESSION['match_errors'] ) ) {
+if(!isset($_SESSION['loginDetail'])){
+    header('Location:login.php');
+    exit();
+}else if( isset( $_SESSION['match_errors'] ) ) {
     $errors = $_SESSION['match_errors'];
     $values = $_SESSION['match_values'];
  }else{

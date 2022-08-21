@@ -17,8 +17,12 @@
     <script type='text/javascript' src='../../ajax.googleapis.com/ajax/libs/mootools/1.3.1/mootools-yui-compressed.js'></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-    <?php include('./functions/dbconnect.php');
-include('./functions/functions.php');?>
+<?php 
+include('./functions/dbconnect.php');
+include('./functions/functions.php');
+
+
+?>
 </head>
 
 <body class="tm-isblog">

@@ -1,9 +1,10 @@
 <?php 
 include('templates/header.php');
-// include('./functions/dbconnect.php');
-// include('./functions/functions.php');
 session_start();
-if( isset( $_SESSION['award_errors'] ) ) {
+if(!isset($_SESSION['loginDetail'])){
+    header('Location:login.php');
+    exit();
+}else if(isset( $_SESSION['award_errors'] ) ) {
     $errors = $_SESSION['award_errors'];
     $values = $_SESSION['award_values'];
  }else{
@@ -16,6 +17,9 @@ if( isset( $_SESSION['award_errors'] ) ) {
     }
     
  }
+print_r($_SESSION);
+die();
+
  if($_GET['id']){
     $id = $_GET['id'];}
 

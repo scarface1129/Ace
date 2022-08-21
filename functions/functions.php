@@ -18,6 +18,16 @@ function getTeam($conn,  $id){
         exit();
     }
 }
+function getTeamCoach($conn,  $id){
+    $sql = "SELECT teamId FROM coach WHERE teamId='$id'";
+    $result = mysqli_query($conn, $sql);
+    $value = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if($value){
+        return True;
+    }else{
+        return False;
+    }
+}
 function getMatchDetail($conn,  $id){
     $sql = "SELECT * FROM matches WHERE id='$id'";
     $result = mysqli_query($conn, $sql);
@@ -125,29 +135,29 @@ function getValue($conn,$id){
 }
 function getMatches($conn){
     $sql = 'SELECT * FROM matches WHERE `date` > NOW()  ORDER BY `date` LIMIT 7';
-$result = mysqli_query($conn, $sql);
-$matches = mysqli_fetch_all($result,MYSQLI_ASSOC);
-$count = 0;
+    $result = mysqli_query($conn, $sql);
+    $matches = mysqli_fetch_all($result,MYSQLI_ASSOC);
+    $count = 0;
 
-foreach ($matches as $match) {
-    $team1_id = $match['team1_id'];
-    $team2_id = $match['team2_id'];
-    // $date = date('F d, Y h:i:s A', strtotime($match['date']));
-    $sql = "SELECT id,`name`,logo FROM teams where id= '$team1_id'";
-    $result = mysqli_query($conn, $sql);
-    $team1 = mysqli_fetch_all($result,MYSQLI_ASSOC);
-    $sql = "SELECT id,`name`,logo FROM teams where id= '$team2_id'";
-    $result = mysqli_query($conn, $sql);
-    $team2 = mysqli_fetch_all($result,MYSQLI_ASSOC);
-    $matches[$count]['team1_id'] = ['info'=> $team1]; 
-    $matches[$count]['team2_id'] = ['info'=> $team2]; 
-    $count++;
-   
-} if($matches){
-    return $matches;
-}else{
-    return null;
-}
+    foreach ($matches as $match) {
+        $team1_id = $match['team1_id'];
+        $team2_id = $match['team2_id'];
+        // $date = date('F d, Y h:i:s A', strtotime($match['date']));
+        $sql = "SELECT id,`name`,logo FROM teams where id= '$team1_id'";
+        $result = mysqli_query($conn, $sql);
+        $team1 = mysqli_fetch_all($result,MYSQLI_ASSOC);
+        $sql = "SELECT id,`name`,logo FROM teams where id= '$team2_id'";
+        $result = mysqli_query($conn, $sql);
+        $team2 = mysqli_fetch_all($result,MYSQLI_ASSOC);
+        $matches[$count]['team1_id'] = ['info'=> $team1]; 
+        $matches[$count]['team2_id'] = ['info'=> $team2]; 
+        $count++;
+    
+    } if($matches){
+        return $matches;
+    }else{
+        return null;
+    }
 }
 
 function getLastPlayedMatch($conn){
@@ -199,6 +209,17 @@ function getAward($conn,$id){
         return $name[0];
     }else{
         return null;
+    }
+}
+
+function userExists($conn,$email,$table){
+    $sql = "SELECT email FROM `$table` WHERE email='$email'";
+    $result = mysqli_query($conn, $sql);
+    $val = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if($val){
+        return True;
+    }else{
+        return False;
     }
 }
 ?>

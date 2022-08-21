@@ -1,5 +1,6 @@
 <?php   
 include('dbconnect.php');
+include('functions.php');
 $coach_errors = ['first_name'=>'','last_name'=>'','team'=>'','picture'=>'','age'=>'','phone'=>'','email'=>'','about_coach'=>''];
 $len = count($coach_errors);
 if(isset($_POST['submit'])){
@@ -40,7 +41,11 @@ if (empty($last_name)) {
 if (empty($team)){
     $coach_errors['team'] = 'Please Identify with a team';
     $len++;
-}if (empty($about_coach)){
+}else if(getTeamCoach($conn,$team)){
+    $coach_errors['team'] = 'Team Already has A Coach';
+    $len++;
+}
+if (empty($about_coach)){
     $coach_errors['about_coach'] = 'Please Write something about yourself';
     $len++;
 }
@@ -87,12 +92,16 @@ if(empty($phone)){
 if (empty($email)) {
     $coach_errors['email'] = 'Email Field Is Required';
     $len++;
-}else{
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+}else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         $coach_errors['email'] =  "Enter a Valid Email";
+        $len++;
+}else{
+    if(userExists($conn,$email,'coach')){
+        $coach_errors['email'] =  "Email Already Exists";
         $len++;
     }
 }
+
 
     if ($len > count($coach_errors)){
         session_start();

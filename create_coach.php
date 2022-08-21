@@ -92,7 +92,7 @@ $teamNames = getTeams($conn);
                                             <label for="team">Team</label>
                                             <div style="color: red;"><?= $errors['team'] ?? '' ?></div>
                                             <select name="team" value='<?= $values['team'] ?? '' ?>' id="team">
-                                                <option value="<?= $values['team'] ?? '' ?>"><?= $values['team'] ?? 'select the team you are coaching' ?></option>
+                                                <option value="<?= $values['team'] ?? '' ?>"><?php $name=getTeamName($conn,$values['team']?? 0);echo($name['name']) ?? 'select the team you are coaching' ?></option>
                                                 <?php if($teamNames):?>
                                                 <?php foreach($teamNames as $team) :?>
                                                 <option value="<?= $team['id'] ?? ''?>"><?= $team['name'] ?? ''?></option>

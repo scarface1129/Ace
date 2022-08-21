@@ -394,8 +394,8 @@ $nextMatch = $matches[0];
                             <div class="gallery-title">
                                 <div class="uk-container uk-container-center tt-gallery-top-main">
                                     <div class="uk-grid" data-uk-grid-match="">
-                                        <div class="uk-width-3-10 title">Gallery</div>
-                                        <div class="uk-width-7-10 text">Nullam quis eros tellus. Duis sit amet neque nec orci feugiat tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed turpis aliquet, pharetra enim sit amet, congue erat. </div>
+                                        <div class="uk-width-5-10 title">Gallery</div>
+                                        <div class="uk-width-4-10 text">Nullam quis eros tellus. Duis sit amet neque nec orci feugiat tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed turpis aliquet, pharetra enim sit amet, congue erat. </div>
                                     </div>
                                 </div>
                             </div>

@@ -6,20 +6,14 @@
                     <li><a href="about.php">About</a></li>
                     <li class="uk-parent uk-active"><a href="#">Pages</a>
                         <ul class="uk-nav-sub">
-                            <li><a href="players.php">Players</a>
+                            <li><a href="teams.php">Teams</a>
                             </li>
                             <li><a href="gallery.php">Gallery</a>
                             </li>
-                            <li><a href="teams.php">Teams</a>
-                            </li>
+                            
                         </ul>
                     </li>
-                    <li class="uk-parent"><a href="match-list.php">Match</a>
-                        <ul class="uk-nav-sub">
-                            <li><a href="results.php">Results</a>
-                            </li>
-                        </ul>
-                    </li>
+                    
                     <li><a href="news.php">News</a>
                     </li>
                     <li><a href="contact.php">Contact</a></li>
@@ -34,7 +28,21 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="contact.php">login</a>
+                    <li class="uk-parent uk-active"><a href="#">Admin</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="match_form.php">Fix Match</a>
+                            </li>
+                            <li><a href="update-match.php?id=1">Update Match</a>
+                            </li>
+                            <li><a href="create_coach.php">Create News</a>
+                            </li>
+                            <li><a href="create-award.php">New Award</a>
+                            </li>
+                            <li><a href="edit-award.php">Update Award</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="login.php">Login</a>
                     </li>
                     
                 </ul>

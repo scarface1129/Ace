@@ -1,6 +1,4 @@
 <?php include('templates/header.php');
-// include('./functions/dbconnect.php');
-// include('./functions/functions.php');
 session_start();
 if( isset( $_SESSION['player_errors'] ) ) {
     $errors = $_SESSION['player_errors'];
@@ -87,7 +85,7 @@ $teamNames = getTeams($conn);
                                             <label for="team">Team</label>
                                             <div style="color: red;"><?= $errors['team'] ?? '' ?></div>
                                             <select name="team"  id="team">
-                                                <option value="<?= $values['team'] ?? '' ?>"><?= $values['team'] ?? 'select your team' ?></option>
+                                                <option value="<?= $values['team'] ?? '' ?>"><?php $name=getTeamName($conn,$values['team']?? 0);echo($name['name']) ?? 'select the team you are coaching' ?></option>
                                                 <?php if($teamNames):?>
                                                 <?php foreach($teamNames as $team) :?>
                                                 <option value="<?= $team['id'] ?? ''?>"><?= $team['name'] ?? ''?></option>

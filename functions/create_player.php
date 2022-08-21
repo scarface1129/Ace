@@ -1,5 +1,6 @@
 <?php   
 include('dbconnect.php');
+include('functions.php');
 $player_errors = ['name'=>'','team'=>'','picture'=>'','jersey_number'=>'','players_age'=>'','players_position'=>'','phone'=>'','email'=>''];
 $len = count($player_errors);
 if(isset($_POST['submit'])){
@@ -90,12 +91,16 @@ if(empty($phone)){
 if (empty($email)) {
     $player_errors['email'] = 'Email Field Is Required';
     $len++;
-}else{
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+}else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         $player_errors['email'] =  "Enter a Valid Email";
+        $len++;
+}else{
+    if(userExists($conn,$email,'players')){
+        $player_errors['email'] =  "Email Already Exists";
         $len++;
     }
 }
+
 
     if ($len > count($player_errors)){
         session_start();
