@@ -106,7 +106,7 @@ $sql = "UPDATE teams SET `name`='$Name',numberOfPlayers='$Players', seekingPlaye
 
 if (mysqli_query($conn, $sql)) {
     
-    header('Location:../index.php');
+    header('Location:../teams.php');
     exit();
     
 }else{

@@ -105,7 +105,7 @@ $sql = "INSERT INTO teams(`name`,numberOfPlayers, seekingPlayers, logo,about_tea
 
 if (mysqli_query($conn, $sql)) {
     
-    header('Location:../index.php');
+    header('Location:../teams.php');
     exit();
     
 }else{

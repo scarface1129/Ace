@@ -111,9 +111,9 @@ if( isset( $_SESSION['team_errors'] ) ) {
                                         <div class="form-input">
                                             <label for="seeking_players">Seeking Players?</label>
                                             <select name="seeking_players" id="seeking_players">
-                                                <option value="<?=$values['seekingPlayers']?? ''?>">No</option>
-                                                <option value="False">No</option>
-                                                <option value="True">Yes</option>
+                                                <option value="<?=$values['seekingPlayers']?? ''?>"></option>
+                                                <option value="0">No</option>
+                                                <option value="1">Yes</option>
                                             </select>
                                         </div>
                                         <div class="form-input">

@@ -644,7 +644,7 @@ $nextMatch = $matches[0];
                                     </div>
                                 </div>
 
-                                <div class="our-team-btn"><a href="players.php"><span>More Info</span></a>
+                                <div class="our-team-btn"><a href="teams.php"><span>More Info</span></a>
                                 </div>
                             </div>
 
