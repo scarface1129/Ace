@@ -37,7 +37,7 @@
 
         <div class="uk-container uk-container-center alt">
             <ul class="uk-breadcrumb">
-                <li><a href="index-2.php">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li class="uk-active"><span>News</span></li>
             </ul>
         </div>

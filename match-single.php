@@ -2,7 +2,15 @@
 // include('./functions/dbconnect.php');
 // include('./functions/functions.php');
 
-$matches = getMatch($conn,$_GET['id']);
+
+if($_GET['id']){
+        $id = $_GET['id'];
+        $matches = getMatch($conn,$_GET['id']);
+    }else{
+        header('Location:./404.php');
+        exit();
+    }
+
 
 
 
@@ -100,7 +108,7 @@ $matches = getMatch($conn,$_GET['id']);
 
         <div class="uk-container uk-container-center alt">
             <ul class="uk-breadcrumb">
-                <li><a href="index-2.php">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="match-list.php">Match list</a></li>
                 <li class="uk-active"><span><?= $matches[0]['team1_id']['info'][0]['name'] ?? ''?> VS <?= $matches[0]['team2_id']['info'][0]['name'] ?? ""?></span></li>
             </ul>

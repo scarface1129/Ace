@@ -2,11 +2,12 @@
 include('templates/header.php');
 // include('./functions/dbconnect.php');
 // include('./functions/functions.php');
-include('./functions/home.php');
 $upNext = getLastPlayedMatch($conn);
 $team1 = getTeamName($conn, $upNext['team1_id']);
 $team2 = getTeamName($conn, $upNext['team2_id']);
 $teams= getAllTeam($conn);
+$matches = getMatches($conn);
+$nextMatch = $matches[0];
 // print_r($team1);
 // print_r($teams);
 // die()

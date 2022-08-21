@@ -10,7 +10,8 @@ if( isset( $_SESSION['player_errors'] ) ) {
         $id = $_GET['id'];
         $values = getPlayersDetail($conn,$id);
     }else{
-        
+        header('Location:./404.php');
+        exit();
     }
     
  }
@@ -57,7 +58,7 @@ $teamNames = getTeams($conn);
 
         <div class="uk-container uk-container-center alt">
             <ul class="uk-breadcrumb">
-                <li><a href="index-2.php">Home</a>
+                <li><a href="index.php">Home</a>
                 </li>
                 <li class="uk-active"><span>Register Player</span>
                 </li>

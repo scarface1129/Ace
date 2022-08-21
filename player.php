@@ -1,4 +1,20 @@
-<?php include('templates/header.php');?>
+<?php include('templates/header.php');
+if($_GET['id']){
+    $id = $_GET['id'];
+    $player = getPlayersDetail($conn,$id);
+}else{
+    header('Location:./404.php');
+    exit();
+}
+
+if ($player == null){
+    header('Location:./404.php');
+    exit();
+}
+// print_r($player);
+// die();
+
+?>
 
 
     <div class="over-wrap">
@@ -23,7 +39,7 @@
                             <div class="uk-cover-background uk-position-relative head-wrap" style="height: 290px; background-image: url('images/head-bg.jpg');">
                                 <img class="uk-invisible" src="images/head-bg.jpg" alt="" height="290" width="1920">
                                 <div class="uk-position-cover uk-flex uk-flex-center head-title">
-                                    <h1>Players</h1>
+                                    <h1>Player</h1>
                                 </div>
                             </div>
                         </div>
@@ -34,11 +50,11 @@
 
         <div class="uk-container uk-container-center alt">
             <ul class="uk-breadcrumb">
-                <li><a href="index-2.php">Home</a>
+                <li><a href="index.php">Home</a>
                 </li>
-                <li><a href="players.php">Players</a>
+                <li><a href="player.php?id=<?=$player['id'] ?? ''?>">Player</a>
                 </li>
-                <li class="uk-active"><span>Christopher Herrera </span>
+                <li class="uk-active"><span><?= $player['name'] ?? ''?> </span>
                 </li>
             </ul>
         </div>
@@ -60,31 +76,30 @@
                                         <div class="uk-grid">
                                             <div class="uk-width-5-12">
                                                 <div class="avatar">
-                                                    <img src="images/05af8f3689acbb6cff8e90e374ebc2b5.jpg" class="img-polaroid" alt="Christopher Herrera" title="Christopher Herrera">                    
+                                                    <img src="images/05af8f3689acbb6cff8e90e374ebc2b5.jpg" class="img-polaroid" alt="<?= $player['name'] ?? ''?>" title="<?= $player['name'] ?? ''?>">                    
                                                 </div>
                                             </div>
                                             <div class="uk-width-1-12">
                                                 <div class="number">
-                                                    36                    
+                                                <?= $player['jerseyNumber'] ?? ''?>                    
                                                 </div>
                                             </div>
                                             <div class="uk-width-6-12">
                                                 <div class="name">
                                                     <h2>
-                                                        Christopher Herrera                        
+                                                    <?= $player['name'] ?? ''?>                        
                                                     </h2>
                                                 </div>
                                                 <div class="wrap">
                                                     <ul class="info">
-                                                        <li><span>POSITION</span><span>STRIKER</span></li>
-                                                        <li><span>APPEARANCES</span><span>581</span></li>
-                                                        <li><span>GOALs</span><span>155</span></li>
-                                                        <li><span>YELLOW CARDS</span><span>15</span></li>
-                                                        <li><span>RED CARDS</span><span>3</span></li>
-                                                        <li><span>D.O.B</span><span>20/08/1985</span></li>
-                                                        <li><span>NATIONALITY</span><span>ENGLISH</span></li>
-                                                        <li><span>HEIGHT</span><span>2.0M</span></li>
-                                                        <li><span>WEIGHT</span><span>81 KG</span></li>
+                                                        <li><span>POSITION</span><span><?= $player['position'] ?? ''?></span></li>
+                                                        <li><span>TEAM</span><span><?php $name=getTeamName($conn,$player['teamId']);echo $name['name'] ?></span></li>
+                                                        <li><span>GOALs</span><span><?= $player['goals'] ?? ''?></span></li>
+                                                        <li><span>YELLOW CARDS</span><span><?= $player['yellow_cards'] ?? ''?></span></li>
+                                                        <li><span>RED CARDS</span><span><?= $player['red_cards'] ?? ''?></span></li>
+                                                        <li><span>AGE</span><span><?= $player['age'] ?? ''?></span></li>
+                                                        <li><span>HEIGHT</span><span><?= $player['height'] ?? ''?> M</span></li>
+                                                        <li><span>WEIGHT</span><span><?= $player['weight'] ?? ''?> KG</span></li>
                                                     </ul>
                                                     <ul class="socials">
                                                         <li class="twitter"><a href="http://twitter.com/" target="_blank" rel="nofollow">
@@ -133,7 +148,7 @@
                                     </div>
                                 </div>
                             </article>
-                            <div>
+                            <!-- <div>
                                 <div class="other-players-wrap">
                                     <div class="uk-container uk-container-center alt">
                                         <div class="uk-grid">
@@ -272,7 +287,7 @@
                                                                             </div>
                                                                             <div class="bio"><span><a draggable="false" href="player.php">bio</a></span></div>
                                                                             <a draggable="false" href="player.php">
-                                                                            <img draggable="false" src="images/8a3d3554567e4859f88a93ac59e1eadc.jpg" class="img-polaroid" alt="Christopher Herrera" title="Christopher Herrera"></a>                                    
+                                                                            <img draggable="false" src="images/8a3d3554567e4859f88a93ac59e1eadc.jpg" class="img-polaroid" alt="<?= $player['name'] ?? ''?>" title="<?= $player['name'] ?? ''?>"></a>                                    
                                                                             <ul class="socials">
                                                                                 <li class="twitter"><a draggable="false" href="http://twitter.com/" target="_blank" rel="nofollow">
                                                                                     </a>
@@ -294,7 +309,7 @@
                                                                         <div class="info">
                                                                             <div class="name">
                                                                                 <h3>
-                                                                                    <a draggable="false" href="player.php">Christopher Herrera</a>
+                                                                                    <a draggable="false" href="player.php"><?= $player['name'] ?? ''?></a>
                                                                                 </h3>
                                                                             </div>
                                                                             <div class="position">STRIKER</div>
@@ -418,7 +433,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </main>
                 </div>

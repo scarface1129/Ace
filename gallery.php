@@ -35,7 +35,7 @@
 
         <div class="uk-container uk-container-center alt">
             <ul class="uk-breadcrumb">
-                <li><a href="http://h-sportak.torbara.com/index.php">Home</a>
+                <li><a href="index.php">Home</a>
                 </li>
                 <li class="uk-active"><span>Gallery</span>
                 </li>
