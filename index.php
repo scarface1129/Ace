@@ -1,16 +1,11 @@
 <?php 
 include('templates/header.php');
-// include('./functions/dbconnect.php');
-// include('./functions/functions.php');
 $upNext = getLastPlayedMatch($conn);
 $team1 = getTeamName($conn, $upNext['team1_id']);
 $team2 = getTeamName($conn, $upNext['team2_id']);
 $teams= getAllTeam($conn);
 $matches = getMatches($conn);
 $nextMatch = $matches[0];
-// print_r($team1);
-// print_r($teams);
-// die()
 ?>
 
 
@@ -278,7 +273,7 @@ $nextMatch = $matches[0];
                                                 <div class="wrapper">
                                                     <div class="logo">
                                                         <a href="match-single.php?id=<?= $match['id'] ?? '' ?>">
-                                                            <img src="images/team-ava.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
+                                                            <img src="images/team-ava.png" class="img-polaroid" alt="<?= $match['team1_id']['info'][0]['name'] ?? '' ?> VS <?= $match['team2_id']['info'][0]['name'] ?? '' ?> <?= $match['date'] ?? ''?>" title="<?= $match['team1_id']['info'][0]['name'] ?? '' ?> VS <?= $match['team2_id']['info'][0]['name'] ?? '' ?> <?= $match['date'] ?? ''?>">
                                                         </a>
                                                     </div>
                                                     <div class="team-name"><?= $match['team1_id']['info'][0]['name'] ?? '' ?> </div>
@@ -287,7 +282,7 @@ $nextMatch = $matches[0];
                                                     <div class="team-name"><?= $match['team2_id']['info'][0]['name'] ?? '' ?> </div>
                                                     <div class="logo">
                                                         <a href="match-single.php?id=<?= $match['id'] ?? '' ?>">
-                                                            <img src="images/team-ava1.png" class="img-polaroid" alt="Cambridgehire VS china (2015-11-29)" title="Cambridgehire VS china (2015-11-29)">
+                                                            <img src="images/team-ava1.png" class="img-polaroid" alt="<?= $match['team1_id']['info'][0]['name'] ?? '' ?> VS <?= $match['team2_id']['info'][0]['name'] ?? '' ?> <?= $match['date'] ?? ''?>" title="<?= $match['team1_id']['info'][0]['name'] ?? '' ?> VS <?= $match['team2_id']['info'][0]['name'] ?? '' ?> <?= $match['date'] ?? ''?>">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -394,8 +389,8 @@ $nextMatch = $matches[0];
                             <div class="gallery-title">
                                 <div class="uk-container uk-container-center tt-gallery-top-main">
                                     <div class="uk-grid" data-uk-grid-match="">
-                                        <div class="uk-width-5-10 title">Gallery</div>
-                                        <div class="uk-width-4-10 text">Nullam quis eros tellus. Duis sit amet neque nec orci feugiat tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed turpis aliquet, pharetra enim sit amet, congue erat. </div>
+                                        <div class="uk-width-6-10 title">Gallery</div>
+                                        <!-- <div class="uk-width-4-10 text">Nullam quis eros tellus. Duis sit amet neque nec orci feugiat tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed turpis aliquet, pharetra enim sit amet, congue erat. </div> -->
                                     </div>
                                 </div>
                             </div>

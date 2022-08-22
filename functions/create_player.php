@@ -124,7 +124,8 @@ if (mysqli_query($conn, $sql)) {
     // $destfile = 'images/uploads/'. $picture;
     // $filepath = $picture['tmp_name'];
     // move_uploaded_file($filepath,$destfile);
-    
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     header('Location:../index.php');
     exit();
     

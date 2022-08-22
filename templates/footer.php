@@ -17,10 +17,10 @@ $pastMatchResults = getMatchResults($conn);
                                 </div>
                                 <div class="footer-socials">
                                     <div class="social-top">
-                                        <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-facebook"></span></a>
-                                        <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-phone"></span></a>
-                                        <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-google"></span></a>
-                                        <a href="#"><span class="uk-icon-small uk-icon-hover uk-icon-instagram"></span></a>
+                                    <a href="http://facebook.com/<?=$contact['facebookLink'] ?? ''?>"><span class="uk-icon-small uk-icon-hover uk-icon-facebook"></span></a>
+                                    <a href="tel:<?= $contact['phone'] ??''?>"><span class="uk-icon-small uk-icon-hover uk-icon-phone"></span></a>
+                                    <a href="mailto:<?=$contact['email'] ?? ''?>"><span class="uk-icon-small uk-icon-hover uk-icon-envelope"></span></a>
+                                    <a href="http://instagram/<?=$contact['instagramHandle'] ?? ''?>"><span class="uk-icon-small uk-icon-hover uk-icon-instagram"></span></a>
                                     </div>
                                 </div>
                                 <div class="clear"></div>

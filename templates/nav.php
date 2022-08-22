@@ -54,6 +54,7 @@
                                 </li>
                                 <li><a href="create_coach.php">Coach Registeration</a>
                                 </li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -73,6 +74,8 @@
                                 <li><a href="create-award.php">New Award</a>
                                 </li>
                                 <li><a href="edit-award.php">Update Award</a>
+                                </li>
+                                <li><a href="aceContactform.php">Ace Contact</a>
                                 </li>
                                 
                             </ul>

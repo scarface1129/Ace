@@ -26,6 +26,7 @@
                             </li>
                             <li><a href="create_coach.php">Coach Registeration</a>
                             </li>
+                            
                         </ul>
                     </li>
                     <li class="uk-parent uk-active"><a href="#">Admin</a>
@@ -39,6 +40,8 @@
                             <li><a href="create-award.php">New Award</a>
                             </li>
                             <li><a href="edit-award.php">Update Award</a>
+                            </li>
+                            <li><a href="aceContactform.php">Ace Contact</a>
                             </li>
                         </ul>
                     </li>

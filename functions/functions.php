@@ -222,4 +222,15 @@ function userExists($conn,$email,$table){
         return False;
     }
 }
+
+function getAceContact($conn){
+    $sql = "SELECT * FROM `contact` WHERE id= '1'";
+    $result = mysqli_query($conn, $sql);
+    $contact = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if($contact){
+        return $contact[0];
+    }else{
+        return null;
+    }
+}
 ?>

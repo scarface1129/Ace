@@ -1,4 +1,10 @@
-<?php include('templates/header.php');?>
+<?php include('templates/header.php');
+
+
+$contact = getAceContact($conn);
+
+
+?>
 
 
 
@@ -58,19 +64,25 @@
                                     <div class="uk-width-1-1">
                                         <div class="contact-socials-wrap">
                                             <ul class="contact-socials">
-                                                <li><a href="#"><i class="uk-icon-facebook"></i></a></li>
-                                                <li><a href="#"><i class="uk-icon-twitter"></i></a></li>
-                                                <li><a href="#"><i class="uk-icon-google-plus"></i></a></li>
-                                                <li><a href="#"><i class="uk-icon-pinterest-p"></i></a></li>
-                                                <li><a href="#"><i class="uk-icon-youtube"></i></a></li>
-                                                <li><a href="#"><i class="uk-icon-instagram"></i></a></li>
-                                                <li><a href="#"><i class="uk-icon-flickr"></i></a></li>
+                                                <?php if($contact['facebookLink']) :?>
+                                                <li><a href="http://facebook.com/<?= $contact['facebookLink']?>"><i class="uk-icon-facebook"></i></a></li>
+                                                <?php endif?>
+                                                <?php if($contact['twitter']) :?>
+                                                <li><a href="http://twitter.com/<?= $contact['twitter']?>"><i class="uk-icon-twitter"></i></a></li>
+                                                <?php endif?>
+                                                <!-- <li><a href="http://youtube.com/"><i class="uk-icon-youtube"></i></a></li> -->
+                                                <?php if($contact['instagramHandle']) :?>
+                                                <li><a href="http://instagram.com/<?= $contact['instagramHandle']?>"><i class="uk-icon-instagram"></i></a></li>
+                                                <?php endif?>
+                                                <?php if($contact['phone']) :?>
+                                                <li><a href="tel:<?= $contact['phone']?>"><i class="uk-icon-phone"></i></a></li>
+                                                <?php endif?>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="uk-grid" data-uk-grid-match="{target:'.contact-enquiries'}">
-                                    <div class="uk-width-medium-1-3 uk-panel">
+                                    <!-- <div class="uk-width-medium-1-3 uk-panel">
                                         <div style="min-height: 139px;" class="contact-enquiries">
                                             <div class="title">CLUB ENQUIRIES</div>
                                             <div class="phone"><i class="uk-icon-phone"></i>(846)-356-9322</div>
@@ -82,21 +94,21 @@
                                             </div>
                                             <div class="location"><i class="uk-icon-map-marker"></i>9478 Chestnut Street, Woodstock, GA 30188</div>
                                         </div>
-                                    </div>
-                                    <div class="uk-width-medium-1-3 uk-panel">
-                                        <div style="min-height: 139px;" class="contact-enquiries">
-                                            <div class="title">MEDIA ENQUIRIES</div>
-                                            <div class="phone"><i class="uk-icon-phone"></i>(748)-864-2151</div>
+                                    </div> -->
+                                    <div class="uk-width-medium-3-3 uk-panel">
+                                        <div style="min-height: 139px; align-items: center;" class="contact-enquiries">
+                                            <div class="title">MEDIA  AND  OFFICIAL ENQUIRIES</div>
+                                            <div class="phone"><i class="uk-icon-phone"></i><?= $contact['phone']?></div>
                                             <div class="mail">
                                                 <i class="uk-icon-envelope"></i>
-                                                <a href="malto:support@torbara.com">
-                                                    support@torbara.com
+                                                <a href="malto:<?= $contact['email']?>">
+                                                <?= $contact['email']?>
                                                 </a>
                                             </div>
-                                            <div class="location"><i class="uk-icon-map-marker"></i>217 Route 70, Lumberton, NC 28358</div>
+                                            <div class="location"><i class="uk-icon-map-marker"></i><?= $contact['address']?></div>
                                         </div>
                                     </div>
-                                    <div class="uk-width-medium-1-3 uk-panel">
+                                    <!-- <div class="uk-width-medium-1-3 uk-panel">
                                         <div style="min-height: 139px;" class="contact-enquiries">
                                             <div class="title">HEAD OFFICE</div>
                                             <div class="phone"><i class="uk-icon-phone"></i>(846)-356-9322</div>
@@ -108,7 +120,7 @@
                                             </div>
                                             <div class="location"><i class="uk-icon-map-marker"></i>241 Adams Street, Huntington, NY 11743</div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -130,11 +142,11 @@
                                         <div class="uk-grid  uk-grid-collapse uk-flex-item-1 uk-height-1-1 uk-nbfc">
                                             <div class="uk-width-5-10 contact-left uk-vertical-align contact-left-wrap">
                                                 <div class="contact-info-lines uk-vertical-align-middle">
-                                                    <div class="item phone"><span class="icon"><i class="uk-icon-phone"></i></span>(846)-356-9322</div>
-                                                    <div class="item mail"><span class="icon"><i class="uk-icon-envelope"></i></span><a href="mailto:support@torbara.com">support@torbara.com</a>
+                                                    <div class="item phone"><span class="icon"><i class="uk-icon-phone"></i></span><?= $contact['phone']?></div>
+                                                    <div class="item mail"><span class="icon"><i class="uk-icon-envelope"></i></span><a href="mailto:<?= $contact['email']?>"><?= $contact['email']?></a>
                                                         
                                                     </div>
-                                                    <div class="item location"><span class="icon"><i class="uk-icon-map-marker"></i></span>9478 Chestnut Street, Woodstock, GA 30188</div>
+                                                    <div class="item location"><span class="icon"><i class="uk-icon-map-marker"></i></span><?= $contact['address']?></div>
                                                 </div>
                                             </div>
                                             <div class="uk-width-medium-5-10 uk-width-small-1-1 contact-right-wrap">
