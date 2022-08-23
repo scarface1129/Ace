@@ -4,7 +4,9 @@ include('./functions/dbconnect.php');
 include('./functions/functions.php');
 $teamNames = getTeams($conn);
 session_start();
-
+// if( isset( $_SESSION['loginDetail'] ) ) {
+//     unset($_SESSION['loginDetail']);
+//  }
 if( isset( $_SESSION['login_errors'] ) ) {
     $errors = $_SESSION['login_errors'];
     $values = $_SESSION['login_values'];
@@ -228,7 +230,6 @@ if( isset( $_SESSION['login_errors'] ) ) {
 <?php
    unset($_SESSION['login_errors']);
    unset($_SESSION['login_values']);
-   unset($_SESSION['loginDetail']);
 
 ?>
 </body>

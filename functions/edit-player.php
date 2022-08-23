@@ -1,6 +1,6 @@
 <?php   
 include('dbconnect.php');
-$player_errors = ['name'=>'','team'=>'','picture'=>'','jersey_number'=>'','players_age'=>'','players_position'=>'','phone'=>'','email'=>''];
+$player_errors = ['name'=>'','team'=>'','picture'=>'','jersey_number'=>'','players_age'=>'','height'=>'','weight'=>'','players_position'=>'','phone'=>'','email'=>''];
 $len = count($player_errors);
 if(isset($_POST['submit'])){
     $id               =   $_POST['id'];
@@ -9,6 +9,8 @@ if(isset($_POST['submit'])){
     $picture            =   $_FILES['picture'];
     $jersey_number      =   $_POST['jersey_number'];
     $players_age        =   $_POST['players_age'];
+    $height        =   $_POST['height'];
+    $weight        =   $_POST['weight'];
     $players_position   =   $_POST['players_position'];
     $phone              =   $_POST['phone'];
     $email              =   $_POST['email'];
@@ -19,6 +21,8 @@ $player_values = ['name'=>$name,
             'profilePicture'=>$picture['name'],
             'jerseyNumber'=>$jersey_number,
             'players_age'=>$players_age,
+            'height'=>$height,
+            'weight'=>$weight,
             'position'=>$players_position,
             'phoneNumber'=>$phone,
             'email'=>$email,
@@ -62,9 +66,11 @@ if ($picture['name'] == null) {
     $exploded = explode('.',$picture['name']);
     $file_type = in_array(strtolower(end($exploded)),$valid);
     $fileinfo = @getimagesize($picture["tmp_name"]);
+    $file_new_name = uniqid('',true) . '.' . strtolower(end($exploded));
+
     if($fileinfo){
         $width = $fileinfo[0];
-        $height = $fileinfo[1];
+        $_height = $fileinfo[1];
     }
     
     if (!$file_type){
@@ -73,11 +79,19 @@ if ($picture['name'] == null) {
     }else if (($picture["size"] > 2000000)) {
         $player_errors['picture'] = "Picture Size is Bigger than 2MB";
         $len++;
-    }else if ($width > "2048" || $height > "2048") {
-        $player_errors['picture'] = "Picture Dimmension is Bigger than 2048 X 2048";
+    }else if ($width > "2000" || $_height > "1500") {
+        $player_errors['picture'] = "Picture Dimmension is Bigger than 2000 X 1500";
         $len++;
     }
   
+}
+if(empty($height)){
+    $player_errors['height'] = 'Height is needed';
+    $len++;
+}
+if(empty($weight)){
+    $player_errors['weight'] = 'Weight is needed';
+    $len++;
 }
 if(empty($phone)){
     $player_errors['phone'] = 'Phone Number is needed';
@@ -106,23 +120,27 @@ if (empty($email)) {
     }else{
         $Name = mysqli_real_escape_string($conn,$name);
 $team = mysqli_real_escape_string($conn,$team);
-$Picture = mysqli_real_escape_string($conn,$picture['name']);
+$Picture = mysqli_real_escape_string($conn,$file_new_name);
 $Jersey_number = mysqli_real_escape_string($conn,$jersey_number);
 $Players_age = mysqli_real_escape_string($conn,$players_age);
+$Weight = mysqli_real_escape_string($conn,$weight);
+$Height = mysqli_real_escape_string($conn,$height);
 $Players_position = mysqli_real_escape_string($conn,$players_position);
 $Phone = mysqli_real_escape_string($conn,$phone);
 $Email = mysqli_real_escape_string($conn,$email);
 $Insta = mysqli_real_escape_string($conn,$instagram);
 $Fb = mysqli_real_escape_string($conn,$facebook);
 $sql = "UPDATE  players SET`name`='$Name',teamId='$team', age='$Players_age', profilePicture='$Picture',position='$Players_position',
-jerseyNumber='$Jersey_number',facebookLink='$Fb',instagramHandle='$Insta',phoneNumber='$Phone',email='$email' WHERE id= '$id'";
+jerseyNumber='$Jersey_number',facebookLink='$Fb',instagramHandle='$Insta',phoneNumber='$Phone',email='$email',height = '$Height',`weight`='$Weight' WHERE id= '$id'";
 
 if (mysqli_query($conn, $sql)) {
-    // $destfile = 'images/uploads/'. $picture;
-    // $filepath = $picture['tmp_name'];
-    // move_uploaded_file($filepath,$destfile);
+    $file_name = $picture['name'];
+    $file_tmp = $picture['tmp_name'];
+    $parent = dirname(__DIR__);
+    $target_dir = $parent."\\uploads\\". $file_new_name;
+    move_uploaded_file($file_tmp, $target_dir);
     
-    header('Location:../index.php');
+    header("Location:../player.php?id=$id");
     exit();
     
 }else{

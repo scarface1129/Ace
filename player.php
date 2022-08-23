@@ -76,7 +76,7 @@ if ($player == null){
                                         <div class="uk-grid">
                                             <div class="uk-width-5-12">
                                                 <div class="avatar">
-                                                    <img src="images/05af8f3689acbb6cff8e90e374ebc2b5.jpg" class="img-polaroid" alt="<?= $player['name'] ?? ''?>" title="<?= $player['name'] ?? ''?>">                    
+                                                    <img src="uploads/<?=$player['profilePicture']?>" class="img-polaroid" alt="<?= $player['name'] ?? ''?>" title="<?= $player['name'] ?? ''?>">                    
                                                 </div>
                                             </div>
                                             <div class="uk-width-1-12">

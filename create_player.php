@@ -119,6 +119,16 @@ $teamNames = getTeams($conn);
                                             </select>
                                         </div>
                                         <div class="form-input">
+                                            <label for="height">Height (M)</label>
+                                            <div style="color: red;"><?= $errors['height'] ?? '' ?></div>
+                                            <input type="text" value='<?= $values['height'] ?? '' ?>' name="height" id="height">
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="weight">Weight (KG)</label>
+                                            <div style="color: red;"><?= $errors['weight'] ?? '' ?></div>
+                                            <input type="text" value='<?= $values['weight'] ?? '' ?>' name="weight" id="weight">
+                                        </div>
+                                        <div class="form-input">
                                             <label for="players_position">Players Position</label>
                                             <div style="color: red;"><?= $errors['players_position'] ?? '' ?></div>
                                             <select name="players_position" value='<?= $values['players_position'] ?? '' ?>' id="players_position">

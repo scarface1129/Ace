@@ -169,7 +169,7 @@ if($teamAward){
                                                             </span>
                                                         </div>
                                                         <a href="player.php">
-                                                        <img src="images/494a6c4fd56d9d2af64b92b6337db693.jpg" class="img-polaroid" alt="Steven Webb" title="Steven Webb">
+                                                        <img src="uploads/<?=$player['profilePicture']?>" class="img-polaroid" alt="Steven Webb" title="Steven Webb">
                                                         </a>
                                                         <ul class="socials">
                                                             <li class="instagram">

@@ -1,6 +1,4 @@
 <?php include('templates/header.php');
-// include('./functions/dbconnect.php');
-// include('./functions/functions.php');
 session_start();
 if(!isset($_SESSION['loginDetail'])){
     header('Location:login.php');
@@ -50,7 +48,7 @@ $teamNames = getTeams($conn);
                             <div class="uk-cover-background uk-position-relative head-wrap" style="height: 290px; background-image: url('images/head-bg.jpg');">
                                 <img class="uk-invisible" src="images/head-bg.jpg" alt="" height="290" width="1920">
                                 <div class="uk-position-cover uk-flex uk-flex-center head-title">
-                                    <h1>Register Player</h1>
+                                    <h1>Edit Player </h1>
                                 </div>
                             </div>
                         </div>
@@ -63,7 +61,7 @@ $teamNames = getTeams($conn);
             <ul class="uk-breadcrumb">
                 <li><a href="index.php">Home</a>
                 </li>
-                <li class="uk-active"><span>Register Player</span>
+                <li class="uk-active"><span>Edit Player</span>
                 </li>
             </ul>
         </div>
@@ -76,7 +74,7 @@ $teamNames = getTeams($conn);
 
                         <div class="uk-container uk-container-center tt-gallery-top">
                             <div class="uk-grid" data-uk-grid-match="">
-                                <div class="uk-width-medium-3-10 uk-width-small-1-1 title">Go Ahead And Get Your Player Registered</div>
+                                <div class="uk-width-medium-3-10 uk-width-small-1-1 title">UPDATE PLAYERS INFORMATION</div>
                                 <div class="uk-width-medium-7-10 uk-width-small-1-1 text">Aenean aliquam, dolor eu lacinia pellentesque, dui arcu condimentum nisl, quis sollicitudin mi lorem quis leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis sapien a ante rutrum pulvinar quis ac tellus. Proin facilisis dui at mollis tincidunt. Sed dignissim orci non arcu luctus pretium. Donec at ex aliquet, porttitor lacus eget, ullamcorper quam. Integer pellentesque egestas arcu, nec molestie leo sollicitudin et</div>
                             </div>
                         </div>
@@ -136,6 +134,16 @@ $teamNames = getTeams($conn);
                                                 <option value="23">23</option>
                                                 <option value="24">24</option>
                                             </select>
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="height">Height (M)</label>
+                                            <div style="color: red;"><?= $errors['height'] ?? '' ?></div>
+                                            <input type="text" value='<?= $values['height'] ?? '' ?>' name="height" id="height">
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="weight">Weight (KG)</label>
+                                            <div style="color: red;"><?= $errors['weight'] ?? '' ?></div>
+                                            <input type="text" value='<?= $values['weight'] ?? '' ?>' name="weight" id="weight">
                                         </div>
                                         <div class="form-input">
                                             <label for="players_position">Players Position</label>
