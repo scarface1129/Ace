@@ -79,8 +79,8 @@ if ($picture['name'] == null) {
     }else if (($picture["size"] > 2000000)) {
         $player_errors['picture'] = "Picture Size is Bigger than 2MB";
         $len++;
-    }else if ($width > "2000" || $_height > "1500") {
-        $player_errors['picture'] = "Picture Dimmension is Bigger than 2000 X 1500";
+    }else if ($width > "500" || $_height > "500") {
+        $player_errors['picture'] = "Picture Dimmension is Bigger than 500 X 500";
         $len++;
     }
   

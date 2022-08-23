@@ -11,11 +11,19 @@ if ($player == null){
     header('Location:./404.php');
     exit();
 }
-// print_r($player);
+session_start();
+if(isset($_SESSION['loginDetail'])){
+    $TeamID = $_SESSION['loginDetail']['teamId'];
+    $PlayerID = $_SESSION['loginDetail']['playerId'];
+}
+
+// print_r($TeamID);
+// print_r($PlayerID);
 // die();
 
 ?>
 
+<link href="css/costom.css" rel="stylesheet" type="text/css" />
 
     <div class="over-wrap">
     <?php include('templates/socials.php')?>
@@ -69,6 +77,7 @@ if ($player == null){
                             <article class="player-single tt-players-page">
                                 <div class="uk-container uk-container-center alt">
                                     <div class="uk-gfid">
+                                        <a href="edit-players.php?id=<?=$player['id'] ?? ''?>" class='edit'>Edit</a>
                                     </div>
                                 </div>
                                 <div class="player-top">

@@ -7750,6 +7750,11 @@ a.uk-thumbnail:focus {
   .uk-text-left-medium {
     text-align: left !important;
   }
+  .player-single .name h2 {
+    
+    font-size: 20px;
+    margin-left: 50px;
+  }
 }
 /* Phone landscape and smaller */
 @media (max-width: 879px) {
@@ -15791,6 +15796,20 @@ ul.uk-switcher {
   }
 }
 @media (max-width: 768px) {
+  .player-single .name h2 {
+    
+    font-size: 20px;
+    margin-left: 50px;
+  }
+  .player-single ul.info {
+
+    width: 100%;
+  }
+  .player-single ul.info span {
+    width: 100%;
+    
+  }
+ 
   .tt-gallery-top .title {
     padding-bottom: 20px;
   }
@@ -15853,7 +15872,39 @@ ul.uk-switcher {
     padding: 0 10px;
   }
 }
+
 @media (max-width: 480px) {
+  .player-single .name h2 {
+    
+    font-size: 20px;
+    margin-left: 50px;
+  }
+  .player-single ul.info {
+    width: 250px;
+    float: left;
+  }
+  .player-single ul.info span {
+    width: 100%;
+    
+  }
+  .player-single .avatar {
+    border: 4px solid #c56119;
+    box-shadow: 0 0 3px 0 #000;
+    width: 250px;
+    clear: both;
+
+  }
+  .player-single .number {
+    display: none;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    background: #c56119;
+    color: #363533;
+    font-size: 38px;
+  }
+
   .tm-logo span {
     font-size: 22px;
   }

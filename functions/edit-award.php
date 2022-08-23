@@ -38,8 +38,8 @@ if ($image['name'] == null) {
     }else if (($image["size"] > 2000000)) {
         $award_errors['image'] = "image Size is Bigger than 2MB";
         $len++;
-    }else if ($width > "2048" || $height > "2048") {
-        $award_errors['image'] = "image Dimmension is Bigger than 2048 X 2048";
+    }else if ($width > "500" || $height > "500") {
+        $award_errors['image'] = "image Dimmension is Bigger than 500 X 500";
         $len++;
     }
   

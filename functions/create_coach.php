@@ -74,8 +74,8 @@ if ($picture['name'] == null) {
     }else if (($picture["size"] > 2000000)) {
         $coach_errors['picture'] = "Picture Size is Bigger than 2MB";
         $len++;
-    }else if ($width > "2048" || $height > "2048") {
-        $coach_errors['picture'] = "Picture Dimmension is Bigger than 2048 X 2048";
+    }else if ($width > "500" || $height > "500") {
+        $coach_errors['picture'] = "Picture Dimmension is Bigger than 500 X 500";
         $len++;
     }
   
