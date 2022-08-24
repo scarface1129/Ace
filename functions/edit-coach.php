@@ -55,7 +55,7 @@ if ($picture['name'] == null) {
     $coach_errors['picture'] = 'Please Upload a Profile Image';
     $len++;
 }else{
-    $valid = ['jpeg','png','jpg'];
+    $valid = ['jpeg','png','jpg','jfif'];
     $exploded = explode('.',$picture['name']);
     $file_type = in_array(strtolower(end($exploded)),$valid);
     $fileinfo = @getimagesize($picture["tmp_name"]);

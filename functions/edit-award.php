@@ -23,7 +23,7 @@ if ($image['name'] == null) {
     $award_errors['image'] = 'Please Upload an Image';
     $len++;
 }else{
-    $valid = ['jpeg','png','jpg'];
+    $valid = ['jpeg','png','jpg','jfif'];
     $exploded = explode('.',$image['name']);
     $file_type = in_array(strtolower(end($exploded)),$valid);
     $fileinfo = @getimagesize($image["tmp_name"]);

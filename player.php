@@ -11,6 +11,7 @@ if ($player == null){
     header('Location:./404.php');
     exit();
 }
+$PlayerID = '';
 session_start();
 if(isset($_SESSION['loginDetail'])){
     $TeamID = $_SESSION['loginDetail']['teamId'];
@@ -60,7 +61,7 @@ if(isset($_SESSION['loginDetail'])){
             <ul class="uk-breadcrumb">
                 <li><a href="index.php">Home</a>
                 </li>
-                <li><a href="player.php?id=<?=$player['id'] ?? ''?>">Player</a>
+                <li><a href="team.php?id=<?=$player['teamId'] ?? ''?>">Team</a>
                 </li>
                 <li class="uk-active"><span><?= $player['name'] ?? ''?> </span>
                 </li>
@@ -77,7 +78,9 @@ if(isset($_SESSION['loginDetail'])){
                             <article class="player-single tt-players-page">
                                 <div class="uk-container uk-container-center alt">
                                     <div class="uk-gfid">
+                                        <?php if($player['id'] == $PlayerID) :?>
                                         <a href="edit-players.php?id=<?=$player['id'] ?? ''?>" class='edit'>Edit</a>
+                                        <?php endif?>
                                     </div>
                                 </div>
                                 <div class="player-top">

@@ -45,7 +45,7 @@ if ($logo['name'] == null) {
     $len++;
 
 }else{
-    $valid = ['jpeg','png','jpg'];
+    $valid = ['jpeg','png','jpg','jfif'];
     $exploded = explode('.',$logo['name']);
     $file_type = in_array(strtolower(end($exploded)),$valid);
     $fileinfo = @getimagesize($logo["tmp_name"]);
