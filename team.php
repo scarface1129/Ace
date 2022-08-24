@@ -13,6 +13,17 @@ if($teamAward){
     $awardCount = 0;
 
 }
+if($coach['id'] == null){
+    $coach['id'] = 0;
+}
+
+session_start();
+$CoachID = '';
+if(isset($_SESSION['loginDetail']['coachId'])){
+    $TeamID = $_SESSION['loginDetail']['teamId'];
+    $CoachID = $_SESSION['loginDetail']['coachId'];
+}
+
 // print_r($awardCount);
 // die()
 ?>
@@ -57,18 +68,25 @@ if($teamAward){
             </ul>
         </div>
         
-
+                
         <div class="uk-container uk-container-center">
             <div id="tm-middle" class="tm-middle uk-grid" data-uk-grid-match="" data-uk-grid-margin="">
                 <div class="tm-main uk-width-medium-1-1 uk-row-first">
-                    <main id="tm-content" class="tm-content">  
+                    <main id="tm-content" class="tm-content"> 
+                        <?php if($coach['id'] == $CoachID) :?> 
+                        <div>
+                        <a href="edit-team.php?id=<?=$team['id']?>" style='float:right;padding: 7px;color: white;background-color: black;margin: 10px;'>Edit</a>
+                        </div>
+                        <?php endif ?>
                         <div class='team_name'>
-                            <h2><?= $team['name']?></h2>
-                        </div>                      
+                            <h2><?= $team['name']?> </h2>
+                            
+                        </div>
+                                              
                         <div class="tm-top-c-box tm-full-width  home-about">
                             <div class="uk-container uk-container-center">
                                 <section id="tm-top-c" class="tm-top-c uk-grid uk-grid-collapse" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin="">
-
+                                
                                     <div class="uk-width-1-1 uk-width-large-1-2">
                                         <div class="uk-panel">
                                             <div class="va-about-wrap clearfix uk-cover-background uk-position-relative">

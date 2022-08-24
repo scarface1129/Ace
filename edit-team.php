@@ -120,7 +120,7 @@ if(!isset($_SESSION['loginDetail'])){
                                             </select>
                                         </div>
                                         <div class="form-input">
-                                            <label for="about_team">About Coach </label>
+                                            <label for="about_team">About Team </label>
                                             <div style="color: red;"><?= $errors['about_team'] ?? '' ?></div>
                                             <textarea type="text" value='<?= $values['about_team'] ?? '' ?>' name="about_team" id="about_team"><?= $values['about_team'] ?? '' ?></textarea>
                                         </div>

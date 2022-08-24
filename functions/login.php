@@ -49,9 +49,7 @@ if (empty($email)) {
         if ($value) {
             session_start();
             $loginDetails = ['teamId'=>$Team,'coachId'=>$value[0]['id']];
-            $_SESSION['loginDetail']=$loginDetails;
-            print_r($_SESSION);
-            die();      
+            $_SESSION['loginDetail']=$loginDetails;      
             header('Location:../index.php');
             exit();
         }else{

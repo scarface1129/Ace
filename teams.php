@@ -1,8 +1,11 @@
 <?php 
 include('templates/header.php');
-// include('./functions/functions.php');
-// include('./functions/dbconnect.php');
 $teams= getAllTeam($conn);
+$CoachID = '';
+
+
+
+
 // print_r($teams);
 // die();
 ?>
@@ -62,7 +65,7 @@ $teams= getAllTeam($conn);
                                     <div class="wrapper">
                                         <div class="img-wrap uk-flex-wrap-top">
                                             <a href="team.php?id=<?= $team['id']?>">
-                                            <img src="images/news/35b8bf93115eb2b8da9f8b4f41fdb0fd.jpg" class="img-polaroid" alt="">
+                                            <img src="uploads/<?= $team['logo'] ?? ''?>" class="img-polaroid" alt="">
                                             </a>        
                                         </div>
                                         <div class="info uk-flex-wrap-middle">

@@ -9,7 +9,8 @@
                 
             </li>
             <li data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="about.php">About</a></li>
-            <li class="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="#">Pages</a>
+            <li data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="teams.php">Teams</a></li>
+            <!-- <li class="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="#">Pages</a>
                 <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
                     <div class="uk-grid uk-dropdown-grid">
                         <div class="uk-width-1-1">
@@ -23,7 +24,7 @@
                         </div>
                     </div>
                 </div>
-            </li>
+            </li> -->
             
             <!-- <li class="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="match-list.php">Match</a>
                 <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">

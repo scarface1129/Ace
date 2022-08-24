@@ -48,6 +48,8 @@ if ($logo['name'] == null) {
     $exploded = explode('.',$logo['name']);
     $file_type = in_array(strtolower(end($exploded)),$valid);
     $fileinfo = @getimagesize($logo["tmp_name"]);
+    $file_new_name = uniqid('',true) . '.' . strtolower(end($exploded));
+
     if($fileinfo){
         $width = $fileinfo[0];
         $height = $fileinfo[1];
@@ -94,17 +96,22 @@ if (empty($email)) {
     }else{
         $Name = mysqli_real_escape_string($conn,$name);
 $Players = mysqli_real_escape_string($conn,$numberOfPlayers);
-$Logo = mysqli_real_escape_string($conn,$logo['name']);
+$Logo = mysqli_real_escape_string($conn,$file_new_name);
 $Seeking_players = mysqli_real_escape_string($conn,$seeking_players);
 $About_team = mysqli_real_escape_string($conn,$about_team);
 $Phone = mysqli_real_escape_string($conn,$phone);
 $Email = mysqli_real_escape_string($conn,$email);
 $Insta = mysqli_real_escape_string($conn,$instagram);
 $Fb = mysqli_real_escape_string($conn,$facebook);
-$sql = "INSERT INTO teams(`name`,numberOfPlayers, seekingPlayers, logo,about_team,facebookLink,instagramHandle,phoneNumber,email) VALUES ('$Name', '$Players', '$Seeking_players','$Logo','$About_team','$Fb','$Insta','$Phone','$email')";
+$sql = "INSERT INTO teams(`name`,numberOfPlayers, seekingPlayers, logo,about_team,facebookLink,instagramHandle,phoneNumber,email) 
+VALUES ('$Name', '$Players', '$Seeking_players','$Logo','$About_team','$Fb','$Insta','$Phone','$email')";
 
 if (mysqli_query($conn, $sql)) {
-    
+    $file_name = $logo['name'];
+    $file_tmp = $logo['tmp_name'];
+    $parent = dirname(__DIR__);
+    $target_dir = $parent."\\uploads\\". $file_new_name;
+    move_uploaded_file($file_tmp, $target_dir);
     header('Location:../teams.php');
     exit();
     

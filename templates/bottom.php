@@ -4,7 +4,8 @@
                     <li class="uk-parent uk-active"><a href="index-2.php">Home</a>
                     </li>
                     <li><a href="about.php">About</a></li>
-                    <li class="uk-parent uk-active"><a href="#">Pages</a>
+                    <li><a href="teams.php">Teams</a></li>
+                    <!-- <li class="uk-parent uk-active"><a href="#">Pages</a>
                         <ul class="uk-nav-sub">
                             <li><a href="teams.php">Teams</a>
                             </li>
@@ -12,7 +13,7 @@
                             </li>
                             
                         </ul>
-                    </li>
+                    </li> -->
                     
                     <li><a href="news.php">News</a>
                     </li>

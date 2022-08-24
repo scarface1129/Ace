@@ -87,7 +87,7 @@ if ($picture['name'] == null) {
     }
   
 }
-if(empty($_zheight)){
+if(empty($_height)){
     $player_errors['height'] = 'Height is needed';
     $len++;
 }

@@ -49,6 +49,8 @@ if ($logo['name'] == null) {
     $exploded = explode('.',$logo['name']);
     $file_type = in_array(strtolower(end($exploded)),$valid);
     $fileinfo = @getimagesize($logo["tmp_name"]);
+    $file_new_name = uniqid('',true) . '.' . strtolower(end($exploded));
+
     if($fileinfo){
         $width = $fileinfo[0];
         $height = $fileinfo[1];
@@ -95,7 +97,7 @@ if (empty($email)) {
     }else{
         $Name = mysqli_real_escape_string($conn,$name);
 $Players = mysqli_real_escape_string($conn,$numberOfPlayers);
-$Logo = mysqli_real_escape_string($conn,$logo['name']);
+$Logo = mysqli_real_escape_string($conn,$file_new_name);
 $Seeking_players = mysqli_real_escape_string($conn,$seeking_players);
 $About_team = mysqli_real_escape_string($conn,$about_team);
 $Phone = mysqli_real_escape_string($conn,$phone);
@@ -105,8 +107,12 @@ $Fb = mysqli_real_escape_string($conn,$facebook);
 $sql = "UPDATE teams SET `name`='$Name',numberOfPlayers='$Players', seekingPlayers='$Seeking_players', logo='$Logo',about_team='$About_team',facebookLink='$Fb',instagramHandle='$Insta',phoneNumber='$Phone',email='$email' WHERE id = '$id'";
 
 if (mysqli_query($conn, $sql)) {
-    
-    header('Location:../teams.php');
+    $file_name = $logo['name'];
+    $file_tmp = $logo['tmp_name'];
+    $parent = dirname(__DIR__);
+    $target_dir = $parent."\\uploads\\". $file_new_name;
+    move_uploaded_file($file_tmp, $target_dir);
+    header("Location:../team.php?id=$id");
     exit();
     
 }else{
