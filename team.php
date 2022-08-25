@@ -17,7 +17,6 @@ if($coach['id'] == null){
     $coach['id'] = 0;
 }
 
-session_start();
 $CoachID = '';
 if(isset($_SESSION['loginDetail']['coachId'])){
     $TeamID = $_SESSION['loginDetail']['teamId'];
@@ -115,7 +114,7 @@ if(isset($_SESSION['loginDetail']['coachId'])){
                                                         </div>
                                                         <ul class="uk-grid uk-slideset uk-grid-width-1-1">
                                                             <li class="uk-active">
-                                                                <div class="img-wrap"><img src="images/trainer-slider/trainer-img.jpg" alt="coaches image">
+                                                                <div class="img-wrap"><img src="uploads/<?= $coach['picture'] ?? ''?>" alt="coaches image">
                                                                 </div>
                                                                 <div class="name"><?= $coach['first_name'] ?? ''?> <span><?= $coach['last_name'] ?? ''?></span>
                                                                 </div>

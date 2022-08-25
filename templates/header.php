@@ -20,6 +20,7 @@
 <?php 
 include('./functions/dbconnect.php');
 include('./functions/functions.php');
+session_start();
 
 
 ?>

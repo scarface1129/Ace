@@ -1,5 +1,4 @@
 <?php include('templates/header.php');
-session_start();
 if(!isset($_SESSION['loginDetail'])){
     header('Location:login.php');
     exit();

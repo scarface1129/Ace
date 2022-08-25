@@ -1,7 +1,7 @@
 <div id="offcanvas" class="uk-offcanvas">
             <div class="uk-offcanvas-bar">
                 <ul class="uk-nav uk-nav-offcanvas">
-                    <li class="uk-parent uk-active"><a href="index-2.php">Home</a>
+                    <li class="uk-parent uk-active"><a href="index.php">Home</a>
                     </li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="teams.php">Teams</a></li>
@@ -30,6 +30,8 @@
                             
                         </ul>
                     </li>
+                    <?php if(isset($_SESSION['loginDetail'])) :?>
+                    <?php if($_SESSION['loginDetail'] == ['Admin']) :?>
                     <li class="uk-parent uk-active"><a href="#">Admin</a>
                         <ul class="uk-nav-sub">
                             <li><a href="match_form.php">Fix Match</a>
@@ -46,8 +48,15 @@
                             </li>
                         </ul>
                     </li>
+                    <?php endif?>
+                    <?php endif?>
+                    <?php if(isset($_SESSION['loginDetail'])) :?>
+                    <li><a href="login.php">Logout</a>
+                    </li>
+                    <?php else :?>
                     <li><a href="login.php">Login</a>
                     </li>
+                    <?php endif?>
                     
                 </ul>
             </div>

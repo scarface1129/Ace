@@ -2,7 +2,6 @@
 include('templates/header.php');
 // include('./functions/dbconnect.php');
 // include('./functions/functions.php');
-session_start();
 if( isset( $_SESSION['ace_errors'] ) ) {
     $errors = $_SESSION['ace_errors'];
     $values = $_SESSION['ace_values'];

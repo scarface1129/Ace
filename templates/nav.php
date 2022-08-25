@@ -61,6 +61,8 @@
                     </div>
                 </div>
             </li>
+            <?php if(isset($_SESSION['loginDetail'])) :?>
+            <?php if($_SESSION['loginDetail'] == ['Admin']) :?>
             <li class="uk-parent" data-uk-dropdown="{'preventflip':'y'}" aria-haspopup="true" aria-expanded="false"><a href="#">Admin</a>
                 <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1">
                     <div class="uk-grid uk-dropdown-grid">
@@ -84,8 +86,15 @@
                     </div>
                 </div>
             </li>
-            <li><a href="login.php">Login</a>
-            </li>
+            <?php endif?>
+            <?php endif?>
+            <?php if(isset($_SESSION['loginDetail'])) :?>
+                <li><a href="login.php">Logout</a>
+                </li>
+                <?php else :?>
+                <li><a href="login.php">Login</a>
+                </li>
+                <?php endif?>
         </ul>
         <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas=""></a>
     </div>

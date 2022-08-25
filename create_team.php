@@ -1,5 +1,4 @@
 <?php include('templates/header.php');
-session_start();
 if( isset( $_SESSION['team_errors'] ) ) {
     $errors = $_SESSION['team_errors'];
     $values = $_SESSION['team_values'];

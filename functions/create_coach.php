@@ -63,6 +63,8 @@ if ($picture['name'] == null) {
     $exploded = explode('.',$picture['name']);
     $file_type = in_array(strtolower(end($exploded)),$valid);
     $fileinfo = @getimagesize($picture["tmp_name"]);
+    $file_new_name = uniqid('',true) . '.' . strtolower(end($exploded));
+
     if($fileinfo){
         $width = $fileinfo[0];
         $height = $fileinfo[1];
@@ -112,7 +114,7 @@ if (empty($email)) {
 $First_name = mysqli_real_escape_string($conn,$first_name);
 $Last_name = mysqli_real_escape_string($conn,$last_name);
 $team = mysqli_real_escape_string($conn,$team);
-$Picture = mysqli_real_escape_string($conn,$picture['name']);
+$Picture = mysqli_real_escape_string($conn,$file_new_name);
 $age = mysqli_real_escape_string($conn,$age);
 $Phone = mysqli_real_escape_string($conn,$phone);
 $Email = mysqli_real_escape_string($conn,$email);
@@ -120,11 +122,13 @@ $About = mysqli_real_escape_string($conn,$about_coach);
 $sql = "INSERT INTO coach(`first_name`,last_name,teamId, age, email,phone,picture,about_coach) VALUES ('$First_name','$Last_name', '$team', '$age','$Email','$Phone','$Picture','$About')";
 
 if (mysqli_query($conn, $sql)) {
-    // $destfile = 'images/uploads/'. $picture;
-    // $filepath = $picture['tmp_name'];
-    // move_uploaded_file($filepath,$destfile);
+    $file_name = $picture['name'];
+    $file_tmp = $picture['tmp_name'];
+    $parent = dirname(__DIR__);
+    $target_dir = $parent."\\uploads\\". $file_new_name;
+    move_uploaded_file($file_tmp, $target_dir);
     
-    header('Location:../index.php');
+    header("Location:../team.php?id=$team");
     exit();
    
 }else{

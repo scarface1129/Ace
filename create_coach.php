@@ -2,7 +2,6 @@
 include('templates/header.php');
 // include('./functions/dbconnect.php');
 // include('./functions/functions.php');
-session_start();
 if( isset( $_SESSION['coach_errors'] ) ) {
     $errors = $_SESSION['coach_errors'];
     $values = $_SESSION['coach_values'];

@@ -2,7 +2,6 @@
 include('templates/header.php');
 // include('./functions/dbconnect.php');
 // include('./functions/functions.php');
-session_start();
 if( isset( $_SESSION['award_errors'] ) ) {
     $errors = $_SESSION['award_errors'];
     $values = $_SESSION['award_values'];
