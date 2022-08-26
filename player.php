@@ -11,6 +11,7 @@ if ($player == null){
     header('Location:./404.php');
     exit();
 }
+$PlayerID = 0;
 if(isset($_SESSION['loginDetail'])){
     $TeamID = $_SESSION['loginDetail']['teamId'];
     $PlayerID = $_SESSION['loginDetail']['playerId'] ?? '';

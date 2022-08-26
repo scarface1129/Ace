@@ -1,7 +1,8 @@
 <?php 
 include('templates/header.php');
-// include('./functions/dbconnect.php');
-// include('./functions/functions.php');
+if($_SESSION['loginDetail'] != ['Admin']){
+    header('Location:index.php?error=Restricted-Page');
+}
 if( isset( $_SESSION['award_errors'] ) ) {
     $errors = $_SESSION['award_errors'];
     $values = $_SESSION['award_values'];

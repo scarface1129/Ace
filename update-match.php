@@ -1,6 +1,5 @@
 <?php include('templates/header.php');
-// include('./functions/dbconnect.php');
-// include('./functions/functions.php');
+
 if(!isset($_SESSION['loginDetail'])){
     header('Location:login.php');
     exit();
@@ -15,6 +14,9 @@ if(!isset($_SESSION['loginDetail'])){
         exit();
     }
  }
+ if($_SESSION['loginDetail'] != ['Admin']){
+    header('Location:index.php?error=Restricted-Page');
+}
  if($_GET['id']){
     $id = getValue($conn,$_GET['id']);
  }

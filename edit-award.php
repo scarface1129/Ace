@@ -1,5 +1,8 @@
 <?php 
 include('templates/header.php');
+if($_SESSION['loginDetail'] != ['Admin']){
+    header('Location:index.php?error=Restricted-Page');
+}
 if(!isset($_SESSION['loginDetail'])){
     header('Location:login.php');
     exit();

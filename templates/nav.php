@@ -72,7 +72,7 @@
                                 </li>
                                 <li><a href="update-match.php?id=1">Update Match</a>
                                 </li>
-                                <li><a href="create_coach.php">Create News</a>
+                                <li><a href="create-news.php">Create News</a>
                                 </li>
                                 <li><a href="create-award.php">New Award</a>
                                 </li>
