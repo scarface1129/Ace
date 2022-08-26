@@ -1,4 +1,10 @@
-<?php include('templates/header.php');?>
+<?php 
+include('templates/header.php');
+
+$getAward = getAwards($conn);
+
+
+?>
 
     <div class="over-wrap">
     <?php include('templates/socials.php')?>
@@ -384,69 +390,18 @@
                                 <div class="our-awards-text">Nullam quis eros tellus. Duis sit amet neque nec orci feugiat tincidunt. Lorem ipsum dolor sit amet,
                                     <br> consectetur adipiscing elit. Nulla sed turpis aliquet, pharetra enim sit amet, congue erat. </div>
                             </div>
-                            <div dir="ltr" class="uk-slidenav-position our-awards" data-uk-slider="{default: 6, autoplay:true, autoplayInterval:7000, animation: 'slide-bottom', duration: 400}">
+                            <div dir="ltr" class="uk-slidenav-position our-awards" data-uk-slider="{default: 2, autoplay:true, autoplayInterval:7000, animation: 'slide-bottom', duration: 400}">
                                 <div class="uk-slider-container">
                                     <ul class="uk-slider uk-grid uk-grid-width-large-1-5 uk-grid-width-medium-1-3">
+                                        <?php if($getAward) :?>
+                                        <?php foreach($getAward as $award) :?>
                                         <li class="uk-slide-after">
-                                            <div class="img-wrap"><img draggable="false" src="images/award-img.png" alt="">
+                                            <div class="img-wrap"><img draggable="false" src="uploads/<?= $award['image'] ??''?>" alt="">
                                             </div>
-                                            <div class="text">2014 world cup champion</div>
+                                            <div class="text"><?= $award['name'] ??''?></div>
                                         </li>
-                                        <li class="uk-slide-after">
-                                            <div class="img-wrap"><img draggable="false" src="images/award-img1.png" alt="">
-                                            </div>
-                                            <div class="text">2014 world cup champion</div>
-                                        </li>
-                                        <li class="uk-slide-after">
-                                            <div class="img-wrap"><img draggable="false" src="images/award-img2.png" alt="">
-                                            </div>
-                                            <div class="text">2014 world cup champion</div>
-                                        </li>
-                                        <li class="uk-slide-after">
-                                            <div class="img-wrap"><img draggable="false" src="images/award-img3.png" alt="">
-                                            </div>
-                                            <div class="text">2014 world cup champion</div>
-                                        </li>
-                                        <li class="uk-slide-after">
-                                            <div class="img-wrap"><img draggable="false" src="images/award-img4.png" alt="">
-                                            </div>
-                                            <div class="text">2014 world cup champion</div>
-                                        </li>
-                                        <li class="uk-slide-before">
-                                            <div class="img-wrap"><img draggable="false" src="images/award-img5.png" alt="">
-                                            </div>
-                                            <div class="text">2014 world cup champion</div>
-                                        </li>
-                                        <li class="uk-slide-before">
-                                            <div class="img-wrap"><img draggable="false" src="images/award-img3.png" alt="">
-                                            </div>
-                                            <div class="text">2014 world cup champion</div>
-                                        </li>
-                                        <li class="uk-slide-before">
-                                            <div class="img-wrap"><img draggable="false" src="images/award-img.png" alt="">
-                                            </div>
-                                            <div class="text">2014 world cup champion</div>
-                                        </li>
-                                        <li class="uk-slide-before">
-                                            <div class="img-wrap"><img draggable="false" src="images/award-img1.png" alt="">
-                                            </div>
-                                            <div class="text">2014 world cup champion</div>
-                                        </li>
-                                        <li class="uk-slide-before">
-                                            <div class="img-wrap"><img draggable="false" src="images/award-img2.png" alt="">
-                                            </div>
-                                            <div class="text">2014 world cup champion</div>
-                                        </li>
-                                        <li class="uk-slide-before">
-                                            <div class="img-wrap"><img draggable="false" src="images/award-img3.png" alt="">
-                                            </div>
-                                            <div class="text">2014 world cup champion</div>
-                                        </li>
-                                        <li class="">
-                                            <div class="img-wrap"><img draggable="false" src="images/award-img4.png" alt="">
-                                            </div>
-                                            <div class="text">2014 world cup champion</div>
-                                        </li>
+                                        <?php endforeach?>
+                                        <?php endif?>
                                     </ul>
                                 </div>
                             </div>

@@ -192,7 +192,16 @@ function getMatchResults($conn){
 }
 
 
-function getAward($conn,$id){
+function getAwards($conn){
+    $sql = "SELECT * FROM `awards`";
+    $result = mysqli_query($conn, $sql);
+    $awards = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if($awards){
+        return $awards;
+    }else{
+        return null;
+    }
+}function getAward($conn,$id){
     $sql = "SELECT * FROM `awards` WHERE winnerId='$id'";
     $result = mysqli_query($conn, $sql);
     $name = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -248,6 +257,15 @@ function getNews($conn){
     $news = mysqli_fetch_all($result, MYSQLI_ASSOC);
     if($news){
         return $news;
+    }else{
+        return null;
+    }
+}function getCommment($conn, $id){
+    $sql = "SELECT * FROM comment WHERE newsId = $id ORDER BY id DESC";
+    $result = mysqli_query($conn, $sql);
+    $comment = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if($comment){
+        return $comment;
     }else{
         return null;
     }

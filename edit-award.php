@@ -19,8 +19,8 @@ if(!isset($_SESSION['loginDetail'])){
     }
     
  }
-print_r($_SESSION);
-die();
+// print_r($_SESSION);
+// die();
 
  if($_GET['id']){
     $id = $_GET['id'];}

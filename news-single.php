@@ -10,8 +10,9 @@ if($_GET['id']){
 }
 
 $otherPosts = getAllPost($conn);
-
-// print_r($otherPosts);
+$comments = array_slice(getCommment($conn,$id), 0, 3);
+$count = count(getCommment($conn,$id)) ?? 0;
+// print_r($count);
 // die()
 
 
@@ -162,16 +163,18 @@ $otherPosts = getAllPost($conn);
                             <div id="comments-wrap">
                                 <div id="jc">
                                     <div id="comments">
-                                        <h3>Comments <span>3</span></h3>
+                                        <h3>Comments <span><?= $count?></span></h3>
+                                        <?php if($comments) :?>
+                                        <?php foreach($comments as $comment) :?>
                                         <div class="comments-list" id="comments-list-0">
                                             <div class="even" id="comment-item-14">
                                                 <div class="rbox">
                                                     <!-- <div class="comment-avatar"><img src="../../www.gravatar.com/avatar/d18ba4a7237afbb7b1fb23fc70c2081bf4db.jpeg?d=http%3A%2F%2Fsport.statiolh.bget.ru%2Fcomponents%2Fcom_jcomments%2Fimages%2Fno_avatar.png" alt="Jesica"></div> -->
                                                     <div class="comment-box avatar-indent">
                                                         <a class="comment-anchor" href="#comment-14" id="comment-14">#</a>
-                                                        <span class="comment-author">Jesica</span>
-                                                        <span class="comment-date">12 : 50 PM, December 08, 2015</span>
-                                                        <div class="comment-body" id="comment-body-14">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</div>
+                                                        <span class="comment-author"><?= $comment['name'] ?? ''?></span>
+                                                        <span class="comment-date"><?=$comment['time'] ??''?>, <?= date('F d, Y', strtotime($comment['date'])) ?? ''?></span>
+                                                        <div class="comment-body" id="comment-body-14"><?= $comment['message'] ??''?></div>
                                                         <span class="comments-buttons">
                                                         <!-- <a href="#" onclick="jcomments.showReply(14); return false;">Reply</a>
                                                         <a href="#" onclick="jcomments.showReply(14,1); return false;">Reply with quote</a> 
@@ -181,50 +184,15 @@ $otherPosts = getAllPost($conn);
                                                     <div class="clear"></div>
                                                 </div>
                                             </div>
-                                            <div class="comments-list" id="comments-list-14">
-                                                <div class="odd" id="comment-item-19">
-                                                    <div class="rbox">
-                                                        <!-- <div class="comment-avatar"><img src="../../www.gravatar.com/avatar/ee93789afa0c550a5c6e41f5e85caed3f4db.jpeg?d=http%3A%2F%2Fsport.statiolh.bget.ru%2Fcomponents%2Fcom_jcomments%2Fimages%2Fno_avatar.png" alt="Jorge"></div> -->
-                                                        <div class="comment-box avatar-indent">
-                                                            <a class="comment-anchor" href="#comment-19" id="comment-19">#</a>
-                                                            <span class="comment-author">Jorge</span>
-                                                            <span class="comment-date">01 : 08 PM, December 08, 2015</span>
-                                                            <div class="comment-body" id="comment-body-19">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
-                                                            <span class="comments-buttons">
-                                                            <!-- <a href="#" onclick="jcomments.showReply(19); return false;">Reply</a>
-                                                            <a href="#" onclick="jcomments.showReply(19,1); return false;">Reply with quote</a> 
-                                                            <a href="#" onclick="jcomments.quoteComment(19); return false;">Quote</a> -->
-                                                            </span>
-                                                        </div>
-                                                        <div class="clear"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="comments-list" id="comments-list-19">
-                                                    <div class="even" id="comment-item-20">
-                                                        <div class="rbox">
-                                                            <!-- <div class="comment-avatar"><img src="../../www.gravatar.com/avatar/b04dfe4ca691441cd19e145fc5d513b8f4db.jpeg?d=http%3A%2F%2Fsport.statiolh.bget.ru%2Fcomponents%2Fcom_jcomments%2Fimages%2Fno_avatar.png" alt="Ann"></div> -->
-                                                            <div class="comment-box avatar-indent">
-                                                                <a class="comment-anchor" href="#comment-20" id="comment-20">#</a>
-                                                                <span class="comment-author">Ann</span>
-                                                                <span class="comment-date">01 : 10 PM, December 08, 2015</span>
-                                                                <div class="comment-body" id="comment-body-20">The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains</div>
-                                                                <span class="comments-buttons">
-                                                                <!-- <a href="#" onclick="jcomments.showReply(20); return false;">Reply</a>
-                                                                <a href="#" onclick="jcomments.showReply(20,1); return false;">Reply with quote</a> 
-                                                                <a href="#" onclick="jcomments.quoteComment(20); return false;">Quote</a> -->
-                                                                </span>
-                                                            </div>
-                                                            <div class="clear"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                         </div>
-                                        <div id="comments-list-footer"><a class="refresh" href="#" title="Refresh comments list" onclick="jcomments.showPage(30,'com_cobalt',0);return false;">Refresh comments list</a></div>
+                                        <div id="comments-list-footer"><a class="refresh" href="#"  >Refresh comments list</a></div>
+                                        <?php endforeach?>
+                                        <?php endif?>
                                     </div>
                                     <h3 class="title-bottom">Leave a <span>Reply</span></h3>
                                     <a id="addcomments" href="#addcomments"></a>
-                                    <form id="comments-form" name="comments-form" action="">
+                                    <form method="POST" id="comments-form" name="comments-form" action="functions/comment.php">
                                         <div class="uk-grid">
                                             <div class="uk-width-1-2 uk-panel">
                                                 <p>
@@ -239,30 +207,33 @@ $otherPosts = getAllPost($conn);
                                                 </p>
                                                 <p>
                                                     <span>
-                                                    <input id="comments-form-homepage" disabled placeholder="Date" name="homepage" value="Date: <?=date('d/m/y') ?>" size="22" tabindex="3" type="text">
+                                                    <input id="comments-form-homepage" disabled placeholder="Date" name="date" value="Date: <?=date('d/m/y') ?>" size="22" tabindex="3" type="text">
                                                     </span>
                                                 </p>
+                                                <p>
+                                                    <span>
+                                                    <input type="hidden" placeholder="id" name="id" value="<?=$news['id'] ?? ''?>">
+                                                    </span>
+                                                </p>
+
                                             </div>
                                             <div class="uk-width-1-2 uk-panel uk-flex uk-flex-column">
                                                 <div class="textarea-wrap">
-                                                    <textarea id="comments-form-comment" placeholder="Message" name="comment" tabindex="5"></textarea>
+                                                    <textarea id="comments-form-comment" placeholder="Message" name="message" tabindex="5"></textarea>
                                                     <div class="grippie"></div>
                                                     <div id="comments-form-buttons">
                                                         <div class="btn" id="comments-form-send">
-                                                            <div><a href="#" tabindex="7" onclick="jcomments.saveComment();return false;" title="Send (Ctrl+Enter)">Send</a></div>
+                                                            <span class="btn"></span>
                                                         </div>
-                                                        <div class="btn" id="comments-form-cancel" style="display:none;">
-                                                            <div><a href="#" tabindex="8" onclick="return false;" title="Cancel">Cancel</a></div>
-                                                        </div>
+                                                        
                                                         <div style="clear:both;"></div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            
                                         </div>
-                                        <div>
-                                            <input name="object_id" value="30" type="hidden">
-                                            <input name="object_group" value="com_cobalt" type="hidden">
-                                        </div>
+                                        <input style="background-color: burlywood;padding: 5px 70px;" type="submit" name='submit'/>
+                                        
                                     </form>
                                     <script type="text/javascript">
                                             function JCommentsInitializeForm()
