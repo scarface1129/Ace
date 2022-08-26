@@ -233,4 +233,32 @@ function getAceContact($conn){
         return null;
     }
 }
+function getNews($conn){
+    $sql = "SELECT * FROM news ";
+    $result = mysqli_query($conn, $sql);
+    $news = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if($news){
+        return $news;
+    }else{
+        return null;
+    }
+}function getAllPost($conn){
+    $sql = "SELECT * FROM news  ORDER BY id DESC LIMIT 3";
+    $result = mysqli_query($conn, $sql);
+    $news = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if($news){
+        return $news;
+    }else{
+        return null;
+    }
+}function getSingleNews($conn,$id){
+    $sql = "SELECT * FROM news WHERE id= '$id'";
+    $result = mysqli_query($conn, $sql);
+    $news = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if($news){
+        return $news[0];
+    }else{
+        return null;
+    }
+}
 ?>

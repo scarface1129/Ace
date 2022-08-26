@@ -20,10 +20,12 @@ if ($image['name'] == null) {
     $award_errors['image'] = 'Please Upload an Image';
     $len++;
 }else{
-    $valid = ['jpeg','png','jpg'];
+    $valid = ['jpeg','png','jpg','jfif'];
     $exploded = explode('.',$image['name']);
     $file_type = in_array(strtolower(end($exploded)),$valid);
     $fileinfo = @getimagesize($image["tmp_name"]);
+    $file_new_name = uniqid('',true) . '.' . strtolower(end($exploded));
+
     if($fileinfo){
         $width = $fileinfo[0];
         $height = $fileinfo[1];
@@ -51,15 +53,17 @@ if ($image['name'] == null) {
         header('Location:../create-award.php');
     }else{
 $Name = mysqli_real_escape_string($conn,$name);
-$Image = mysqli_real_escape_string($conn,$image['name']);
+$Image = mysqli_real_escape_string($conn,$file_new_name);
 
 $sql = "INSERT INTO awards(`name`,`image`) VALUES ('$Name', '$Image')";
 
 
 if (mysqli_query($conn, $sql)) {
-    // $destfile = 'images/uploads/'. $picture;
-    // $filepath = $picture['tmp_name'];
-    // move_uploaded_file($filepath,$destfile);
+    $file_name = $image['name'];
+    $file_tmp = $image['tmp_name'];
+    $parent = dirname(__DIR__);
+    $target_dir = $parent."\\uploads\\". $file_new_name;
+    move_uploaded_file($file_tmp, $target_dir);
     
     header('Location:../index.php');
     exit();

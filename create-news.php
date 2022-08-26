@@ -7,7 +7,6 @@ if( isset( $_SESSION['news_errors'] ) ) {
     $errors = $_SESSION['news_errors'];
     $values = $_SESSION['news_values'];
  }
-$teamNames = getTeams($conn);
 
 ?>
 <link href="css/costom.css" rel="stylesheet" type="text/css" />
@@ -91,7 +90,7 @@ $teamNames = getTeams($conn);
                                         <div class="form-input">
                                             <label for="d1">Description1 </label>
                                             <div style="color: red;"><?= $errors['d1'] ?? '' ?></div>
-                                            <textarea type="text" value='<?= $values['d1'] ?? '' ?>' name="d1" id="d1"><?= $values['d1'] ?? '' ?></textarea>
+                                            <textarea type="text" value='<?= $values['description'] ?? '' ?>' name="d1" id="d1"><?= $values['description'] ?? '' ?></textarea>
                                         </div>
                                         <div class="form-input">
                                             <label for="d2">Description2 </label>
@@ -103,11 +102,7 @@ $teamNames = getTeams($conn);
                                             <div style="color: red;"><?= $errors['d3'] ?? '' ?></div>
                                             <textarea type="text" value='<?= $values['d3'] ?? '' ?>' name="d3" id="d3"><?= $values['d3'] ?? '' ?></textarea>
                                         </div>
-                                        <div class="form-input">
-                                            <label for="name">Date</label>
-                                            <div style="color: red;"><?= $errors['date'] ?? '' ?></div>
-                                            <input type="date"value='<?= $values['date'] ?? '' ?>' name="date" id="date">
-                                        </div>
+                                        
                                         
                                         
                                        

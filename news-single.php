@@ -1,4 +1,21 @@
-<?php include('templates/header.php');?>
+<?php 
+include('templates/header.php');
+
+if($_GET['id']){
+    $id = $_GET['id'];
+    $news = getSingleNews($conn,$_GET['id']);
+}else{
+    header('Location:./404.php');
+    exit();
+}
+
+$otherPosts = getAllPost($conn);
+
+// print_r($otherPosts);
+// die()
+
+
+?>
 
 
     <div class="over-wrap">
@@ -23,7 +40,7 @@
                                 <img class="uk-invisible" src="images/head-bg.jpg" alt="" height="290" width="1920">
                                 <div class="uk-position-cover uk-flex uk-flex-center head-title">
                                     <h1>
-                                        Suspendisse purus enim, dictum sed lorem ac, sodales maximus est
+                                        <?= $news['title'] ?? '' ?>
                                     </h1>
                                 </div>
                             </div>
@@ -38,7 +55,7 @@
             <ul class="uk-breadcrumb">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="news.php">News</a></li>
-                <li class="uk-active"><span>Suspendisse purus enim, dictum sed lorem ac, sodales maximus est</span></li>
+                <li class="uk-active"><span><?=$news['title'] ?? ''?></span></li>
             </ul>
         </div>
 
@@ -53,8 +70,8 @@
                                     <div id="carusel-11-30" class="uk-slidenav-position" data-uk-slideshow="{ height : 510 }">
                                         <ul class="uk-slideshow">
                                             <li>
-                                                <div style="background-image: url(images/slider/1448409600_2412ac1f15197bfe93d67bdd259afc94.jpg);" class="uk-cover-background uk-position-cover"></div>
-                                                <img style="width: 100%; height: auto; opacity: 0;" src="images/slider/1448409600_2412ac1f15197bfe93d67bdd259afc94.jpg" alt="">
+                                                <div style="background-image: url(uploads/<?= $news['picture'] ??''?>);" class="uk-cover-background uk-position-cover"></div>
+                                                <img style="width: 100%; height: auto; opacity: 0;" src="uploads/<?= $news['picture'] ??''?>" alt="">
                                             </li>
                                             <li>
                                                 <div style="background-image: url(images/slider/1449540000_3c66e89ed9dbc01b314eb1af9ab9e93a.jpg);" class="uk-cover-background uk-position-cover"></div>
@@ -62,15 +79,15 @@
                                             </li>
                                         </ul>
                                         <div class="article-slider-btn">
-                                            <a href="http://h-sportak.torbara.com/" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
-                                            <a href="http://h-sportak.torbara.com/" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
+                                            <a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
+                                            <a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="article-param">
                                     <div class="date">
                                         <i class="uk-icon-calendar"></i>
-                                        November 25, 2015            
+                                        <?= date('F d, Y', strtotime($news['date'])) ?? ''?>            
                                     </div>
                                     <div class="author">
                                         <i class="uk-icon-user"></i>
@@ -82,14 +99,14 @@
                                     </div>
                                 </div>
                                 <div class="article-single-text">
-                                    <p>Vivamus hendrerit, tortor sed luctus maximus, nunc urna hendrerit nibh, sit amet efficitur libero lorem quis mauris. Nunc a pulvinar lectus. Pellentesque aliquam justo ut rhoncus lobortis. In sed venenatis massa. Sed sodales faucibus odio, eget tempus nibh accumsan ut. Fusce tincidunt semper finibus. Nullam consequat non leo interdum pulvinar.<br><br>Suspendisse odio erat, suscipit vel aliquam tristique, dapibus at neque. Aliquam lectus tellus, feugiat non sodales nec, rhoncus a est. Etiam hendrerit, eros nec mollis blandit, velit sem aliquet ex, id tristique metus ligula tincidunt nisi. Ut porta augue at molestie feugiat. Donec quis neque molestie, interdum sapien at, dictum diam. Nam aliquam diam vitae purus vestibulum, sit amet rutrum tortor aliquet. Curabitur rhoncus consectetur tempor. Vivamus volutpat, mauris non auctor molestie, est ex auctor eros, vel egestas eros tellus non dui.</p>
+                                    <p><?= $news['description'] ?? ''?></p>
                                     <!-- <blockquote><span>Ut scelerisque odio et cursus hendrerit. Nullam volutpat ligula elit, sit amet viverra est consequat non. Suspendisse nisl magna, suscipit sed volutpat nec, commodo nec nunc. Nunc posuere commodo ipsum, sit amet pretium felis eleifend vitae. Cras eget aliquam augue.</span></blockquote> -->
                                     <p>
-                                        Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc sit amet consequat magna. Donec congue sem felis, vel bibendum risus rutrum vel. Vivamus sed turpis nec nisl volutpat euismod eu in nisi. In sapien tortor, efficitur non ullamcorper in, fermentum malesuada quam. Fusce sed elit pharetra, semper nibh id, rutrum est. Phasellus id mollis elit. Nullam iaculis consequat est sed dignissim. Morbi rhoncus aliquet justo, et feugiat augue feugiat ut. Integer odio est, lobortis eu dolor faucibus, pretium imperdiet sapien. Nunc in ligula metus. Quisque mi lacus, ullamcorper sed bibendum vel, vehicula a tortor.
+                                    <?= $news['description2'] ?? ''?>
                                     </p>
                                     
                                     <p>
-                                        Integer bibendum dolor purus, ut ultricies nisi porta pellentesque. Integer vitae lobortis nisi. Etiam fringilla, quam sit amet consequat ultricies, orci massa vehicula ligula, sit amet fringilla libero lorem quis sem. Vivamus sit amet erat tempor purus lobortis euismod sodales ac tellus. Phasellus non aliquet libero, vitae dignissim lorem. Aenean at eleifend libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                                    <?= $news['description3'] ?? ''?>
                                     </p>
                                 </div>
                                 
@@ -116,60 +133,31 @@
                             </div> -->
                             <h3 class="other-post-title">Other <span>Posts</span></h3>
                             <div class="uk-grid" data-uk-grid-match="">
+                                <?php if($otherPosts) :?>
+                                <?php foreach($otherPosts as $post) :?>
                                 <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article other uk-flex uk-flex-column">
                                     <div class="wrapper">
                                         <div class="img-wrap">
-                                            <a href="news-single.php">
-                                        <img src="images/news/534579b3c373c09398691a46025fe5e6.jpg" class="img-polaroid" alt="">
+                                            <a href="news-single.php?id=<?=$post['id'] ?? ''?>">
+                                        <img src="uploads/<?=$post['picture'] ?? ''?>" class="img-polaroid" alt="">
                                     </a>        </div>
                                         <div class="info">
                                             <div class="date">
-                                                November 19, 2015            </div>
+                                            <?= date('F d, Y', strtotime($post['date'])) ?? ''?>           
+                                            </div>
                                             <div class="name">
                                                 <h4>
-                                                    <a href="news-single.php">
-                                                            Nunc in interdum neque. Mauris tincidunt molestie felis                    </a>     
+                                                    <a href="news-single.php?id=<?=$post['id'] ?? ''?>">
+                                                       <?=$post['title'] ?? ''?>     
+                                                    </a>     
                                                 </h4>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article other uk-flex uk-flex-column">
-                                    <div class="wrapper">
-                                        <div class="img-wrap">
-                                            <a href="news-single.php">
-                                        <img src="images/news/7f2425d96a8122cb1ac403d0604c257e.jpg" class="img-polaroid" alt="">
-                                    </a>        </div>
-                                        <div class="info">
-                                            <div class="date">
-                                                November 20, 2015            </div>
-                                            <div class="name">
-                                                <h4>
-                                                    <a href="news-single.php">
-                                                            Interdum et malesuada fames ac ante ipsum primis in faucibus                    </a>        
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article other uk-flex uk-flex-column">
-                                    <div class="wrapper">
-                                        <div class="img-wrap">
-                                            <a href="news-single.php">
-                                        <img src="images/news/35b8bf93115eb2b8da9f8b4f41fdb0fd.jpg" class="img-polaroid" alt="">
-                                    </a>        </div>
-                                        <div class="info">
-                                            <div class="date">
-                                                November 25, 2015            </div>
-                                            <div class="name">
-                                                <h4>
-                                                    <a href="news-single.php">
-                                                            Suspendisse purus enim, dictum sed lorem ac, sodales maximus est                    </a>        
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php endforeach?>
+                                <?php endif?>
+                                
                             </div>
                             <div id="comments-wrap">
                                 <div id="jc">
@@ -236,7 +224,7 @@
                                     </div>
                                     <h3 class="title-bottom">Leave a <span>Reply</span></h3>
                                     <a id="addcomments" href="#addcomments"></a>
-                                    <form id="comments-form" name="comments-form" action="javascript:void(null);">
+                                    <form id="comments-form" name="comments-form" action="">
                                         <div class="uk-grid">
                                             <div class="uk-width-1-2 uk-panel">
                                                 <p>
@@ -251,7 +239,7 @@
                                                 </p>
                                                 <p>
                                                     <span>
-                                                    <input id="comments-form-homepage" placeholder="Website" name="homepage" value="" size="22" tabindex="3" type="text">
+                                                    <input id="comments-form-homepage" disabled placeholder="Date" name="homepage" value="Date: <?=date('d/m/y') ?>" size="22" tabindex="3" type="text">
                                                     </span>
                                                 </p>
                                             </div>
@@ -305,66 +293,31 @@
                     
                     <div class="uk-panel news-sidebar">
                         <h3 class="uk-panel-title">Latest News</h3>
+                        <?php if($otherPosts) :?>
+                        <?php foreach($otherPosts as $post) :?>
                         <article class="has-context ">
                             <div class="latest-news-wrap">
                                 <div class="img-wrap">
-                                    <a href="news-single.php">
-                                    <img src="images/35b8bf93115eb2b8da9f8b4f41fdb0fd.jpg" class="img-polaroid" alt="">
+                                    <a href="news-single.php?id=<?=$post['id'] ?? ''?>">
+                                    <img src="uploads/<?=$post['picture'] ??''?>" class="img-polaroid" alt="">
                                     </a>        
                                 </div>
                                 <div class="info">
                                     <div class="date">
-                                        November 25, 2015            
+                                    <?= date('F d, Y', strtotime($post['date'])) ?? ''?>            
                                     </div>
                                     <div class="name">
                                         <h4>
-                                            <a href="news-single.php">
-                                            Suspendisse purus enim, dictum sed lorem ac, sodales maximus est                    </a>        
+                                            <a href="news-single.php?id=<?=$post['id'] ?? ''?>">
+                                            <?=$post['title'] ??''?>                    </a>        
                                         </h4>
                                     </div>
                                 </div>
                             </div>
                         </article>
-                        <article class="has-context ">
-                            <div class="latest-news-wrap">
-                                <div class="img-wrap">
-                                    <a href="news-single.php">
-                                    <img src="images/4e9ed1f24d1f63b923e67456774158a3.jpg" class="img-polaroid" alt="">
-                                    </a>        
-                                </div>
-                                <div class="info">
-                                    <div class="date">
-                                        November 20, 2015            
-                                    </div>
-                                    <div class="name">
-                                        <h4>
-                                            <a href="news-single.php">
-                                            Suspendisse purus enim, dictum sed lorem ac, sodales maximus est                    </a>        
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="has-context ">
-                            <div class="latest-news-wrap">
-                                <div class="img-wrap">
-                                    <a href="news-single.php">
-                                    <img src="images/19896c58825d0206bd858f7e50bf51b2.jpg" class="img-polaroid" alt="">
-                                    </a>        
-                                </div>
-                                <div class="info">
-                                    <div class="date">
-                                        November 20, 2015            
-                                    </div>
-                                    <div class="name">
-                                        <h4>
-                                            <a href="news-single.php">
-                                            Cum sociis natoque penatibus et magnis dis parturient                    </a>       
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+                        <?php endforeach?>
+                        <?php endif?>
+                        
                     </div>
                     
                 </aside>

@@ -1,4 +1,9 @@
-<?php include('templates/header.php');?>
+<?php 
+include('templates/header.php');
+$news = getNews($conn);
+
+
+?>
 
 
 
@@ -49,249 +54,37 @@
                     <div class="contentpaneopen">
                        <main id="tm-content" class="tm-content">
                             <div class="uk-grid" data-uk-grid-match="">
+                                <?php if($news) :?>
+                                <?php foreach($news as $news) :?>
                                 <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
                                     <div class="wrapper">
                                         <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.php">
-                                            <img src="images/news/35b8bf93115eb2b8da9f8b4f41fdb0fd.jpg" class="img-polaroid" alt="">
+                                            <a href="news-single.php?id=<?= $news['id'] ?? ''?>">
+                                            <img src="uploads/<?= $news['picture'] ?? ''?>" class="img-polaroid" alt="">
                                             </a>        
                                         </div>
                                         <div class="info uk-flex-wrap-middle">
                                             <div class="date">
-                                                November 25, 2015            
+                                            <?= date('F d, Y', strtotime($news['date'])) ?? ''?>            
                                             </div>
                                             <div class="name">
                                                 <h4>
-                                                    <a href="news-single.php">
-                                                    Suspendisse purus enim, dictum sed lorem ac, sodales maximus est                    </a>        
+                                                    <a href="news-single.php?id=<?= $news['id'] ?? ''?>">
+                                                    <?= $news['title'] ?? ''?>                    </a>        
                                                 </h4>
                                             </div>
                                             <div class="text">
-                                                <p>Vivamus hendrerit, tortor sed luctus maximus, nunc urna hendrerit nibh, sit amet efficitur libero lorem quis mauris. Nunc a pulvinar lectus.</p>
+                                                <p><?= substr($news['description'],0,100) ??''?>...</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="article-actions uk-flex-wrap-bottom">
                                         <div class="count"><i class="uk-icon-comments"></i><span>3</span></div>
-                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
+                                        <div class="read-more"><a href="news-single.php?id=<?= $news['id'] ?? ''?>">Read More</a></div>
                                     </div>
                                 </div>
-                                <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
-                                    <div class="wrapper">
-                                        <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.php">
-                                            <img src="images/news/4e9ed1f24d1f63b923e67456774158a3.jpg" class="img-polaroid" alt="">
-                                            </a>        
-                                        </div>
-                                        <div class="info uk-flex-wrap-middle">
-                                            <div class="date">
-                                                November 20, 2015            
-                                            </div>
-                                            <div class="name">
-                                                <h4>
-                                                    <a href="news-single.php">
-                                                    Suspendisse purus enim, dictum sed lorem ac, sodales maximus est                    </a>        
-                                                </h4>
-                                            </div>
-                                            <div class="text">
-                                                <p>Vivamus hendrerit, tortor sed luctus maximus, nunc urna hendrerit nibh, sit amet efficitur libero lorem quis mauris. Nunc a pulvinar lectus.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="article-actions uk-flex-wrap-bottom">
-                                        <div class="count"><i class="uk-icon-comments"></i><span>3</span></div>
-                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
-                                    </div>
-                                </div>
-                                <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
-                                    <div class="wrapper">
-                                        <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.php">
-                                            <img src="images/news/19896c58825d0206bd858f7e50bf51b2.jpg" class="img-polaroid" alt="">
-                                            </a>        
-                                        </div>
-                                        <div class="info uk-flex-wrap-middle">
-                                            <div class="date">
-                                                November 20, 2015            
-                                            </div>
-                                            <div class="name">
-                                                <h4>
-                                                    <a href="news-single.php">
-                                                    Cum sociis natoque penatibus et magnis dis parturient                    </a>       
-                                                </h4>
-                                            </div>
-                                            <div class="text">
-                                                <p>Vivamus hendrerit, tortor sed luctus maximus, nunc urna hendrerit nibh, sit amet efficitur libero lorem quis mauris. Nunc a pulvinar lectus.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="article-actions uk-flex-wrap-bottom">
-                                        <div class="count"><i class="uk-icon-comments"></i><span>2</span></div>
-                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
-                                    </div>
-                                </div>
-                                <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
-                                    <div class="wrapper">
-                                        <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.php">
-                                            <img src="images/news/0a213d8fc9b9586f374154e6b55e0d7d.jpg" class="img-polaroid" alt="">
-                                            </a>        
-                                        </div>
-                                        <div class="info uk-flex-wrap-middle">
-                                            <div class="date">
-                                                November 20, 2015            
-                                            </div>
-                                            <div class="name">
-                                                <h4>
-                                                    <a href="news-single.php">
-                                                    Vestibulum ante ipsum primis in                    </a>     
-                                                </h4>
-                                            </div>
-                                            <div class="text">
-                                                <p>Vivamus hendrerit, tortor sed luctus maximus, nunc urna hendrerit nibh, sit amet efficitur libero lorem quis mauris. Nunc a pulvinar lectus.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="article-actions uk-flex-wrap-bottom">
-                                        <div class="count"><i class="uk-icon-comments"></i><span>3</span></div>
-                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
-                                    </div>
-                                </div>
-                                <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
-                                    <div class="wrapper">
-                                        <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.php">
-                                            <img src="images/news/853d071dfa2f869fbd2a70dbcb3a8f5e.jpg" class="img-polaroid" alt="">
-                                            </a>        
-                                        </div>
-                                        <div class="info uk-flex-wrap-middle">
-                                            <div class="date">
-                                                November 20, 2015            
-                                            </div>
-                                            <div class="name">
-                                                <h4>
-                                                    <a href="news-single.php">
-                                                    Nullam enim ante, volutpat non viverra eget                    </a>     
-                                                </h4>
-                                            </div>
-                                            <div class="text">
-                                                <p>Vivamus hendrerit, tortor sed luctus maximus, nunc urna hendrerit nibh, sit amet efficitur libero lorem quis mauris. Nunc a pulvinar lectus.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="article-actions uk-flex-wrap-bottom">
-                                        <div class="count"><i class="uk-icon-comments"></i><span>3</span></div>
-                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
-                                    </div>
-                                </div>
-                                <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
-                                    <div class="wrapper">
-                                        <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.php">
-                                            <img src="images/news/7f2425d96a8122cb1ac403d0604c257e.jpg" class="img-polaroid" alt="">
-                                            </a>        
-                                        </div>
-                                        <div class="info uk-flex-wrap-middle">
-                                            <div class="date">
-                                                November 20, 2015            
-                                            </div>
-                                            <div class="name">
-                                                <h4>
-                                                    <a href="news-single.php">
-                                                    Interdum et malesuada fames ac ante ipsum primis in faucibus                    </a>        
-                                                </h4>
-                                            </div>
-                                            <div class="text">
-                                                <p>Vivamus hendrerit, tortor sed luctus maximus, nunc urna hendrerit nibh, sit amet efficitur libero lorem quis mauris. Nunc a pulvinar lectus.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="article-actions uk-flex-wrap-bottom">
-                                        <div class="count"><i class="uk-icon-comments"></i><span>2</span></div>
-                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
-                                    </div>
-                                </div>
-                                <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
-                                    <div class="wrapper">
-                                        <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.php">
-                                            <img src="images/news/a05149b3647ccfca06226f762ad4a50a.jpg" class="img-polaroid" alt="">
-                                            </a>        
-                                        </div>
-                                        <div class="info uk-flex-wrap-middle">
-                                            <div class="date">
-                                                November 20, 2015            
-                                            </div>
-                                            <div class="name">
-                                                <h4>
-                                                    <a href="news-single.php">
-                                                    Nunc tincidunt dictum nisi                    </a>      
-                                                </h4>
-                                            </div>
-                                            <div class="text">
-                                                <p>Vivamus hendrerit, tortor sed luctus maximus, nunc urna hendrerit nibh, sit amet efficitur libero lorem quis mauris. Nunc a pulvinar lectus.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="article-actions uk-flex-wrap-bottom">
-                                        <div class="count"><i class="uk-icon-comments"></i><span>1</span></div>
-                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
-                                    </div>
-                                </div>
-                                <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
-                                    <div class="wrapper">
-                                        <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.php">
-                                            <img src="images/news/534579b3c373c09398691a46025fe5e6.jpg" class="img-polaroid" alt="">
-                                            </a>        
-                                        </div>
-                                        <div class="info uk-flex-wrap-middle">
-                                            <div class="date">
-                                                November 19, 2015            
-                                            </div>
-                                            <div class="name">
-                                                <h4>
-                                                    <a href="news-single.php">
-                                                    Nunc in interdum neque. Mauris tincidunt molestie felis                    </a>     
-                                                </h4>
-                                            </div>
-                                            <div class="text">
-                                                <p>Vivamus hendrerit, tortor sed luctus maximus, nunc urna hendrerit nibh, sit amet efficitur libero lorem quis mauris. Nunc a pulvinar lectus.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="article-actions uk-flex-wrap-bottom">
-                                        <div class="count"><i class="uk-icon-comments"></i><span>2</span></div>
-                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
-                                    </div>
-                                </div>
-                                <div class="uk-width-large-1-3 uk-width-medium-2-4 uk-width-small-2-4 list-article uk-flex uk-flex-column">
-                                    <div class="wrapper">
-                                        <div class="img-wrap uk-flex-wrap-top">
-                                            <a href="news-single.php">
-                                            <img src="images/news/f1aa744989a08c3135ade02490456f4f.jpg" class="img-polaroid" alt="">
-                                            </a>        
-                                        </div>
-                                        <div class="info uk-flex-wrap-middle">
-                                            <div class="date">
-                                                November 19, 2015            
-                                            </div>
-                                            <div class="name">
-                                                <h4>
-                                                    <a href="news-single.php">
-                                                    Vivamus in risus nulla. Fusce volutpat varius odio                    </a>      
-                                                </h4>
-                                            </div>
-                                            <div class="text">
-                                                <p>Vivamus hendrerit, tortor sed luctus maximus, nunc urna hendrerit nibh, sit amet efficitur libero lorem quis mauris. Nunc a pulvinar lectus.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="article-actions uk-flex-wrap-bottom">
-                                        <div class="count"><i class="uk-icon-comments"></i><span>3</span></div>
-                                        <div class="read-more"><a href="news-single.php">Read More</a></div>
-                                    </div>
-                                </div>
+                                <?php endforeach?>
+                                <?php endif?>
                             </div>
                             <form method="post">
                                 <div class="pagination">

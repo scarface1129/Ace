@@ -27,6 +27,8 @@ if ($image['name'] == null) {
     $exploded = explode('.',$image['name']);
     $file_type = in_array(strtolower(end($exploded)),$valid);
     $fileinfo = @getimagesize($image["tmp_name"]);
+    $file_new_name = uniqid('',true) . '.' . strtolower(end($exploded));
+
     if($fileinfo){
         $width = $fileinfo[0];
         $height = $fileinfo[1];
@@ -64,7 +66,7 @@ if (empty($winnerId)){
         header("Location:../edit-award.php?id=$id");
     }else{
 $Name = mysqli_real_escape_string($conn,$name);
-$Image = mysqli_real_escape_string($conn,$image['name']);
+$Image = mysqli_real_escape_string($conn,$file_new_name);
 $Winner = mysqli_real_escape_string($conn,$winnerId);
 $Losser = mysqli_real_escape_string($conn,$losserId);
 $Scores = mysqli_real_escape_string($conn,$scores);
@@ -72,10 +74,11 @@ $sql = "UPDATE awards SET `name`='$Name',`image`='$Image', winnerId='$Winner', l
 
 
 if (mysqli_query($conn, $sql)) {
-    // $destfile = 'images/uploads/'. $picture;
-    // $filepath = $picture['tmp_name'];
-    // move_uploaded_file($filepath,$destfile);
-    
+    $file_name = $image['name'];
+    $file_tmp = $image['tmp_name'];
+    $parent = dirname(__DIR__);
+    $target_dir = $parent."\\uploads\\". $file_new_name;
+    move_uploaded_file($file_tmp, $target_dir);
     header('Location:../index.php');
     exit();
    
