@@ -117,7 +117,13 @@ if($_SESSION['loginDetail'] != ['Admin']){
                                         <div class="form-input">
                                             <input type="hidden" value='0' name="team2_score">
                                         </div>
-                                        
+                                        <h3>Stadium Information</h3>
+                                        <div class="line"></div>
+                                        <div class="form-input">
+                                            <label for="picture">Upload a Pictures of stadium </label>
+                                            <div style="color: red;"><?= $errors['picture[0]'] ?? '' ?></div>
+                                            <input type="file" name="picture[]" id="picture" multiple=''>
+                                        </div>
                                         <div class="form-input">
                                         <input class="button" type="submit" name="submit">
                                         </div>

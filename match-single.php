@@ -11,7 +11,7 @@ if($_GET['id']){
         exit();
     }
 
-
+    $otherPosts = getAllPost($conn);
 
 
 
@@ -220,69 +220,33 @@ if($_GET['id']){
                 <aside class="tm-sidebar-a uk-width-medium-1-4 uk-pull-3-4 uk-row-first">
                     
                     
-                    <div class="uk-panel news-sidebar">
+                <div class="uk-panel news-sidebar">
                         <h3 class="uk-panel-title">Latest News</h3>
-                        int(3)
+                        <?php if($otherPosts) :?>
+                        <?php foreach($otherPosts as $post) :?>
                         <article class="has-context ">
                             <div class="latest-news-wrap">
                                 <div class="img-wrap">
-                                    <a href="news.php">
-                                    <img src="images/35b8bf93115eb2b8da9f8b4f41fdb0fd.jpg" class="img-polaroid" alt="">
+                                    <a href="news-single.php?id=<?=$post['id'] ?? ''?>">
+                                    <img src="uploads/<?=$post['picture'] ??''?>" class="img-polaroid" alt="">
                                     </a>        
                                 </div>
                                 <div class="info">
                                     <div class="date">
-                                        November 25, 2015            
+                                    <?= date('F d, Y', strtotime($post['date'])) ?? ''?>            
                                     </div>
                                     <div class="name">
                                         <h4>
-                                            <a href="news.php">
-                                            Suspendisse purus enim, dictum sed lorem ac, sodales maximus est                    </a>        
+                                            <a href="news-single.php?id=<?=$post['id'] ?? ''?>">
+                                            <?=$post['title'] ??''?>                    </a>        
                                         </h4>
                                     </div>
                                 </div>
                             </div>
                         </article>
-                        <article class="has-context ">
-                            <div class="latest-news-wrap">
-                                <div class="img-wrap">
-                                    <a href="news.php">
-                                    <img src="images/4e9ed1f24d1f63b923e67456774158a3.jpg" class="img-polaroid" alt="">
-                                    </a>        
-                                </div>
-                                <div class="info">
-                                    <div class="date">
-                                        November 20, 2015            
-                                    </div>
-                                    <div class="name">
-                                        <h4>
-                                            <a href="news.php">
-                                            Suspendisse purus enim, dictum sed lorem ac, sodales maximus est                    </a>        
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="has-context ">
-                            <div class="latest-news-wrap">
-                                <div class="img-wrap">
-                                    <a href="news.php">
-                                    <img src="images/19896c58825d0206bd858f7e50bf51b2.jpg" class="img-polaroid" alt="">
-                                    </a>        
-                                </div>
-                                <div class="info">
-                                    <div class="date">
-                                        November 20, 2015            
-                                    </div>
-                                    <div class="name">
-                                        <h4>
-                                            <a href="news.php">
-                                            Cum sociis natoque penatibus et magnis dis parturient                    </a>       
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+                        <?php endforeach?>
+                        <?php endif?>
+                        
                     </div>
                 </aside>
             </div>

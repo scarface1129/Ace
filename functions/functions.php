@@ -171,7 +171,7 @@ function getLastPlayedMatch($conn){
     }
 }
 function getTeamName($conn,$id){
-    $sql = "SELECT `name` FROM `teams` WHERE id='$id'";
+    $sql = "SELECT `name`,logo FROM `teams` WHERE id='$id'";
     $result = mysqli_query($conn, $sql);
     $name = mysqli_fetch_all($result, MYSQLI_ASSOC);
     if($name){
@@ -192,7 +192,34 @@ function getMatchResults($conn){
 }
 
 
-function getAwards($conn){
+function getAcePictures($conn){
+    $sql = "SELECT * FROM `gallery` where category ='company'";
+    $result = mysqli_query($conn, $sql);
+    $picture = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if($picture){
+        return $picture;
+    }else{
+        return null;
+    }
+}function getOtherPictures($conn){
+    $sql = "SELECT * FROM `gallery` where category= 'others'";
+    $result = mysqli_query($conn, $sql);
+    $picture = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if($picture){
+        return $picture;
+    }else{
+        return null;
+    }
+}function getAboutAce($conn){
+    $sql = "SELECT * FROM `about_ace` where id=1";
+    $result = mysqli_query($conn, $sql);
+    $about = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if($about){
+        return $about[0];
+    }else{
+        return null;
+    }
+}function getAwards($conn){
     $sql = "SELECT * FROM `awards`";
     $result = mysqli_query($conn, $sql);
     $awards = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -278,5 +305,20 @@ function getNews($conn){
     }else{
         return null;
     }
+}
+
+
+function reArrangeFiles($file_post){
+    $file_ary = array();
+    $file_count = count($file_post['name']);
+    $file_keys = array_keys($file_post);
+
+    for($i=0; $i<$file_count; $i++){
+        foreach($file_keys as $key){
+            $file_ary[$i][$key] = $file_post[$key][$i];
+        }
+    }
+    return $file_ary;
+
 }
 ?>

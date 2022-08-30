@@ -1,6 +1,8 @@
 <?php   
 include('dbconnect.php');
-$match_errors = ['date'=>'','time'=>'','team1'=>'','team2'=>'','location'=>'','about_match'=>''];
+include('functions.php');
+$match_errors = ['date'=>'','time'=>'','team1'=>'','team2'=>'','location'=>'','about_match'=>'','picture'=>[]];
+$file_new_name = [];
 $len = count($match_errors);
 if(isset($_POST['submit'])){
     $date               =   $_POST['date'];
@@ -9,7 +11,11 @@ if(isset($_POST['submit'])){
     $team2               =   $_POST['team2'];
     $location               =   $_POST['location'];
     $about_match               =   $_POST['about_match'];
-    
+    $picture                 = $_FILES['picture'];
+    // echo '<pre>';
+    // print_r(reArrangeFiles($picture));
+    // echo '</pre>';
+    // die();
     $match_values = ['date'=>$date,'time'=>$time,'team1'=>$team1,'team2'=>$team2,'location'=>$location,'about_match'=>$about_match];
 if (empty($date)) {
     $match_errors['date'] = 'date Field Is Required';
@@ -34,8 +40,49 @@ if (empty($location)) {
     $match_errors['about_match'] = 'Required';
     $len++;
 }
+if ($picture['size'][0] == 0) {
+    $match_errors['picture'] = 'Please Upload some pictures at least 3 or 4';
+    $len++;
+}else{
+    $picture = reArrangeFiles($picture);
+    foreach($picture as $pics){
+    $valid = ['jpeg','png','jpg','jfif'];
+    $exploded = explode('.',$pics['name']);
+    $file_type = in_array(strtolower(end($exploded)),$valid);
+    $fileinfo = @getimagesize($pics["tmp_name"]);
+    // $file_new_name = uniqid('',true) . '.' . strtolower(end($exploded));
+    // print_r($fileinfo);
+    // print_r($file_type);
+    // die();
+    
 
+    if($fileinfo){
+        $width = $fileinfo[0];
+        $height = $fileinfo[1];
+    }
+    
+    if (!$file_type){
+        array_push($match_errors['picture'],$pics['name'].">>> Invalid File Format") ;
+        $len++;
+    }
+    else if (($pics["size"] > 2000000)) {
+        array_push($match_errors['picture'],$pics['name'].">>>Picture Size is Bigger than 2MB");
+        $len++;
+    }else if ($width > "500" || $height > "500") {
+        array_push($match_errors['picture'],$pics['name'].">>>Picture Dimmension is Bigger than 500 X 500");
+        $len++;
+    }
+    else{
+        array_push($file_new_name,$pics['name']);
+    }
+    }
+    
+  
+}
 
+// print_r(implode(',',$file_new_name));
+// print_r($picture);
+// die();
 $ready = False;
     if ($len > count($match_errors)){
         session_start();
@@ -49,11 +96,12 @@ $ready = False;
     $Team2 = mysqli_real_escape_string($conn,$team2);
     $Location = mysqli_real_escape_string($conn,$location);
     $About = mysqli_real_escape_string($conn,$about_match);
+    $Picture = mysqli_real_escape_string($conn,implode($file_new_name));
     $Fouls = 0;
     $Team1_score = 0;
     $Team2_score = 0;
-    $sql = "INSERT INTO matches(`date`,`time`,fouls, team1_id, team2_id,`location`,team1_score,team2_score,about_match) 
-    VALUES ('$Date', '$Time','$Fouls', '$Team1','$Team2','$Location','$Team1_score','$Team2_score','$About')";
+    $sql = "INSERT INTO matches(`date`,`time`,fouls, team1_id, team2_id,`location`,team1_score,team2_score,about_match,stadium_image) 
+    VALUES ('$Date', '$Time','$Fouls', '$Team1','$Team2','$Location','$Team1_score','$Team2_score','$About','$Picture')";
     
     if (mysqli_query($conn, $sql)) {
         header('Location:../index.php');

@@ -80,6 +80,10 @@
                                 </li>
                                 <li><a href="aceContactform.php">Ace Contact</a>
                                 </li>
+                                <li><a href="create-gallery.php">Ace Gallery</a>
+                                </li>
+                                <li><a href="messages.php">Messages</a>
+                                </li>
                                 
                             </ul>
                         </div>

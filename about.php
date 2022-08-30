@@ -2,7 +2,7 @@
 include('templates/header.php');
 
 $getAward = getAwards($conn);
-
+$about = getAboutAce($conn);
 
 ?>
 
@@ -57,18 +57,19 @@ $getAward = getAwards($conn);
                                     <div class="uk-width-large-5-10 uk-width-small-1-1 left-part">
                                         <div class="top-title">
                                             <h2>About <span>Ace Inc</span></h2>
+                                            
                                         </div>
-                                        <p class="sub-title">Pellentesque a urna sit amet turpis tristique facilisis. Pellentesque commodo turpis leo, id pulvinar turpis rhoncus interdum. </p>
-                                        <p>Nunc ullamcorper varius magna eu tincidunt. Vestibulum eget nisi mattis, feugiat nisl ac, tempor lacus. Proin a velit rhoncus, imperdiet orci quis, tempus orci. Duis tincidunt dui nec orci imperdiet, at scelerisque augue iaculis. Fusce non arcu tortor. Vivamus sapien metus, porta ut ipsum sit amet, accumsan volutpat libero.</p>
-                                        <p>Aenean pretium iaculis diam et semper. Sed nec risus ac nibh rhoncus scelerisque. Fusce id mauris massa. Aliquam erat volutpat. Maecenas porta dignissim erat, at vulputate tortor luctus eu. </p>
+                                        <p class="sub-title"><?=$about['paragraph1'] ?? ''?></p>
+                                        <p><?=$about['paragraph2'] ??''?></p>
                                     </div>
                                     <div class="uk-width-large-5-10 uk-width-small-1-1">
                                         <div class="top-banner uk-cover-background uk-position-relative" style="height: 420px; background-image: url('images/about-team-banner.jpg');">
                                             <img class="uk-invisible" src="images/about-team-banner.jpg" alt="">
                                             <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle inner">
-                                                “It’s not whether you get knocked
-                                                <br> down; it’s whether you get up.”
-                                                <div class="name">Vince Lombardi</div>
+                                                <?=$about['quote'] ??''?>
+                                                <!-- “It’s not whether you get knocked
+                                                <br> down; it’s whether you get up.” -->
+                                                <div class="name"><?=$about['quote_by'] ?? ''?></div>
                                             </div>
                                         </div>
                                     </div>
@@ -390,7 +391,7 @@ $getAward = getAwards($conn);
                                 <div class="our-awards-text">Nullam quis eros tellus. Duis sit amet neque nec orci feugiat tincidunt. Lorem ipsum dolor sit amet,
                                     <br> consectetur adipiscing elit. Nulla sed turpis aliquet, pharetra enim sit amet, congue erat. </div>
                             </div>
-                            <div dir="ltr" class="uk-slidenav-position our-awards" data-uk-slider="{default: 2, autoplay:true, autoplayInterval:7000, animation: 'slide-bottom', duration: 400}">
+                            <div dir="ltr" class="uk-slidenav-position our-awards" data-uk-slider="{default: 6, autoplay:true, autoplayInterval:3000, animation: 'slide-bottom', duration: 100}">
                                 <div class="uk-slider-container">
                                     <ul class="uk-slider uk-grid uk-grid-width-large-1-5 uk-grid-width-medium-1-3">
                                         <?php if($getAward) :?>

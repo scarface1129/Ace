@@ -74,7 +74,10 @@ if(isset($_SESSION['loginDetail']['coachId'])){
                     <main id="tm-content" class="tm-content"> 
                         <?php if($coach['id'] == $CoachID) :?> 
                         <div>
-                        <a href="edit-team.php?id=<?=$team['id']?>" style='float:right;padding: 7px;color: white;background-color: black;margin: 10px;'>Edit</a>
+                        <a href="edit-team.php?id=<?=$team['id']?>" style='float:right;padding: 7px;color: white;background-color: black;margin: 10px;'>Edit Team</a>
+                        </div>
+                        <div>
+                        <a href="edit-coach.php?id=<?=$coach['id']?>" style='float:right;padding: 7px;color: white;background-color: black;margin: 10px;'>Edit Coach</a>
                         </div>
                         <?php endif ?>
                         <div class='team_name'>
@@ -111,26 +114,16 @@ if(isset($_SESSION['loginDetail']['coachId'])){
                                                                 <a href="http://h-sportak.torbara.com/" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideset-item="next"></a>
                                                             </div> -->
                                                             <h3>Trainers</h3>
+                                                            <div class="name"><?= $coach['first_name'] ?? ''?> <span><?= $coach['last_name'] ?? ''?></span>
+                                                                </div>
                                                         </div>
                                                         <ul class="uk-grid uk-slideset uk-grid-width-1-1">
                                                             <li class="uk-active">
                                                                 <div class="img-wrap"><img src="uploads/<?= $coach['picture'] ?? ''?>" alt="coaches image">
                                                                 </div>
-                                                                <div class="name"><?= $coach['first_name'] ?? ''?> <span><?= $coach['last_name'] ?? ''?></span>
-                                                                </div>
+                                                                
                                                             </li>
-                                                            <!-- <li style="display: none;">
-                                                                <div class="img-wrap"><img src="images/trainer-slider/trainer-img1.jpg" alt="">
-                                                                </div>
-                                                                <div class="name">Fernand <span>Bernardez</span>
-                                                                </div>
-                                                            </li>
-                                                            <li style="display: none;">
-                                                                <div class="img-wrap"><img src="images/trainer-slider/trainer-img2.jpg" alt="">
-                                                                </div>
-                                                                <div class="name">Martin <span>Huanez</span>
-                                                                </div>
-                                                            </li> -->
+                                                           
                                                         </ul>
                                                     </div>
                                                 </div>
