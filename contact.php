@@ -159,7 +159,7 @@ $contact = getAceContact($conn);
                                                             <div class="aiContactSafe" id="aiContactSafe_mainbody_1">
                                                                 <div class="contentpaneopen">
                                                                     <div id="aiContactSafeForm">
-                                                                        <form  method="post" id="adminForm_1" name="adminForm_1">
+                                                                        <form method="POST" action="functions/message.php" name="adminForm_1">
                                                                             <div id="displayAiContactSafeForm_1">
                                                                                 <div class="aiContactSafe" id="aiContactSafe_contact_form">
                                                                                     <div class="aiContactSafe" id="aiContactSafe_info"></div>
@@ -168,7 +168,7 @@ $contact = getAceContact($conn);
                                                                                             <label class="required_field">*</label>
                                                                                         </div>
                                                                                         <div class="aiContactSafe_contact_form_field_right">
-                                                                                            <input name="aics_name" id="aics_name" class="textbox" placeholder="Name" value="" type="text">
+                                                                                            <input name="sender" required id="aics_name" class="textbox" placeholder="Name" value="" type="text">
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="aiContactSafe_row" id="aiContactSafe_row_aics_email">
@@ -176,7 +176,7 @@ $contact = getAceContact($conn);
                                                                                             <label class="required_field">*</label>
                                                                                         </div>
                                                                                         <div class="aiContactSafe_contact_form_field_right">
-                                                                                            <input name="aics_email" id="aics_email" class="email" placeholder="Email" value="" type="text">
+                                                                                            <input name="email" required id="aics_email" class="email" placeholder="Email" value="" type="text">
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="aiContactSafe_row" id="aiContactSafe_row_aics_message">
@@ -184,9 +184,10 @@ $contact = getAceContact($conn);
                                                                                             <label class="required_field">*</label>
                                                                                         </div>
                                                                                         <div class="aiContactSafe_contact_form_field_right">
-                                                                                            <textarea name="aics_message" id="aics_message" cols="40" rows="10" class="editbox" placeholder="Message"></textarea>
+                                                                                            <textarea name="message" required id="aics_message" cols="40" rows="10" class="editbox" placeholder="Message"></textarea>
                                                                                         </div>
                                                                                     </div>
+                                                                                    <input type="hidden" name='contact' value="Yes"/>
                                                                                 </div>
                                                                             </div>
                                                                             <br>
@@ -200,7 +201,7 @@ $contact = getAceContact($conn);
                                                                                                     <div id="aiContactSafeSend_loading_1">&nbsp;</div>
                                                                                                 </td>
                                                                                                 <td id="td_aiContactSafeSendButton">
-                                                                                                    <input id="aiContactSafeSendButton" value="Send" type="submit">
+                                                                                                    <input id="aiContactSafeSendButton" name='submit' type="submit">
                                                                                                 </td>
                                                                                             </tr>
                                                                                         </tbody>

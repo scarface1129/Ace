@@ -6,6 +6,7 @@
 if($_GET['id']){
         $id = $_GET['id'];
         $matches = getMatch($conn,$_GET['id']);
+        $stadium =  getPictures($matches[0]['stadium_image']);
     }else{
         header('Location:./404.php');
         exit();
@@ -13,7 +14,8 @@ if($_GET['id']){
 
     $otherPosts = getAllPost($conn);
 
-
+// print_r($stadium);
+// die();
 
 ?>
 
@@ -181,18 +183,11 @@ if($_GET['id']){
                                                         <a draggable="false" href="http://h-sportak.torbara.com/" class="uk-slidenav uk-slidenav-next" data-uk-slider-item="next"></a>
                                                     </div>
                                                     <ul class="uk-slider uk-grid uk-grid-width-1-3">
-                                                        <li><img draggable="false" class="uk-responsive-height" src="images/slider/1449540000_e7ee87b9056f7e9171396905dd7c4e90.jpg" alt=""></li>
-                                                        <li><img draggable="false" class="uk-responsive-height" src="images/slider/1449540000_3c66e89ed9dbc01b314eb1af9ab9e93a.jpg" alt=""></li>
-                                                        <li><img draggable="false" class="uk-responsive-height" src="images/slider/1449540000_dfa512708fbc257f1a399dd810d932ed.jpg" alt=""></li>
-                                                        <li><img draggable="false" class="uk-responsive-height" src="images/slider/1449540000_1f7cd1168eb6e41eeed68a1154877d33.jpg" alt=""></li>
-                                                        <li><img draggable="false" class="uk-responsive-height" src="images/slider/1449540000_e7ee87b9056f7e9171396905dd7c4e90.jpg" alt=""></li>
-                                                        <li><img draggable="false" class="uk-responsive-height" src="images/slider/1449540000_3c66e89ed9dbc01b314eb1af9ab9e93a.jpg" alt=""></li>
-                                                        <li><img draggable="false" class="uk-responsive-height" src="images/slider/1449540000_dfa512708fbc257f1a399dd810d932ed.jpg" alt=""></li>
-                                                        <li><img draggable="false" class="uk-responsive-height" src="images/slider/1449540000_1f7cd1168eb6e41eeed68a1154877d33.jpg" alt=""></li>
-                                                        <li><img draggable="false" class="uk-responsive-height" src="images/slider/1449540000_e7ee87b9056f7e9171396905dd7c4e90.jpg" alt=""></li>
-                                                        <li><img draggable="false" class="uk-responsive-height" src="images/slider/1449540000_3c66e89ed9dbc01b314eb1af9ab9e93a.jpg" alt=""></li>
-                                                        <li><img draggable="false" class="uk-responsive-height" src="images/slider/1449540000_dfa512708fbc257f1a399dd810d932ed.jpg" alt=""></li>
-                                                        <li><img draggable="false" class="uk-responsive-height" src="images/slider/1449540000_1f7cd1168eb6e41eeed68a1154877d33.jpg" alt=""></li>
+                                                        <?php if($stadium) :?>
+                                                        <?php foreach($stadium as $stadium) :?>
+                                                        <li><img draggable="false" class="uk-responsive-height" src="uploads/<?=$stadium?>" alt=""></li>
+                                                        <?php endforeach?>
+                                                        <?php endif?>
                                                     </ul>
                                                 </div>
                                             </div>

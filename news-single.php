@@ -10,8 +10,21 @@ if($_GET['id']){
 }
 
 $otherPosts = getAllPost($conn);
-$comments = array_slice(getCommment($conn,$id), 0, 3);
-$count = count(getCommment($conn,$id)) ?? 0;
+$data = getCommment($conn,$id);
+if($data != null){
+    $comments = array_slice($data, 0, 3);
+    $count = count($data);
+
+}
+else{
+    $comments = '';
+    $count = 0;
+}
+
+if( isset( $_SESSION['comment_errors'] ) ) {
+    $errors = $_SESSION['comment_errors'];
+    $values = $_SESSION['comment_values'];
+ }
 // print_r($count);
 // die()
 
@@ -163,7 +176,7 @@ $count = count(getCommment($conn,$id)) ?? 0;
                             <div id="comments-wrap">
                                 <div id="jc">
                                     <div id="comments">
-                                        <h3>Comments <span><?= $count?></span></h3>
+                                        <h3>Comments <span><?= $count?></span>  (Showing the Latest <span></span>)</h3><h4></h4>
                                         <?php if($comments) :?>
                                         <?php foreach($comments as $comment) :?>
                                         <div class="comments-list" id="comments-list-0">
@@ -197,17 +210,19 @@ $count = count(getCommment($conn,$id)) ?? 0;
                                             <div class="uk-width-1-2 uk-panel">
                                                 <p>
                                                     <span>
-                                                    <input id="comments-form-name" placeholder="Name" name="name" value="" maxlength="20" size="22" tabindex="1" type="text">
+                                                    <div style="color: red;"><?= $errors['name'] ?? '' ?></div>
+                                                    <input id="comments-form-name" placeholder="Name" name="name" value="<?= $values['name'] ?? '' ?>"  tabindex="1" type="text">
                                                     </span>
                                                 </p>
                                                 <p>
                                                     <span>
-                                                    <input id="comments-form-email" placeholder="Email" name="email" value="" size="22" tabindex="2" type="text">
+                                                    <div style="color: red;"><?= $errors['email'] ?? '' ?></div>
+                                                    <input id="comments-form-email" placeholder="Email" name="email" value="<?= $values['email'] ?? '' ?>"  tabindex="2" type="text">
                                                     </span>
                                                 </p>
                                                 <p>
                                                     <span>
-                                                    <input id="comments-form-homepage" disabled placeholder="Date" name="date" value="Date: <?=date('d/m/y') ?>" size="22" tabindex="3" type="text">
+                                                    <input id="comments-form-homepage" disabled placeholder="Date" name="date" value="Date: <?=date('d/m/y') ?>"  tabindex="3" type="text">
                                                     </span>
                                                 </p>
                                                 <p>
@@ -217,25 +232,27 @@ $count = count(getCommment($conn,$id)) ?? 0;
                                                 </p>
 
                                             </div>
+                                            
                                             <div class="uk-width-1-2 uk-panel uk-flex uk-flex-column">
                                                 <div class="textarea-wrap">
-                                                    <textarea id="comments-form-comment" placeholder="Message" name="message" tabindex="5"></textarea>
+                                                    <textarea id="comments-form-comment" placeholder="Message" name="message" tabindex="5"><?= $values['message'] ?? '' ?></textarea>
                                                     <div class="grippie"></div>
                                                     <div id="comments-form-buttons">
-                                                        <div class="btn" id="comments-form-send">
+                                                        <!-- <div class="btn" id="comments-form-send">
                                                             <span class="btn"></span>
-                                                        </div>
+                                                        </div> -->
                                                         
                                                         <div style="clear:both;"></div>
                                                     </div>
+                                                    <div style="color: red;"><?= $errors['message'] ?? '' ?></div>
                                                 </div>
                                             </div>
                                             
                                         </div>
-                                        <input style="background-color: burlywood;padding: 5px 70px;" type="submit" name='submit'/>
+                                        <input style="background-color: burlywood;padding: 5px 70px;cursor: pointer;" type="submit" name='submit'/>
                                         
                                     </form>
-                                    <script type="text/javascript">
+                                    <!-- <script type="text/javascript">
                                             function JCommentsInitializeForm()
                                             {
                                                 var jcEditor = new JCommentsEditor('comments-form-comment', true);
@@ -246,12 +263,10 @@ $count = count(getCommment($conn,$id)) ?? 0;
                                             else if (document.addEventListener){document.addEventListener('load',JCommentsInitializeForm,false);}
                                             else if (window.attachEvent){window.attachEvent('onload',JCommentsInitializeForm);}
                                             else {if (typeof window.onload=='function'){var oldload=window.onload;window.onload=function(){oldload();JCommentsInitializeForm();}} else window.onload=JCommentsInitializeForm;} 
-                                            //-->
                                     </script>
                                     <script type="text/javascript">
                                             jcomments.setAntiCache(1,0,0);
-                                            //-->
-                                    </script> 
+                                    </script>  -->
                                 </div>
                             </div>
 
@@ -315,7 +330,10 @@ $count = count(getCommment($conn,$id)) ?? 0;
 <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
 
 <script type="text/javascript" src="js/theme.js"></script>
-
+<?php
+   unset($_SESSION['comment_errors']);
+   unset($_SESSION['comment_values']);
+?>
 
 </body>
 

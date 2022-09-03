@@ -9,6 +9,8 @@ $nextMatch = $matches[0];
 $news = array_slice(getNews($conn),0,2);
 $other = getOtherPictures($conn);
 $AcePictures = getAcePictures($conn);
+$contact = getAceContact($conn);
+
 // print_r($other);
 // print_r($AcePictures);
 // die();
@@ -342,7 +344,7 @@ $AcePictures = getAcePictures($conn);
                                             </div>
                                             <div class="name">
                                                 <h4>
-                                                    <a href="news-single.php"><?= $news['title'] ?? ''?> </a>	
+                                                    <a href="news-single.php?id=<?=$news['id'] ?? ''?>"><?= $news['title'] ?? ''?> </a>	
                                                 </h4>
                                             </div>
                                             <div class="text">
@@ -572,13 +574,13 @@ $AcePictures = getAcePictures($conn);
                                     <div class="uk-container uk-container-center uk-flex-item-1">
                                         <div class="uk-grid  uk-grid-collapse uk-flex-item-1 uk-height-1-1 uk-nbfc">
                                             <div class="uk-width-5-10 contact-left uk-vertical-align contact-left-wrap">
-                                                <div class="contact-info-lines uk-vertical-align-middle">
-                                                    <div class="item phone"><span class="icon"><i class="uk-icon-phone"></i></span>(846)-356-9322</div>
-                                                    <div class="item mail"><span class="icon"><i class="uk-icon-envelope"></i></span><a href="mailto:support@torbara.com">support@torbara.com</a>
-                                                        
-                                                    </div>
-                                                    <div class="item location"><span class="icon"><i class="uk-icon-map-marker"></i></span>9478 Chestnut Street, Woodstock, GA 30188</div>
+                                            <div class="contact-info-lines uk-vertical-align-middle">
+                                                <div class="item phone"><span class="icon"><i class="uk-icon-phone"></i></span><?= $contact['phone']?></div>
+                                                <div class="item mail"><span class="icon"><i class="uk-icon-envelope"></i></span><a href="mailto:<?= $contact['email']?>"><?= $contact['email']?></a>
+                                                    
                                                 </div>
+                                                <div class="item location"><span class="icon"><i class="uk-icon-map-marker"></i></span><?= $contact['address']?></div>
+                                            </div>
                                             </div>
                                             <div class="uk-width-medium-5-10 uk-width-small-1-1 contact-right-wrap">
                                                 <div class="contact-form uk-height-1-1">

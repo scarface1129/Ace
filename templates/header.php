@@ -27,7 +27,7 @@ session_start();
 </head>
 
 <body class="tm-isblog">
-<!-- 
+
     <div class="preloader">
         <div class="loader"></div>
-    </div> -->
+    </div>

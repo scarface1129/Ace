@@ -2,7 +2,7 @@
 include('dbconnect.php');
 include('functions.php');
 if(isset($_POST['submit'])){
-    $sender               =   $_POST['name'];
+    $sender               =   $_POST['sender'];
     $email               =   $_POST['email'];
     $message               =   $_POST['message'];
     $date            =   date('y/m/d') ;
@@ -15,8 +15,14 @@ $Date = mysqli_real_escape_string($conn,$date);
 $sql = "INSERT INTO messages(`sender`,email,`message`, `date`) VALUES ('$Sender','$Email', '$Message', '$Date')";
 
 if (mysqli_query($conn, $sql)) {
-    header("Location:../index.php?feed=Message-sent");
-    exit();
+    if($_POST['contact']){
+        header("Location:../contact.php?feed=Message-sent");
+        exit();
+    }else{
+        header("Location:../index.php?feed=Message-sent");
+        exit();
+    }
+    
    
 }else{
     header('Location:../index.php?feed=Message-Was-Not-Sent');

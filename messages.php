@@ -1,4 +1,16 @@
-<?php include('templates/header.php');?>
+<?php include('templates/header.php');
+$data = getMessages($conn);
+
+if($data != null){
+    $message = array_slice($data, 0,10);
+    $count = count($data);
+
+}
+else{
+    $message = '';
+    $count = 0;
+}
+?>
 
 
 
@@ -46,8 +58,36 @@
             <div id="tm-middle" class="tm-middle uk-grid" data-uk-grid-match="" data-uk-grid-margin="">
                 <div class="tm-main uk-width-medium-1-1 uk-row-first">
                     <main id="tm-content" class="tm-content">                       
-                        
-                        
+                    <div id="comments-wrap">
+                            <div id="jc">
+                                <div id="comments">
+                                    <h3>Messages <span><?= $count?></span>  (Showing the Latest <span>10</span>)</h3>
+                                    <?php if($message) :?>
+                                    <?php foreach($message as $message) :?>
+                                    <div class="comments-list" id="comments-list-0">
+                                        <div class="even" id="comment-item-14">
+                                            <div class="rbox">
+                                                <div class="comment-box avatar-indent">
+                                                    <a class="comment-anchor" href="#comment-14" id="comment-14">#</a>
+                                                    <span class="comment-author"><?= $message['sender'] ?? ''?> <h6> <a href="mailto:<?= $message['email'] ?? ''?>"><?= $message['email'] ?? ''?></a></h6></span>
+                                                    <span class="comment-date"><?= date('F d, Y', strtotime($message['date'])) ?? ''?></span>
+                                                    <div class="comment-body" id="comment-body-14"><?= $message['message'] ??''?></div>
+                                                    <span class="comments-buttons">
+                                                    
+                                                    </span>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <?php endforeach?>
+                                    <?php endif?>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>                       
                     </main>
                 </div>
             </div>

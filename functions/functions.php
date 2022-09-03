@@ -321,4 +321,19 @@ function reArrangeFiles($file_post){
     return $file_ary;
 
 }
+
+function getPictures($list){
+    $pictures = explode(',',$list);
+    return $pictures;
+}
+function getMessages($conn){
+    $sql = "SELECT * FROM `messages` ORDER BY `date` DESC";
+    $result = mysqli_query($conn, $sql);
+    $message = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if($message){
+        return $message;
+    }else{
+        return null;
+    }
+}
 ?>

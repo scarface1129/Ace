@@ -45,8 +45,8 @@ $pastMatchResults = getMatchResults($conn);
                                         <div class="last-match-top">
                                             <div class="last-match-title">Last match</div>
                                             <div class="footer-slider-btn">
-                                                <a href="http://h-sportak.torbara.com/" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
-                                                <a href="http://h-sportak.torbara.com/" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
+                                                <a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
+                                                <a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
                                             </div>
                                             <div class="clear"></div>
                                         </div>
@@ -58,7 +58,7 @@ $pastMatchResults = getMatchResults($conn);
                                                     <div class="wrapper">
                                                         <div class="logo">
                                                             <a href="match-single.php?id=<?=$result['id'] ?? ''?>">
-                                                                <img src="images/team-ava.png" class="img-polaroid" alt="<?php $name=getTeamName($conn,$result['team1_id']); echo($name['name'])?> VS <?php $name=getTeamName($conn,$result['team2_id']); echo($name['name'])?> <?= ($result['date']) ?? ''?>" title="<?php $name=getTeamName($conn,$result['team1_id']); echo($name['name'])?> VS <?php $name=getTeamName($conn,$result['team2_id']); echo($name['name'])?> <?= ($result['date']) ?? ''?>">
+                                                                <img src="uploads/<?php $team1 = getTeam($conn,$result['team1_id']); echo($team1['logo']); ?>" class="img-polaroid" alt="<?php $name=getTeamName($conn,$result['team1_id']); echo($name['name'])?> VS <?php $name=getTeamName($conn,$result['team2_id']); echo($name['name'])?> <?= ($result['date']) ?? ''?>" title="<?php $name=getTeamName($conn,$result['team1_id']); echo($name['name'])?> VS <?php $name=getTeamName($conn,$result['team2_id']); echo($name['name'])?> <?= ($result['date']) ?? ''?>">
                                                             </a>
                                                         </div>
                                                         <div class="team-name">
@@ -69,7 +69,7 @@ $pastMatchResults = getMatchResults($conn);
                                                         <?php $name=getTeamName($conn,$result['team2_id']); echo($name['name'])?> </div>
                                                         <div class="logo">
                                                             <a href="match-single.php?id=<?=$result['id'] ?? ''?>">
-                                                                <img src="images/team-ava1.png" class="img-polaroid" alt="<?php $name=getTeamName($conn,$result['team1_id']); echo($name['name'])?> VS <?php $name=getTeamName($conn,$result['team2_id']); echo($name['name'])?> <?= ($result['date']) ?? ''?>" title="<?php $name=getTeamName($conn,$result['team1_id']); echo($name['name'])?> VS <?php $name=getTeamName($conn,$result['team2_id']); echo($name['name'])?> <?= ($result['date']) ?? ''?>">
+                                                                <img src="uploads/<?php $team2 = getTeam($conn,$result['team2_id']); echo($team2['logo']); ?>" class="img-polaroid" alt="<?php $name=getTeamName($conn,$result['team1_id']); echo($name['name'])?> VS <?php $name=getTeamName($conn,$result['team2_id']); echo($name['name'])?> <?= ($result['date']) ?? ''?>" title="<?php $name=getTeamName($conn,$result['team1_id']); echo($name['name'])?> VS <?php $name=getTeamName($conn,$result['team2_id']); echo($name['name'])?> <?= ($result['date']) ?? ''?>">
                                                             </a>
                                                         </div>
                                                         <a class="read-more" href="match-single.php?id=<?=$result['id'] ?? ''?>">Read More</a>

@@ -13,8 +13,8 @@ if($teamAward){
     $awardCount = 0;
 
 }
-if($coach['id'] == null){
-    $coach['id'] = 0;
+if(!isset($coach['id'])){
+    $coach['id'] = '#';
 }
 
 $CoachID = '';

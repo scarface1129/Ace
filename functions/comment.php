@@ -49,7 +49,7 @@ if (empty($email)) {
         session_start();
         $_SESSION['comment_errors'] = $comment_errors;
         $_SESSION['comment_values'] = $comment_values;
-        header('Location:../create_coach.php');
+        header("Location:../news-single.php?id=$newsId");
     }else{
 $name = mysqli_real_escape_string($conn,$name);
 $newsId = mysqli_real_escape_string($conn,$newsId);
