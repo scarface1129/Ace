@@ -63,8 +63,8 @@ $about = getAboutAce($conn);
                                         <p><?=$about['paragraph2'] ??''?></p>
                                     </div>
                                     <div class="uk-width-large-5-10 uk-width-small-1-1">
-                                        <div class="top-banner uk-cover-background uk-position-relative" style="height: 420px; background-image: url('images/about-team-banner.jpg');">
-                                            <img class="uk-invisible" src="images/about-team-banner.jpg" alt="">
+                                        <div class="top-banner uk-cover-background uk-position-relative" style="height: 420px; background-image: url('images/offline-bg.jpg');">
+                                            <img class="uk-invisible" src="images/offline-bg.jpg" alt="">
                                             <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle inner">
                                                 <?=$about['quote'] ??''?>
                                                 <!-- “It’s not whether you get knocked

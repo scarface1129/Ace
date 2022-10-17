@@ -73,6 +73,7 @@ if ($picture['name'] == null) {
     if (!$file_type){
         $coach_errors['picture'] = "Invalid File Format";
         $len++;
+        
     }else if (($picture["size"] > 2000000)) {
         $coach_errors['picture'] = "Picture Size is Bigger than 2MB";
         $len++;

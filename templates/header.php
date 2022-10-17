@@ -28,6 +28,6 @@ session_start();
 
 <body class="tm-isblog">
 
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="loader"></div>
-    </div>
+    </div> -->
